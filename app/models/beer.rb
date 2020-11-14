@@ -5,7 +5,7 @@ class Beer < ApplicationRecord
   has_many :users_beers
   has_many :users, through: :users_beers
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   include PgSearch::Model
   pg_search_scope :search_by_name_category_description,
