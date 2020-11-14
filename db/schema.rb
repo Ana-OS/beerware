@@ -10,10 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_12_192734) do
+ActiveRecord::Schema.define(version: 2020_11_13_160024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bars", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "location"
+    t.string "city"
+    t.string "country"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "bars_beers", force: :cascade do |t|
+    t.bigint "bar_id", null: false
+    t.bigint "beer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bar_id"], name: "index_bars_beers_on_bar_id"
+    t.index ["beer_id"], name: "index_bars_beers_on_beer_id"
+  end
+
+  create_table "beers", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.string "alcohol"
+    t.integer "ibu"
+    t.integer "temperature"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "user_id", null: false
+    t.bigint "beer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["beer_id"], name: "index_reviews_on_beer_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,4 +70,20 @@ ActiveRecord::Schema.define(version: 2020_11_12_192734) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "users_beers", force: :cascade do |t|
+    t.boolean "drank"
+    t.bigint "user_id", null: false
+    t.bigint "beer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["beer_id"], name: "index_users_beers_on_beer_id"
+    t.index ["user_id"], name: "index_users_beers_on_user_id"
+  end
+
+  add_foreign_key "bars_beers", "bars"
+  add_foreign_key "bars_beers", "beers"
+  add_foreign_key "reviews", "beers"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "users_beers", "beers"
+  add_foreign_key "users_beers", "users"
 end
