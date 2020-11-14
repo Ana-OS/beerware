@@ -16,3 +16,4 @@ Rails.application.routes.draw do
   end
 
   resources :reviews, only: :destroy
+end
