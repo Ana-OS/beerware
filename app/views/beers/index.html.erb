@@ -1,20 +1,31 @@
-<div class="container col-8 mt-5">
-  <%= form_tag beers_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a beer"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
-
-  <ul class="list-unstyled">
-    <% @beers.each do |beer| %>
-    <li class="mt-4">Name: <%= beer.name %></li>
-    <li>Category : <%= beer.category %></li>
-    <% end  %>
-  </ul>
+<div class="container" style="border:2px solid blue">
+ <div class="row">
+  <div class="d-flex col-md-8 search_tab" style="border:2px solid red">
+  <i class="fas fa-arrow-circle-left"></i>
+    <%= form_tag beers_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a beer"
+      %>
+    <% end %>
+    </div>
+  </div>
 </div>
 
+<div class="container col-8 mt-5">
+  <h4>Results for Beers</h4>
+  <div class="d-flex flex-column">
+    <% @beers.each do |beer| %>
+      <div class="card-product mt-4">
+        <img src="https://s3-alpha-sig.figma.com/img/9435/953d/af9bb87829af50d3b22b8abe7951092b?Expires=1606089600&Signature=OgywYWKIrozD~kbNulQF095SdNeEs0R7KG4Sk5eufR~q7aRXK1nUdBtskZnKncacFh0oOFbHEVdUzeaNOQFkbCkEKqXT8rZgif7Cajf4hH1kH7Mrv294FXobvk0k9FdhXE2xAUmZm0TfkLd9uiA4Zbi6rIXpa5~gN8bjHxbwInSh8bGPS8pQ6-twOXUSIbfUeLRvqI5-BXYGUdOVS2pf~X62xBkmIqk15nVvnZHwbUdHwLYkcNDw-RwM0TbD1iHsA-qna755Wj938ogU5QjOba4rVoE5ZH~1fZqaCqPMQSScNMgwf1~T2S188-TnMBD7dk2p7w54u5OgqOyA2c2frg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"/>
+        <div class="card-product-infos">
+          <h2><%= beer.name %></h2>
+          <p> <%= beer.description %> </p>
+          <p> <%= beer.id %> </p>
+        </div>
+      </div>
+    <% end  %>
+
+</div>
 
