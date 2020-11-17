@@ -1,0 +1,18 @@
+.simple_form input.form-control {
+  background-color: $light-gray;
+  border-radius: 5px;
+  border-color: $border-gray;
+  border-width: 0.5px;
+  height: calc(1.5em + 0.75rem + 7px);
+
+  &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $med-gray;    ;
+    opacity: 1; /* Firefox */
+  }
+
+  &::-ms-input-placeholder { /* Microsoft Edge */
+    color: $med-gray;
+  }
+}
+
+// .simple_form input[type=text].form-control
