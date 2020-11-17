@@ -8,13 +8,9 @@ class Beer < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
   include PgSearch::Model
-  pg_search_scope :search_by_name_category_description,
+  pg_search_scope :search_beers_by_name_category_description,
    against: [:name, :category],
-
-  # associated_against: {
-  #     bar: [ :name ]
-  #   },
     using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+      tsearch: { prefix: true }
     }
 end

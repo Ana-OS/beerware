@@ -1,0 +1,34 @@
+<div class="container col-8 mt-5">
+
+  <%= form_tag search_page_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query], # params[:query]
+      class: "form-control",
+      placeholder: "Find a beer or bar"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+
+
+  <h4 class="mt-5">results for beers</h4>
+
+  <ul class="list-unstyled">
+    <% @beers.each do |beer| %>
+    <li class="mt-4">Name: <%= beer.name %></li>
+    <li>Category : <%= beer.category %></li>
+    <% end  %>
+  </ul>
+
+
+  <h4>results for bars</h4>
+  <ul class="list-unstyled">
+    <% @bars.each do |bar| %>
+    <li class="mt-4">Name: <%= bar.name %></li>
+    <li>Location : <%= bar.location %></li>
+    <% end %>
+  </ul>
+
+
+</div>
+
