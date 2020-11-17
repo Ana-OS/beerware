@@ -1,14 +1,58 @@
+.body {
+  height: 100vh;
+}
+
+.container.signup {
+  height: calc(100% - 66px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .big-container {
-  background-color: pink;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
   padding-right: 5%;
   padding-left: 5%;
-  border: 0.1px solid rgb(230, 230, 230);
-  box-shadow: 0 0 15px rgba(139, 139, 139, 0.137);
-  margin-bottom: 0%;
-  margin-top: 0%;
+}
+
+@media screen and (min-width: 1024px) {
+  .big-container {
+    width: 40%;
+    border: 0.1px solid rgb(230, 230, 230);
+    box-shadow: 0 0 15px rgba(139, 139, 139, 0.137);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .big-container {
+    width: 50%;
+    border: 0.1px solid rgb(230, 230, 230);
+    box-shadow: 0 0 15px rgba(139, 139, 139, 0.137);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .big-container {
+    width: 70%;
+    border: 0.1px solid rgb(230, 230, 230);
+    box-shadow: 0 0 15px rgba(139, 139, 139, 0.137);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .big-container {
+    width: 80%;
+    border: 0.1px solid rgb(230, 230, 230);
+    box-shadow: 0 0 15px rgba(139, 139, 139, 0.137);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .big-container {
+    width: 100%;
+    border: none;
+    box-shadow: none;
+  }
 }
 
 .signup-header {
@@ -32,15 +76,17 @@
 }
 
 .signup-first-name {
-  margin-right: 10px;
+  margin-right: 2%;
 }
 
 .signup-last-name {
-  margin-left: 10px;
+  margin-left: 2%;
 }
 
-.signup-btn {
+.form-actions.signup .btn{
+  width: 100%;
   background-color: $black;
+  color: $off-white;
   border-radius: 50px;
   text-align: center;
   margin-top: 20px;
@@ -64,16 +110,6 @@
 }
 
 .login-link a:hover {
-  color: $pink;
+  color: $orange-hover;
   text-decoration: none;
-}
-
-.signup-image {
-  position: absolute;
-  left: 450px;
-  bottom: -190px;
-}
-
-.signup-first-name placeholder {
-  color: red;
 }
