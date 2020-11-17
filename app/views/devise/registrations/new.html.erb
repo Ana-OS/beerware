@@ -10,7 +10,7 @@
       <div class="form-inputs">
         <div class="signup-name">
           <div class="signup-first-name">
-            <%= f.input :first_name, required: true, autofocus: true, label:false, placeholder: 'First name'%>
+            <%= f.input :first_name, required: true, autofocus: true, label:false, placeholder: 'First name', :placeholder_html => { :class => 'placeholder' }%>
           </div>
           <div class="signup-last-name">
             <%= f.input :last_name, required: true, autofocus: true, label: false, placeholder: 'Last name'%>
@@ -21,7 +21,7 @@
                     autofocus: true,
                     label: false,
                     placeholder: 'Email',
-                    input_html: { autocomplete: "email" }%>
+                    input_html: { autocomplete: "email", class: "foo" }%>
         <%= f.input :password,
                     required: true,
                     label: false,
@@ -35,7 +35,7 @@
       </div>
 
       <div class="form-actions signup">
-        <p class="signup-btn"><%= f.button :submit, "Sign up" %></p>
+        <%= f.button :submit, "Sign up" %>
       </div>
     <% end %>
     <div class="login-action">
