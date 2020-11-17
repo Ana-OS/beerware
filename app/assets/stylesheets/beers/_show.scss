@@ -1,8 +1,33 @@
-.beer-image {
-  border-radius: 1px;
-  height: 439px;
+.beer-details {
+  background-color: #FFFFFF;
 }
 
-.list-unstyled .beer-description {
-  margin-bottom: 10px;
+.beer-image {
+  border-radius: 1px;
+  text-align: -webkit-center;
 }
+
+.beer-info-top {
+  margin-left: 10px;
+
+  h2 {
+    color: #D18411;
+    font-size: 16px;
+  }
+}
+
+
+.beer-info {
+  margin-left: 10px;
+
+  p {
+    font-size: 24px;
+  }
+
+}
+
+
+.beer-all-content {
+  padding-top: 5px;
+}
+

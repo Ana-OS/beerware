@@ -1,27 +1,30 @@
-<div class="beer-detail">
-  <div class="card beer-image">
-    <%= image_tag "beer_image.png" %>
-  </div>
-  <div class="list-unstyled beer-description">
-    <h2><li><%= @beer.name %></li></h2>
-    <li><%= @beer.category %></li>
-  </div>
-  <div class="beer-description">
-    <%= @beer.description %>
-  </div>
-  <div class="beer-details">
-    <div class="beer-alcohol">
-      <%= @beer.alcohol %>
+<div class="row justify-content-center beer-all-content">
+
+  <div class="col-12 col-lg-6 beer-details">
+
+    <div class="beer-image">
+      <%= image_tag "beer_image.png" %>
     </div>
-    <div class="beer-ibu">
-      <%= @beer.ibu %>
+
+    <div class="list-unstyled beer-info-top">
+      <h1><li><%= @beer.name %></li></h1>
+      <h2><li><%= @beer.category %></li></h2>
     </div>
-    <div class="beer-temperature">
-      <%= @beer.temperature %>
+
+    <div class="beer-description">
+      <%= @beer.description %>
     </div>
-  </div>
-  <div class="beer-reviews">
-    Reviews:
-  </div>
+
+    <div class="d-flex justify-content-around beer-info">
+      <p><%= @beer.alcohol %></p>
+      <p><%= @beer.ibu %></p>
+      <p><%= @beer.temperature %></p>
+    </div>
+
+    <div class="beer-reviews">
+      Reviews:
+    </div>
+    </div>
+
   </div>
 </div>
