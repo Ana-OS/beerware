@@ -2,7 +2,7 @@ class BeersController < ApplicationController
   before_action :find_beer, except: [:index]
 
   def index
-   # @beers = Beer.all
+   @beers = Beer.all
   end
 
   def show;end
