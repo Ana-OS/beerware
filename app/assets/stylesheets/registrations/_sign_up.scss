@@ -67,16 +67,14 @@
 .signup-name {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
 }
 
-.signup-first-name {
-  margin-right: 2%;
+.signup-name .user_first_name {
+  margin-right: 7px;
 }
 
-.signup-last-name {
-  margin-left: 2%;
+.signup-name .user_last_name {
+  margin-left: 7px;
 }
 
 .form-actions.signup .btn{

@@ -9,12 +9,8 @@
 
       <div class="form-inputs">
         <div class="signup-name">
-          <div class="signup-first-name">
             <%= f.input :first_name, required: true, autofocus: true, label:false, placeholder: 'First name', :placeholder_html => { :class => 'placeholder' }%>
-          </div>
-          <div class="signup-last-name">
             <%= f.input :last_name, required: true, autofocus: true, label: false, placeholder: 'Last name'%>
-          </div>
         </div>
         <%= f.input :email,
                     required: true,
