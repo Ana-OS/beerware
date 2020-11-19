@@ -8,6 +8,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+    <!-- added font-awesome, bootstrap, google fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+  </head>
+
+  <body style="background-color: #FFFCFB;">
+    <nav class="navbar navbar-expand-lg">
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+
+          <!-- for the rest of the navbar -->
+          <!-- if user is logged in -->
+          <% if current_user %>
+            <!-- Logged in as <%= current_user.email %> -->
+              <li class="nav-item options">
+                <div class="options" aria-labelledby="navbarDropdown">
+                  <a href="/"> <i class="fas fa-home"></i> </a>
+                  <a href="/search"> <i class="fas fa-search"></i> </a>
+                  <a href="/map"> <i class="fas fa-map"></i> </a>
+
+                  <%= link_to "Search", search_page_path %>
+                  <%= link_to "Map", root_path %>
+                  <%= link_to "Profile", root_path %>
+                </div>
+              </li>
+              <li class="nav-item">
+              <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>
+
+
+<!-- ADD GEMS -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Beerware</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
@@ -17,3 +84,4 @@
     <%= yield %>
   </body>
 </html>
+ -->
