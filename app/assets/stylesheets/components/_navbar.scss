@@ -16,12 +16,7 @@
 // @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .navbar {
-  position: absolute;
-  width: 100%;
-  text-align: right;
-  background-color: transparent;
-  z-index: 1;
-  margin-top: 40px;
+  background-color: #FFFFFF;
 }
 
 .nav-link {
@@ -39,33 +34,33 @@
   }
 }
 
-.nav-link.avatar {
-  width: 56px;
-  border-radius: 50%;
-  padding-top:8px;
-}
-
-.nav-link.sign-up {
-  // text-decoration: underline;
-  color: #363334;
-  width: 121px;
-  height: 46px;
-  left: 1248px;
-  top: 53px;
-  background: $yellow;
-  border-radius: 11px;
-  text-align: center;
-}
-
-.nav-link.homelink {
-  text-align: left;
-  position: absolute;
-  left: 72px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 22px;
-}
 
 .fa-home {
   color: #999999;
+  font-size: 30px;
+  margin-right: 10px;
 }
 
+.fa-map {
+  color: #999999;
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.fa-user {
+  color: #999999;
+  font-size: 30px;
+}
+
+.fa-search {
+  color: #999999;
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.options {
+}
+
+.map-label {
+
+}
