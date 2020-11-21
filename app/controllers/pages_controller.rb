@@ -2,6 +2,15 @@ class PagesController < ApplicationController
   def home
   end
 
+  def landing
+    if Rails.env.production?
+      @ip = request.remote_ip
+    else
+      @ip = Net::HTTP.get(URI.parse('http://checkip.amazonaws.com/')).squish
+    end
+    @bars_near = Bar.near(@ip)
+  end
+
   def search
     @not_searched = !params[:query] #!! double negative. converts to truthy or falsy
 
