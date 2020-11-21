@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
 
   def search
-    @not_searched = !params[:query] #!! double negative. converts to truthy or falsy
+    @not_searched = !params[:query]
 
     @beers = Beer.search_beers_by_name_category_description(params[:query])
     @bars = Bar.search_by_name_location_description(params[:query])
@@ -11,15 +11,11 @@ class PagesController < ApplicationController
     if @beers.size > 0 || @bars.size > 0
       @empty_list = false
 
-    elsif
-      @empty_list = true
-
+    elsif @empty_list = true
       @beers = Beer.all.sample(2)
       @bars = Bar.all.sample(2)
     end
- end
-
-
+  end
 
   def map
     @bars = Bar.where.not(latitude: nil, longitude: nil)
