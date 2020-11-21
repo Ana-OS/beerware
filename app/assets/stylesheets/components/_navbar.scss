@@ -1,4 +1,4 @@
-.navbar-lewagon {
+/* .navbar-lewagon {
   justify-content: space-between;
   background: white;
 }
@@ -9,4 +9,90 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+ */
+
+
+// @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.navbar {
+  background-color: #FFFFFF;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding-bottom: 0px !important;
+  padding-top: 15px !important;
+  filter: drop-shadow(0px -2px 5px rgba(140, 140, 140, 0.13));
+
+}
+
+.nav-link {
+  text-decoration : none;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 28px;
+  color: rgba(28, 12, 27, 0.55);
+  margin-right: 30px;
+  width: 121px;
+    &:hover {
+      color: rgb(80,80,80);
+  }
+}
+
+
+.fa-home {
+  color: #999999;
+  font-size: 25px;
+}
+
+.home-label {
+  color: #999999;
+  font-family: roboto;
+  font-weight: 300;
+}
+
+.fa-map {
+  color: #999999;
+  font-size: 25px;
+}
+
+.map-label {
+  color: #999999;
+  font-family: roboto;
+  font-weight: 300;
+}
+
+.fa-user {
+  color: #999999;
+  font-size: 25px;
+}
+
+.profile-label {
+  color: #999999;
+  font-family: roboto;
+  font-weight: 300;
+}
+
+.fa-search {
+  color: #999999;
+  font-size: 25px;
+}
+
+.search-label {
+  color: #999999;
+  font-family: roboto;
+  font-weight: 300;
+}
+
+.menu-options {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.menu-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
