@@ -7,6 +7,8 @@ class Beer < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
 
+  # has_one_attached :photo
+
   include PgSearch::Model
   pg_search_scope :search_beers_by_name_category_description,
    against: [:name, :category],
