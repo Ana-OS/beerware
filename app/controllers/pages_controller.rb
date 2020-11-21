@@ -20,4 +20,17 @@ class PagesController < ApplicationController
 
 
   end
+
+
+  def map
+    @bars = Bar.where.not(latitude: nil, longitude: nil)
+
+    @markers = @bars.map do |bar|
+      {
+        lng: bar.longitude,
+        lat: bar.latitude,
+        infoWindow: render_to_string(partial: "info_bar", locals: { bar: bar })
+      }
+    end
+  end
 end
