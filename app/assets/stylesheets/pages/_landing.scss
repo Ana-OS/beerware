@@ -1,0 +1,80 @@
+.row.landing{
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.landing-bar-text {
+  font-size: 20px;
+  font-weight: 900;
+  font-family: $headers-font;
+}
+
+.card-landing {
+  overflow: hidden;
+
+  flex-basis: 33.333%;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.card-landing > img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-landing-infos {
+  height: 40px;
+  font-family: $headers-font;
+}
+
+.card-landing h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: $black;
+}
+
+.card-landing p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  color: $med-gray;
+}
+
+.card-landing .card-landing-infos {
+  padding: 5px 0px 0px 0px;
+}
+
+.container-fluid.new-bar {
+  margin-top: 16px;
+}
+
+.container-fluid.new-beer {
+  margin-top: 16px;
+}
+
+.landing-titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.landing-titles p {
+  color: $med-gray;
+  font-weight: 400;
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-family: $headers-font;
+}
+
+.landing-cog-wheel {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 13px;
+}

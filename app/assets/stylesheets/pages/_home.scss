@@ -1,76 +1,26 @@
 // Specific CSS for your home-page
-.row.landing{
-  align-items: stretch;
+
+.homepage-text {
+  background-color: $black;
+  border-radius: 5px;
+  width: 164px;
+  height: 68px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 250px;
+
+  a {
+    color: $off-white;
+    font-size: 32px;
+  }
+  a:hover {
+    color: $off-white;
+    text-decoration: none;
+  }
 }
 
-.landing-bar-text {
-  font-size: 24px;
-}
-
-.card-landing {
-  overflow: hidden;
-
-  flex-basis: 33.333%;
-  flex-grow: 0;
-  flex-shrink: 0;
-}
-
-.card-landing > img {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-.card-landing-infos {
-  height: 40px;
-}
-
-.card-landing h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-  color: $black;
-}
-
-.card-landing p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-  color: $med-gray;
-}
-
-.card-landing .card-landing-infos {
-  padding: 5px 0px 0px 0px;
-}
-
-.container-fluid.new-bar {
-  margin-top: 16px;
-}
-
-.container-fluid.new-beer {
-  margin-top: 16px;
-}
-
-.landing-titles {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
-
-.landing-titles p {
-  color: $med-gray;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-.landing-cog-wheel {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 13px;
+.homepage-text:active {
+  background-color: $black-hover; 
 }
