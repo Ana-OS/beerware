@@ -8,7 +8,7 @@
 }
 
 .beer-info-top {
-  margin-left: 10px;
+
 
   h2 {
     color: #D18411;
@@ -16,18 +16,37 @@
   }
 }
 
-
 .beer-info {
-  margin-left: 10px;
+
+  padding-top: 30px;
 
   p {
     font-size: 24px;
   }
-
 }
 
 
 .beer-all-content {
   padding-top: 5px;
+}
+
+
+.beer-description {
+
+}
+
+.beer-reviews {
+  p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+}
+
+.review-button {
+  background-color: black;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
