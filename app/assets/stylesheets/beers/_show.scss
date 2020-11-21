@@ -47,7 +47,13 @@
   background-color: black;
   color: white;
   padding-top: 5px;
-  padding-bottom: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.review-button:hover {
+  background-color: #4CAF50;
+
 }
 
 .rate {
