@@ -17,7 +17,19 @@ class PagesController < ApplicationController
       @beers = Beer.all.sample(2)
       @bars = Bar.all.sample(2)
     end
-
-
  end
+
+
+
+  def map
+    @bars = Bar.where.not(latitude: nil, longitude: nil)
+
+    @markers = @bars.map do |bar|
+      {
+        lng: bar.longitude,
+        lat: bar.latitude,
+        infoWindow: render_to_string(partial: "info_bar", locals: { bar: bar })
+      }
+    end
+  end
 end
