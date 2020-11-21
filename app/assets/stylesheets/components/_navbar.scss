@@ -17,6 +17,12 @@
 
 .navbar {
   background-color: #FFFFFF;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding-bottom: 0px !important;
+  padding-top: 15px !important;
+  filter: drop-shadow(0px -2px 5px rgba(140, 140, 140, 0.13));
+
 }
 
 .nav-link {
@@ -37,30 +43,56 @@
 
 .fa-home {
   color: #999999;
-  font-size: 30px;
-  margin-right: 10px;
+  font-size: 25px;
+}
+
+.home-label {
+  color: #999999;
+  font-family: roboto;
+  font-weight: 300;
 }
 
 .fa-map {
   color: #999999;
-  font-size: 30px;
-  margin-right: 10px;
+  font-size: 25px;
+}
+
+.map-label {
+  color: #999999;
+  font-family: roboto;
+  font-weight: 300;
 }
 
 .fa-user {
   color: #999999;
-  font-size: 30px;
+  font-size: 25px;
+}
+
+.profile-label {
+  color: #999999;
+  font-family: roboto;
+  font-weight: 300;
 }
 
 .fa-search {
   color: #999999;
-  font-size: 30px;
-  margin-right: 10px;
+  font-size: 25px;
 }
 
-.options {
+.search-label {
+  color: #999999;
+  font-family: roboto;
+  font-weight: 300;
 }
 
-.map-label {
+.menu-options {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
 
+.menu-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
