@@ -1,18 +1,18 @@
-.container.signup {
+.container.login {
   height: calc(100% - 66px);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.big-container-signup {
+.big-container-login {
   width: 100%;
   padding-right: 5%;
   padding-left: 5%;
 }
 
 @media screen and (min-width: 1024px) {
-  .big-container-signup {
+  .big-container-login {
     width: 40%;
     border: 0.1px solid rgb(230, 230, 230);
     box-shadow: 0 0 15px rgba(139, 139, 139, 0.137);
@@ -20,7 +20,7 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .big-container-signup {
+  .big-container-login {
     width: 50%;
     border: 0.1px solid rgb(230, 230, 230);
     box-shadow: 0 0 15px rgba(139, 139, 139, 0.137);
@@ -28,7 +28,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .big-container-signup {
+  .big-container-login {
     width: 70%;
     border: 0.1px solid rgb(230, 230, 230);
     box-shadow: 0 0 15px rgba(139, 139, 139, 0.137);
@@ -36,7 +36,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .big-container-signup {
+  .big-container-login {
     width: 80%;
     border: 0.1px solid rgb(230, 230, 230);
     box-shadow: 0 0 15px rgba(139, 139, 139, 0.137);
@@ -44,40 +44,27 @@
 }
 
 @media screen and (max-width: 480px) {
-  .big-container-signup {
+  .big-container-login {
     width: 100%;
     border: none;
     box-shadow: none;
   }
 }
 
-.signup-header {
+.login-header {
   text-align: center;
   padding-top: 30%;
   padding-bottom: 10%;
 }
 
-.signup-text {
+.login-text {
   color: $black;
   font-size: 24px;
   font-family: $headers-font;
   justify-self: center;
 }
 
-.signup-name {
-  display: flex;
-  justify-content: space-between;
-}
-
-.signup-name .user_first_name {
-  margin-right: 7px;
-}
-
-.signup-name .user_last_name {
-  margin-left: 7px;
-}
-
-.form-actions.signup .btn{
+.form-actions.login .btn{
   width: 100%;
   background-color: $black;
   color: $off-white;
@@ -87,23 +74,37 @@
   box-shadow: 0 0 15px rgba(139, 139, 139, 0.137);
 }
 
-.signup-btn:hover {
+.login-btn:hover {
   background-color: $black-hover;
 }
 
-.login-action {
+.forgot-password-link {
+  text-align: right;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.forgot-password a {
+  color: $dark-gray;
+}
+
+.forgot-password a:hover {
+  color: $menu-buttons;
+}
+
+.signup-action {
   text-align: center;
   color: $black;
   margin-bottom: 10%;
   margin-top: 20%;
 }
 
-.login-link a {
+.signup-link a {
   color: $orange;
   font-weight: 500;
 }
 
-.login-link a:hover {
+.signup-link a:hover {
   color: $orange-hover;
   text-decoration: none;
 }
