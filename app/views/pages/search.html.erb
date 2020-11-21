@@ -3,10 +3,11 @@
 
     <div class = "search-bar-wrapper">
       <!-- font awesome back button -->
-      <%= link_to :back do %>
-        <i class= "fas fa-arrow-circle-left"></i>
-      <% end %>
-
+      <div class="back-button">
+        <%= link_to :back do %>
+          <i class= "fas fa-arrow-circle-left"></i>
+        <% end %>
+      </div>
       <!-- Search -->
       <%= form_tag search_page_path, method: :get do %>
         <%= text_field_tag :query,

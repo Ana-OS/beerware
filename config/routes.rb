@@ -18,4 +18,10 @@ Rails.application.routes.draw do
   end
 
   resources :reviews, only: :destroy
+
+  resources :users, only: [] do
+    collection do
+      get :profile
+    end
+  end
 end

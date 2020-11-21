@@ -1,0 +1,32 @@
+<div class="container col-8 mt-5">
+
+  <div class="my-profile">
+    <h1> My Profile </h1>
+  </div>
+
+  <div class="settings-logout">
+    <%= link_to edit_user_registration_path do %>
+      <i class="fas fa-cog"></i>
+    <% end %>
+
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+  </div>
+
+  <div class="user-name-picture">
+    <!-- profile picture -->
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+    <p><%= current_user.first_name.capitalize %> </p>
+    <p><%= current_user.last_name.capitalize %></p>
+  </div>
+
+  <!-- to drink list -->
+  <h3> To drink </h3>
+  <h3> Drank </h3>
+
+
+  <!-- images of beers to drink- sample from list -->
+  <div class="sample-beers-to-drink">
+
+  </div>
+</div>
+
