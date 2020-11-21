@@ -1,18 +1,17 @@
 <div class="container col-8 mt-5">
-  <%= form_tag bars_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a bar"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
 
   <ul class="list-unstyled">
     <% @bars.each do |bar| %>
     <li class="mt-4">Name: <%= bar.name %></li>
+
     <li>Location : <%= bar.location %></li>
+    <li>City : <%= bar.city %></li>
+    <li>Country : <%= bar.country %></li>
+
+    <li>Id : <%= bar.id %></li>
     <% end  %>
   </ul>
+
 </div>
+
+
