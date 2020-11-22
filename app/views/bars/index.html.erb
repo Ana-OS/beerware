@@ -1,15 +1,27 @@
-<div class="container col-8 mt-5">
+<div class="bar-container">
+  <div class="container">
+    <div class="container-fluid">
+    <h2 class="bars-title">Results for bars</h2>
 
-  <ul class="list-unstyled">
-    <% @bars.each do |bar| %>
-    <li class="mt-4">Name: <%= bar.name %></li>
+      <% @bars.each do |bar| %>
+        <div class="card bars">
+          <div class="row">
 
-    <li>Location : <%= bar.location %></li>
-    <li>City : <%= bar.city %></li>
-    <li>Country : <%= bar.country %></li>
-
-    <li>Id : <%= bar.id %></li>
-    <% end  %>
-  </ul>
-
+            <div class="col-sm-1" style="width: 10rem;">
+              <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
+            </div>
+            
+            <div class="col bars">
+              <div class="card-bars-infos">
+              <h2 class="card-bars-name"><%=link_to (h truncate(bar.name, :length => 25)), bar_path(bar) %></h2>
+              <p class="card-bars-location"><%=h truncate(bar.location, :length => 30) %></p>
+              <p class="card-bars-description"><%=h truncate(bar.description, :length => 100) %></p>
+            </div>
+          
+          </div>
+        </div>
+      <% end %>
+      
+    </div>
+  </div>
 </div>
