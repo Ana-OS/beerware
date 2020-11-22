@@ -1,1 +1,48 @@
-@import "show"
+.bars-title {
+  font-size: 20px;
+  font-weight: 900;
+  font-family: $headers-font;
+  margin-top: 50px;
+}
+
+.card.bars {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border: none;
+  // border-bottom: 1px solid $menu-buttons;
+}
+
+.card.bars img {
+  object-fit: cover;
+}
+
+.card-bars-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: $black;
+  padding-top: 13px;
+  margin-bottom: 2px;
+  font-family: $headers-font;
+}
+
+.card-bars-location {
+  font-size: 16px;
+  color: $med-gray;
+  font-weight: 300;
+  margin-top: 2px;
+  margin-bottom: 5px;
+  font-family: $headers-font;
+}
+
+.card-bars-description {
+  font-size: 12px;
+  color: $black;
+  margin-top: 5px;
+  font-family: $headers-font;
+}
+
+.col.bars {
+  padding: 0px 15px 2px 0px;
+  margin: 0px 0px 2px 0px;
+}
