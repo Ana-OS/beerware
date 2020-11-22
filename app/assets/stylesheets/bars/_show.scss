@@ -1,0 +1,40 @@
+.card-bar-name {
+  font-size: 32px;
+  margin-top: 19px;
+  margin-bottom: 5px;
+  color: $black;
+  font-family: $headers-font;
+}
+
+.card-bar-location {
+  text-decoration: underline;
+  font-size: 16px;
+  color: $black;
+  font-weight: 100;
+  font-family: $headers-font;
+}
+
+.card-bar-description {
+  font-size: 16px;
+  color: $black;
+  font-family: $headers-font;
+}
+
+.beer-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button.beer-menu{
+  background-color: $black;
+  color: $off-white;
+  border-radius: 50px;
+  width: 100%;
+  height: 46px;
+  font-family: $headers-font;
+}
+
+.foter {
+  height: 100px;
+}
