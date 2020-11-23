@@ -1,0 +1,8 @@
+<div class="container col-10 mt-5">
+  <h4 class="mt-5">Bars in your area</h4>
+    <% @bars_near.each do |bar| %>
+    <div class="mt-4" style="border:2px solid red"><%=link_to bar.name, bar_path(bar) %></div>
+    <div><%=link_to bar.location, map_page_path %></li>
+    <% end  %>
+  </ul>
+</div>

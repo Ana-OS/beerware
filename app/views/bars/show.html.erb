@@ -1,6 +1,6 @@
-<div class="row justify-content-center bar-all-content">
+<div class="row justify-content-center bar-all-content" style="border:1px solid blue">
 
-  <div class="col-12 col-lg-6 bar-details">
+  <div class="col-sm-10 col-lg-6 bar-details">
 
     <!-- bar image needed -->
 
@@ -17,7 +17,7 @@
       <p><%= @bar.city %></p>
       <p><%= @bar.country %></p>
     </div>
-
+    <%= link_to "back", bars_path %>
     <!-- bar menu needed -->
   </div>
 </div>

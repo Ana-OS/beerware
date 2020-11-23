@@ -2,13 +2,15 @@
 
   <ul class="list-unstyled">
     <% @bars.each do |bar| %>
-    <li class="mt-4">Name: <%= bar.name %></li>
-
-    <li>Location : <%= bar.location %></li>
-    <li>City : <%= bar.city %></li>
-    <li>Country : <%= bar.country %></li>
-
-    <li>Id : <%= bar.id %></li>
+     <%= link_to bar_path(bar), :action => 'go' do %>
+      <div class="mt-4" style="width: 200px; height:200px; border: 1px solid blue; border-radius:30px">
+        <li class="ml-3 mt-2">Name: <%= bar.name %></li>
+        <li class="ml-3">Location : <%= bar.location %></li>
+        <li class="ml-3">City : <%= bar.city %></li>
+        <li class="ml-3">Country : <%= bar.country %></li>
+        <li class="ml-3">Id : <%= bar.id %></li>
+        <% end %>
+      </div>
     <% end  %>
   </ul>
 

@@ -1,14 +1,18 @@
 <div class="container col-8 mt-5">
-
-  <ul class="list-unstyled">
+  <%= link_to "back", root_path  %>
+  <ul class="list-unstyled" >
     <% @beers.each do |beer| %>
-    <li class="mt-4">Name: <%= beer.name %></li>
-    <li>Category : <%= beer.category %></li>
-    <li>Alcohol : <%= beer.alcohol %></li>
-    <li>IBU : <%= beer.ibu %></li>
-    <li>Temperature : <%= beer.temperature %></li>
-    <li>Description : <%= beer.description %></li>
-    <li>Id : <%= beer.id %></li>
+      <%= link_to beer_path(beer), :action => 'go' do %>
+      <div class="m-4" style="width: 200px; height:200px; border: 1px solid red; border-radius:30px">
+      <li class="ml-3 mt-2">Name: <%= beer.name %></li>
+      <li class="ml-3">Category : <%= beer.category %></li>
+      <li class="ml-3">Alcohol : <%= beer.alcohol %></li>
+      <li class="ml-3">IBU : <%= beer.ibu %></li>
+      <li class="ml-3">Temperature : <%= beer.temperature %></li>
+      <li class="ml-3">Description : <%= beer.description %></li>
+      <li class="ml-3">Id : <%= beer.id %></li>
+      </div>
+      <% end  %>
     <% end  %>
   </ul>
 </div>

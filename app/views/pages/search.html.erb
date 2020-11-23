@@ -38,7 +38,7 @@
     <h4> Recommended Beers </h4>
     <ul class="list-unstyled">
       <% @beers.each do |beer| %>
-      <li class="mt-4">Name: <%= beer.name %></li>
+      <li class="mt-4">Name: <%=link_to beer.name, beer_path(beer) %></li>
       <li>Category : <%= beer.category %></li>
       <% end %>
     </ul>
@@ -46,7 +46,7 @@
     <h4>Recommended Bars</h4>
     <ul class="list-unstyled">
       <% @bars.each do |bar| %>
-      <li class="mt-4">Name: <%= bar.name %></li>
+      <li class="mt-4">Name: <%=link_to bar.name, bar_path(bar) %></li>
       <li>Location : <%= bar.location %></li>
       <% end %>
     </ul>
@@ -56,7 +56,7 @@
     <h4 class="mt-5">Results for Beers</h4>
     <ul class="list-unstyled">
       <% @beers.each do |beer| %>
-      <li class="mt-4">Name: <%= beer.name %></li>
+      <li class="mt-4">Name: <%= link_to beer.name, beer_path(beer) %></li>
       <li>Category : <%= beer.category %></li>
       <% end  %>
     </ul>
@@ -65,7 +65,7 @@
     <h4>Results for Bars</h4>
     <ul class="list-unstyled">
       <% @bars.each do |bar| %>
-      <li class="mt-4">Name: <%= bar.name %></li>
+      <li class="mt-4">Name: <%= link_to bar.name, bar_path(bar) %></li>
       <li>Location : <%= bar.location %></li>
       <% end %>
     </ul>
