@@ -28,6 +28,7 @@ class PagesController < ApplicationController
 
   def map
     @bars = Bar.where.not(latitude: nil, longitude: nil)
+    @options = { padding: 70, maxZoom: 15, duration: 0 }
 
     @markers = @bars.map do |bar|
       {

@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   get '/map' => 'pages#map', :as => 'map_page'
   get '/landing' => 'pages#landing', :as => 'landing_page'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :bars
+  resources :bars do
+    member do
+      get :map
+    end
+  end
 
   resources :beers do
 

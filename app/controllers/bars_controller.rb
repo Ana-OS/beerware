@@ -7,6 +7,16 @@ class BarsController < ApplicationController
 
   def show; end
 
+  def map
+    @options = { padding: 70, maxZoom: 17, duration: 0 }
+    @markers = [
+      {
+        lng: @bar.longitude,
+        lat: @bar.latitude,
+      }
+    ]
+  end
+
   private
 
   def find_bar
