@@ -2,6 +2,7 @@
   transform:none !important;
   max-width: 100% !important;
   top: 70%;
+    height:200px;
 }
 .popup_img{
   width:100px;
@@ -14,10 +15,12 @@
 .mapboxgl-popup-content{
   padding-bottom:20px;
   border-radius:30px 30px 0 0 !important;
+
 }
 .mapboxgl-popup-close-button{
   display: none !important;
 }
+
 
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
