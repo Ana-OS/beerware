@@ -15,7 +15,7 @@
               <div class="card-beer-infos">
               <h2 class="card-beer-name"><%=link_to (h truncate(beer.name, :length => 25)), beer_path(beer) %></h2>
               <p class="card-beer-location"><%=h truncate(beer.category, :length => 30) %></p>
-              <p class="card-beer-description"><%=h truncate(beer.description, :length => 100) %></p>
+              <p class="card-beer-description"><%=h truncate(beer.description, :length => 30) %></p>
             </div>
           
           </div>
