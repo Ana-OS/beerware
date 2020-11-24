@@ -8,7 +8,7 @@
 }
 
 .beer-info-top {
-  margin-left: 10px;
+
 
   h2 {
     color: #D18411;
@@ -16,18 +16,88 @@
   }
 }
 
-
 .beer-info {
-  margin-left: 10px;
+
+  padding-top: 30px;
 
   p {
     font-size: 24px;
   }
-
 }
 
 
 .beer-all-content {
   padding-top: 5px;
+}
+
+
+.beer-description {
+
+}
+
+.beer-reviews {
+  p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+}
+
+.review-button {
+  background-color: black;
+  color: white;
+  padding-top: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.review-button:hover {
+  background-color: $black-hover;
+  color: white;
+
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.rate {
+  padding-left: 0px !important;
+}
+
+.review-title-container {
+  clear: both;
 }
 
