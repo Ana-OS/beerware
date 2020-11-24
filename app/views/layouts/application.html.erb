@@ -24,19 +24,30 @@
             <!-- Logged in as <%= current_user.email %> -->
               <div class="menu-options">
                 <div class="menu-option">
-                  <a href="/map"> <i class="fas fa-map"></i> </a>
+                  <%= link_to map_page_path do  %>
+                    <i class="fas fa-map"></i>
+                  <% end %>
                   <p class="map-label">Map</p>
                 </div>
+
                 <div class="menu-option">
-                  <a href="/search"> <i class="fas fa-search"></i> </a>
+                  <%= link_to search_page_path do  %>
+                    <i class="fas fa-search"></i>
+                  <% end %>
                   <p class="search-label">Search</p>
                 </div>
+
                 <div class="menu-option">
-                  <a href="/landing"> <i class="fas fa-home"></i> </a>
+                  <%= link_to landing_page_path do  %>
+                    <i class="fas fa-home"></i>
+                  <% end %>
                   <p class="home-label">Home</p>
                 </div>
+
                 <div class="menu-option">
-                  <a href="users/profile"> <i class="fas fa-user"></i> </a>
+                  <%= link_to profile_users_path do  %>
+                    <i class="fas fa-user"></i>
+                  <% end %>
                   <p class="profile-label">Profile</p>
                 </div>
                   <!-- <%= link_to "Search", search_page_path %>
