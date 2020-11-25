@@ -8,7 +8,7 @@
 }
 
 .beer-info-top {
-
+  margin-left: 10px;
 
   h2 {
     color: #D18411;
@@ -32,6 +32,7 @@
 
 
 .beer-description {
+  margin-left: 10px;
 
 }
 
@@ -49,12 +50,18 @@
   padding-top: 5px;
   margin-bottom: 10px;
   margin-top: 10px;
+  margin-left: 10px;
 }
 
 .review-button:hover {
   background-color: $black-hover;
   color: white;
 
+}
+
+.review-send-button {
+  background-color: black;
+  color: white;
 }
 
 .rate {
