@@ -19,6 +19,7 @@ fabricaMusa = Bar.create(name: 'Fábrica Musa', description: 'Musa da Bica is Ce
 outroLado = Bar.create(name: 'Outro Lado', description: 'Musa da Bica is Cerveja Musa\'s new taproom in one of Lisbon\'s most historic neighborhoods; Bica. We have 15 open taps and a food menu that complements them perfectly. Come check it out!', location: '1 Beco do Arco Escuro', city: 'Lisbon', country: 'Portugal')
 
 
+
 puts 'bars created'
 
 doisCorvos = Beer.create(name:'Dois Corvos', category: 'Blonde Ale', alcohol:'4', ibu: 3, temperature: 13, description: 'So good')
@@ -34,6 +35,27 @@ maldita = Beer.create(name:'Maldita', category: 'Bohemian Pilsener', alcohol:'2.
 puts "beers created"
 
 
+puts "adding photos"
+# file = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249754/Beerware/Beers/dois_yy0rws.webp')
+# doisCorvos.photo.attach(io: file, filename: 'filename.png', content_type: 'image/png')
+# file1 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249850/Beerware/Beers/8a_dpwkqp.jpg')
+# oitavaColina.photo.attach(io: file, filename: 'filename.png', content_type: 'image/png')
+# file2 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249851/Beerware/Beers/351_v59f4u.jpg')
+# tresCincoUm.photo.attach(io: file, filename: 'filename.png', content_type: 'image/png')
+# file3 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250220/Beerware/Beers/florinda_ndykgp.webp')
+# florinda.photo.attach(io: file, filename: 'filename.png', content_type: 'image/png')
+# file4 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/nortada_aqjotn.jpg')
+# nortada.photo.attach(io: file, filename: 'filename.png', content_type: 'image/png')
+# file5 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/mean_s_o96ql7.jpg')
+# meanSardine.photo.attach(io: file, filename: 'filename.png', content_type: 'image/png')
+# file6 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/bilitre_uybubq.jpg')
+# biltre.photo.attach(io: file, filename: 'filename.png', content_type: 'image/png')
+# file7 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250124/Beerware/Beers/matilda_wxpr4g.jpg')
+# maldita.photo.attach(io: file, filename: 'filename.png', content_type: 'image/png')
+# file8 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606247256/Beerware/Beers/mick_copo_blsgxn.png')
+# mickLager.photo.attach(io: file, filename: 'filename.png', content_type: 'image/png')
+=======
+
 BarsBeer.create(beer:oitavaColina, bar: cervejaCanil)
 BarsBeer.create(beer:oitavaColina, bar: musaDaBica)
 BarsBeer.create(beer:meanSardine, bar: musaDaBica)
@@ -48,6 +70,7 @@ BarsBeer.create(beer:mickLager, bar: cervejaCanil)
 BarsBeer.create(beer:maldita, bar: cervejaCanil)
 BarsBeer.create(beer:florinda, bar: outroLado)
 BarsBeer.create(beer:florinda, bar: fabricaMusa)
+
 
 
 
