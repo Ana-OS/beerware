@@ -5,7 +5,10 @@ class BeersController < ApplicationController
    @beers = Beer.all
   end
 
-  def show;end
+  def show
+    @reviews = @beer.reviews
+    @review = Review.new
+  end
 
 
   private

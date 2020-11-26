@@ -17,8 +17,6 @@ class ReviewsController < ApplicationController
     @review.user = current_user
       if @review.save
         redirect_to beer_path(@beer)
-      else
-        render 'new'
       end
   end
 
