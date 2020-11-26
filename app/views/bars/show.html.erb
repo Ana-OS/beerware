@@ -7,7 +7,7 @@
       <p class="card-bar-location"><%=link_to @bar.location, map_bar_path %></p>
       <p class="card-bar-description"><%= @bar.description %></p>
       <div class="beer-menu">
-        <button class="button beer-menu">Beer menu</button>
+        <button class="button beer-menu"><%= link_to "Beer menu", beers_path %></button>
       </div>
 
     </div>
