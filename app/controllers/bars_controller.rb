@@ -6,6 +6,9 @@ class BarsController < ApplicationController
   end
 
   def show; end
+  def beer_menu
+    @bar_beer = @bar.beers
+  end
 
   def map
     @options = { padding: 70, maxZoom: 17, duration: 0 }

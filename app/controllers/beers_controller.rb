@@ -10,6 +10,10 @@ class BeersController < ApplicationController
     @review = Review.new
   end
 
+  def bar_list
+    @beer_bars = @beer.bars
+  end
+
 
   private
 

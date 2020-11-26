@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :bars do
     member do
       get :map
+      get :beer_menu
     end
   end
 
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
       post :drank # use link_to
       post :to_drink
       delete :unlist
+      get :bar_list
     end
 
     resources :reviews, only: [ :new, :create ]
