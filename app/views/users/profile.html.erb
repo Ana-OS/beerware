@@ -20,13 +20,30 @@
   </div>
 
   <!-- to drink list -->
-  <h3> To drink </h3>
-  <h3> Drank </h3>
+  <div class = "to-drink-list">
+    <p> To drink</p>
+    <p><%= @to_drink.size %></p>
+
+  </div>
+
+  <div class = "drank-list">
+    <p> Drank </p>
+    <p><%= @drank.size %></p>
+  </div>
+
 
 
   <!-- images of beers to drink- sample from list -->
-  <div class="sample-beers-to-drink">
-
+  <div class="beers-to-drink">
+    <ul>
+      <% if @to_drink.size < 1 %>
+        <li> No drinks on this list- you must be thirsty or drunk! </li>
+        <li><%= link_to "Check out some beers now!", beers_path %></li>
+      <% else %>
+        <% @to_drink.each do |beer| %>
+          <li><%= beer.name %></li>
+        <% end %>
+      <% end %>
+    </ul>
   </div>
 </div>
-
