@@ -5,7 +5,14 @@ class BeersController < ApplicationController
    @beers = Beer.all
   end
 
-  def show;end
+  def show
+    @reviews = @beer.reviews
+    @review = Review.new
+  end
+
+  def bar_list
+    @beer_bars = @beer.bars
+  end
 
   def to_drink
     # @beer = Beer.find(params[:id])

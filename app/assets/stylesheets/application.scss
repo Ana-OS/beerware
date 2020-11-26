@@ -17,8 +17,9 @@
 @import "pages/index";
 
 // Beers
-@import "beers/index";
-@import "beers/show";
+@import "beers/_index";
+@import "beers/_show";
+@import "beers/_beer_menu";
 
 // Bars
 @import "bars/index";

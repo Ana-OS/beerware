@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   get '/map' => 'pages#map', :as => 'map_page'
   get '/landing' => 'pages#landing', :as => 'landing_page'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :bars
+  resources :bars do
+    member do
+      get :map
+      get :beer_menu
+    end
+  end
 
   resources :beers do
 
@@ -13,9 +18,10 @@ Rails.application.routes.draw do
       post :drank # use link_to
       post :to_drink
       delete :unlist
+      get :bar_list
     end
 
-    resources :reviews
+    resources :reviews, only: [ :new, :create ]
   end
 
   resources :reviews, only: :destroy
