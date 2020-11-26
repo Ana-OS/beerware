@@ -18,6 +18,7 @@ musaDaBica = Bar.create(name: 'Musa da Bica - Craft Beer Bar', description: 'Mus
 fabricaMusa = Bar.create(name: 'Fábrica Musa', description: 'Musa da Bica is Cerveja Musa\'s new taproom in one of Lisbon\'s most historic neighborhoods; Bica. We have 15 open taps and a food menu that complements them perfectly. Come check it out!', location: '83 Rua do Açúcar Marvila', city: 'Lisbon', country: 'Portugal')
 outroLado = Bar.create(name: 'Outro Lado', description: 'Musa da Bica is Cerveja Musa\'s new taproom in one of Lisbon\'s most historic neighborhoods; Bica. We have 15 open taps and a food menu that complements them perfectly. Come check it out!', location: '1 Beco do Arco Escuro', city: 'Lisbon', country: 'Portugal')
 
+
 puts 'bars created'
 
 doisCorvos = Beer.create(name:'Dois Corvos', category: 'Blonde Ale', alcohol:'4', ibu: 3, temperature: 13, description: 'So good')
@@ -29,7 +30,6 @@ nortada = Beer.create(name:'Nortada', category: 'Brown Porter', alcohol:'2.6', i
 meanSardine = Beer.create(name:'Mean Sardine', category: 'Brown Porter', alcohol:'2.6', ibu: 4, temperature: 13, description: 'So awesome')
 biltre = Beer.create(name:'Biltre', category: 'American Pale Ale', alcohol:'2.6', ibu: 4, temperature: 13, description: 'So awesome')
 maldita = Beer.create(name:'Maldita', category: 'Bohemian Pilsener', alcohol:'2.9', ibu: 4, temperature: 13, description: 'So awesome')
-
 
 puts "beers created"
 
