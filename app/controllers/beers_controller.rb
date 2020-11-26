@@ -7,6 +7,10 @@ class BeersController < ApplicationController
 
   def show;end
 
+  def bar_list
+    @beer_bars = @beer.bars
+  end
+
 
   private
 
