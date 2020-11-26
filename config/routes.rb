@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       delete :unlist
     end
 
-    resources :reviews
+    resources :reviews, only: [ :new, :create ]
   end
 
   resources :reviews, only: :destroy
