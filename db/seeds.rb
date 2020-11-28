@@ -36,6 +36,7 @@ puts "beers created"
 
 
 puts "adding photos"
+
 file = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249754/Beerware/Beers/dois_yy0rws.webp')
 doisCorvos.photo.attach(io: file, filename: 'filename.png', content_type: 'image/png')
 file1 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249850/Beerware/Beers/8a_dpwkqp.jpg')
