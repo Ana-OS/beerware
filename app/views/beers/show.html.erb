@@ -7,16 +7,29 @@
     </div>
 
     <div class="list-unstyled beer-info-top">
-      <%= @beer.photo %>
+      <%= cl_image_tag @beer.photo.key, height: 400, width: 400, crop: :fit %>
       <h1><li><%= @beer.name %></li></h1>
       <h2><li><%= @beer.category %></li></h2>
     </div>
 
-<!-- need to edit to make sure user can't post the same drink more than once -->
-    <ul class = to-drink-drank-add">
-      <li><%= link_to "Add to your To Drink List", to_drink_beer_path, method: :post %></li>
-      <li><%= link_to "Add to your Drank Link", drank_beer_path, method: :post %></li>
+
+    <ul class = to-drink-drank-unlist-butons">
+      <% @to_drink = UsersBeer.find_by(beer: @beer, user: current_user, drank: :false) %>
+      <% @drank = UsersBeer.find_by(beer: @beer, user: current_user, drank: :true) %>
+      <% if @to_drink %>
+        <p> On your To Drink list </p>
+        <li><%= link_to "Add to your Drank list", drank_beer_path, method: :post %></li>
+        <li><%= link_to "Remove Beer from To Drink list", unlist_beer_path, method: :delete %></li>
+      <% elsif @drank %>
+        <p> On your Drank list </p>
+        <li><%= link_to "Add to your To Drink list", to_drink_beer_path, method: :post %></li>
+        <li><%= link_to "Remove Beer from Drank list", unlist_beer_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Add to your To Drink list", to_drink_beer_path, method: :post %></li>
+        <li><%= link_to "Add to your Drank list", drank_beer_path, method: :post %></li>
+      <% end %>
     </ul>
+
     <!-- button to open modal-->
 <button type="button" class="btn btn-sm review-button" data-toggle="modal" data-target="#modal">Review it</button>
 <p><%= link_to "check which bars sell this beer", bar_list_beer_path(@beer) %></p>
