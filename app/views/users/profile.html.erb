@@ -34,16 +34,15 @@
 
 
   <!-- images of beers to drink- sample from list -->
-  <div class="beers-to-drink">
-    <ul>
+  <div class="beers-to-drink-images">
       <% if @to_drink.size < 1 %>
-        <li> No drinks on this list- you must be thirsty or drunk! </li>
-        <li><%= link_to "Check out some beers now!", beers_path %></li>
+        <p>No drinks on this list- you must be thirsty or drunk!</p>
+        <br>
+        <%= link_to "Check out some beers now!", beers_path %>
       <% else %>
         <% @to_drink.each do |beer| %>
-          <li><%= beer.name %></li>
-        <% end %>
+        <%= cl_image_tag beer.photo.key, height: 200, width: 200, crop: :fit %>
       <% end %>
-    </ul>
+    <% end %>
   </div>
 </div>
