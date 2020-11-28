@@ -46,7 +46,18 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for [ @beer, @review ] do |f| %>
-          <%= f.input :rating, label: false, placeholder: 'Rate it' %>
+          <div class="rate">
+              <input type="radio" id="star5" name="review[rating]" value="5" />
+              <label for="star5" title="text">5 stars</label>
+              <input type="radio" id="star4" name="review[rating]" value="4" />
+              <label for="star4" title="text">4 stars</label>
+              <input type="radio" id="star3" name="review[rating]" value="3" />
+              <label for="star3" title="text">3 stars</label>
+              <input type="radio" id="star2" name="review[rating]" value="2" />
+              <label for="star2" title="text">2 stars</label>
+              <input type="radio" id="star1" name="review[rating]" value="1" />
+              <label for="star1" title="text">1 star</label>
+            </div>
           <%= f.input :content, label: false, placeholder: 'Describe' %>
           <%= f.submit "Submit review", class: "btn btn-primary" %>
         <% end %>
