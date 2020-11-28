@@ -14,3 +14,27 @@
               </div>
             <% end  %>
           </div>
+
+
+// original 
+
+<div class="container">
+    <div class="container-fluid">
+      <h2 class= "landing-bar-text">Bars close to you</h2>
+      <div class="scrollmenu">
+        <div class="row landing">
+          <div class="col col-md-2">
+            <% @bars_near.each do |bar| %>
+              <div class="card-landing" style="width: 8rem;">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" />
+                <div class="card-landing-infos">
+                  <h2 class="card-landing-name"><%= bar.name %></h2>
+                  <p class="card-landing-location"><%= bar.location %></p>
+                </div>
+              </div>
+            <% end  %>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

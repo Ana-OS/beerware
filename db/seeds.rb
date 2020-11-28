@@ -54,7 +54,6 @@ puts "adding photos"
 # maldita.photo.attach(io: file, filename: 'filename.png', content_type: 'image/png')
 # file8 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606247256/Beerware/Beers/mick_copo_blsgxn.png')
 # mickLager.photo.attach(io: file, filename: 'filename.png', content_type: 'image/png')
-=======
 
 BarsBeer.create(beer:oitavaColina, bar: cervejaCanil)
 BarsBeer.create(beer:oitavaColina, bar: musaDaBica)
