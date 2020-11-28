@@ -15,4 +15,13 @@ class Beer < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+  def avg_rating
+    if reviews.size == 0
+      return 0
+    else
+      reviews.sum(&:rating)/reviews.size.to_f
+    end
+  end
+
 end
