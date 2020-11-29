@@ -3,6 +3,7 @@
   font-weight: 900;
   font-family: $headers-font;
   margin-top: 12px;
+  color: $black;
 }
 
 .card.bars {
@@ -11,6 +12,8 @@
   // align-items: center;
   border: none;
   // border-bottom: 1px solid $menu-buttons;
+  margin-bottom: 6px;
+  margin-top: 6px;
 }
 
 .card.bars img {
