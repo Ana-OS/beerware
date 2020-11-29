@@ -48,15 +48,17 @@
         <div class="row landing">
           <% @bars_near.each do |bar| %>
             <div class="col-sm-3 col-5">
-              <div class="card-landing">
-                <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" />
-                <div class="card-landing-infos">
-                  <h2 class="card-landing-name"><%=link_to (h truncate(bar.name, :length => 12)), bar_path(bar) %></h2>
-                  <p class="card-landing-location"><%= bar.location %></p>
+              <%= link_to bar_path(bar) do %>
+                <div class="card-landing">
+                  <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" />
+                  <div class="card-landing-infos">
+                    <h2 class="card-landing-name"><%= h truncate(bar.name, :length => 12) %></h2>
+                    <p class="card-landing-location"><%= bar.location %></p>
+                  </div>
                 </div>
-              </div>
+              <% end %>
             </div>
-          <% end  %>
+          <% end %>
         </div>
       </div>
     </div>
