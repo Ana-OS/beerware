@@ -29,23 +29,26 @@
 
       <% @beers.each do |beer| %>
         <div class="card beers">
-          <div class="row">
-
-            <div class="col-sm-3 col-5">
-              <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
+          <%= link_to beer_path(beer) do %>
+          
+            <div class="row">
+              <div class="col-sm-3 col-5">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
+              </div>
+              <div class="col-sm-9 col-7 pl-0 beers">
+                <div class="card-beer-infos">
+                  <h2 class="card-beer-name"><%= h truncate(beer.name, :length => 25) %></h2>
+                  <p class="card-beer-category"><%= h truncate(beer.category, :length => 25) %></p>
+                  <p class="card-beer-description"><%= h truncate(beer.description, :length => 90) %></p>
+                </div>
+              </div>
             </div>
 
-            <div class="col-sm-9 col-7 pl-0 beers">
-              <div class="card-beer-infos">
-              <h2 class="card-beer-name"><%=link_to (h truncate(beer.name, :length => 25)), beer_path(beer) %></h2>
-              <p class="card-beer-category"><%=h truncate(beer.category, :length => 25) %></p>
-              <p class="card-beer-description"><%=h truncate(beer.description, :length => 90) %></p>
-            </div>
-
-          </div>
+          <% end %>
         </div>
       <% end %>
 
     </div>
   </div>
+  
 </div>
