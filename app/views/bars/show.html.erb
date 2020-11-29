@@ -1,6 +1,15 @@
-<img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
-
 <div class="bar-container">
+
+  <!-- font awesome back button -->
+  <div class="back-button">
+    <%= link_to :back do %>
+      <i class= "fas fa-arrow-circle-left fa-3x"></i>
+    <% end %>
+  </div>
+
+  <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
+
+
   <div class="container">
     <div class="container-fluid">
       <h1 class="card-bar-name"><%= @bar.name %></h1>
@@ -13,5 +22,3 @@
     </div>
   </div>
 </div>
-<div class="foter"></div>
-
