@@ -1,0 +1,33 @@
+.mapboxgl-ctrl-top-right {
+  position: relative;
+}
+
+.mapboxgl-ctrl-top-right .mapboxgl-ctrl {
+  float: none;
+}
+
+
+.mapboxgl-ctrl-geocoder {
+  border-radius: 50px;
+  font-family: $headers-font;
+  width: 95%;
+}
+
+.mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
+  margin: 50px 10px 0px 10px;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+  height: 50px;
+  padding-left: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+  background: #FFFFFF;
+  border: 0.5px solid #E5E5E5;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px rgba(191, 191, 191, 0.25);
+  height: 46px;
+  border-radius: 50px;
+}
+
+
