@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Beerware</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+  </head>
+
+    <!-- added font-awesome, bootstrap, google fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+
+  <body style="background-color: #FFFFFF;">
+    <nav class="navbar fixed-bottom full-menu">
+          <!-- for the rest of the navbar -->
+          <!-- if user is logged in -->
+          <% if current_user %>
+            <!-- Logged in as <%= current_user.email %> -->
+              <div class="menu-options">
+                <div class="menu-option">
+                  <%= link_to map_page_path do  %>
+                    <i class="fas fa-map"></i>
+                  <% end %>
+                  <p class="map-label">Map</p>
+                </div>
+
+                <div class="menu-option">
+                  <%= link_to search_page_path do  %>
+                    <i class="fas fa-search"></i>
+                  <% end %>
+                  <p class="search-label">Search</p>
+                </div>
+
+                <div class="menu-option">
+                  <%= link_to landing_page_path do  %>
+                    <i class="fas fa-home"></i>
+                  <% end %>
+                  <p class="home-label">Home</p>
+                </div>
+
+                <div class="menu-option">
+                  <%= link_to profile_users_path do  %>
+                    <i class="fas fa-user"></i>
+                  <% end %>
+                  <p class="profile-label">Profile</p>
+                </div>
+                  <!-- <%= link_to "Search", search_page_path %>
+                  <%= link_to "Map", root_path %>
+                  <%= link_to "Profile", root_path %> -->
+              </div>
+<!--               <div class="nav-item logout">
+                <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+              </div> -->
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>
+
+
