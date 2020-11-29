@@ -19,7 +19,7 @@
           <%= text_field_tag :query,
             params[:query], # params[:query]
             class: "search-bar",
-            placeholder: "Find a beer or bar"
+            placeholder: "Beer name, bar, type of beer..."
           %>
         <% end %>
       </div>
@@ -67,7 +67,7 @@
               <div class="col-sm-9 col-7 pl-0 beers">
                 <div class="card-beer-infos">
                   <h2 class="card-beer-name"><%=link_to (h truncate(beer.name, :length => 25)), beer_path(beer) %></h2>
-                  <p class="card-beer-category"><%=h truncate(beer.category, :length => 30) %></p>
+                  <p class="card-beer-category"><%=h truncate(beer.category, :length => 25) %></p>
                   <p class="card-beer-description"><%=h truncate(beer.description, :length => 90) %></p>
                 </div>
               </div>
@@ -113,7 +113,7 @@
               <div class="col-sm-9 col-7 pl-0 beers">
                 <div class="card-beer-infos">
                   <h2 class="card-beer-name"><%=link_to (h truncate(beer.name, :length => 25)), beer_path(beer) %></h2>
-                  <p class="card-beer-category"><%=h truncate(beer.category, :length => 30) %></p>
+                  <p class="card-beer-category"><%=h truncate(beer.category, :length => 25) %></p>
                   <p class="card-beer-description"><%=h truncate(beer.description, :length => 90) %></p>
                 </div>
               </div>
