@@ -1,21 +1,27 @@
 <div class="bars-container">
 
-  <div class="search-header">
+  <div class="container search-header">
     <!-- font awesome back button -->
-    <div class="seach-back-button">
-      <%= link_to :back do %>
-        <i class= "fas fa-arrow-circle-left fa-2x"></i>
-      <% end %>
-    </div>
+    <!-- add rows and col -->
+    <div class="row">
+      <div class="col col-2">
+        <%= link_to :back do %>
+          <i class= "fas fa-arrow-circle-left fa-2x"></i>
+        <% end %>
+      </div>
 
     <!-- Search -->
-    <%= form_tag search_page_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query], # params[:query]
-        class: "search-bar",
-        placeholder: "Find a beer or bar"
-      %>
-    <% end %>
+      <div class="col col-10">
+
+        <%= form_tag search_page_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query], # params[:query]
+            class: "search-bar",
+            placeholder: "Beer name, bar, type of beer..."
+          %>
+        <% end %>
+      </div>
+    </div>
   </div>
 
   <div class="container">
