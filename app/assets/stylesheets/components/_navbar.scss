@@ -27,7 +27,7 @@
 
 .nav-link {
   text-decoration : none;
-  font-family: 'Roboto', sans-serif;
+  font-family: $body-font;
   font-style: normal;
   font-size: 20px;
   font-weight: bold;
@@ -42,47 +42,51 @@
 
 
 .fa-home {
-  color: #999999;
+  color: $menu-buttons;
   font-size: 25px;
 }
 
 .home-label {
-  color: #999999;
-  font-family: roboto;
+  color: $menu-buttons;
+  font-family: $body-font;
   font-weight: 300;
+  font-size: 14px;
 }
 
 .fa-map {
-  color: #999999;
+  color: $menu-buttons;
   font-size: 25px;
 }
 
 .map-label {
-  color: #999999;
-  font-family: roboto;
+  color: $menu-buttons;
+  font-family: $body-font;
   font-weight: 300;
+  font-size: 14px;
 }
 
 .fa-user {
-  color: #999999;
+  color: $menu-buttons;
   font-size: 25px;
 }
 
 .profile-label {
-  color: #999999;
-  font-family: roboto;
+  color: $menu-buttons;
+  font-family: $body-font;
   font-weight: 300;
+  font-size: 14px;
 }
 
 .fa-search {
-  color: #999999;
+  color: $menu-buttons;
   font-size: 25px;
 }
 
 .search-label {
-  color: #999999;
-  font-family: roboto;
+  color: $menu-buttons;
+  font-family: $body-font;
   font-weight: 300;
+  font-size: 14px;
 }
 
 .menu-options {
