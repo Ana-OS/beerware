@@ -1,21 +1,22 @@
 <div class="beers-container">
   <div class="container">
     <div class="container-fluid">
-    <h2 class="beers-title">Beers</h2>
+      <h2 class="beers-title">Beers</h2>
 
       <% @bar_beer.each do |beer| %>
         <div class="card beers">
           <div class="row">
 
-            <div class="col-sm-1" style="width: 8rem;">
+            <div class="col-sm-3 col-5">
               <img src="https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png" class="img-fluid" />
             </div>
 
-            <div class="col beers">
+            <div class="col-sm-9 col-7 pl-0 beers">
               <div class="card-beer-infos">
-              <h2 class="card-beer-name"><%=link_to (h truncate(beer.name, :length => 25)), beer_path(beer) %></h2>
-              <p class="card-beer-location"><%=h truncate(beer.category, :length => 30) %></p>
-              <p class="card-beer-description"><%=h truncate(beer.description, :length => 30) %></p>
+                <h2 class="card-beer-name"><%=link_to (h truncate(beer.name, :length => 20)), beer_path(beer) %></h2>
+                <p class="card-beer-category"><%=h truncate(beer.category, :length => 10) %></p>
+                <p class="card-beer-description"><%=h truncate(beer.description, :length => 70) %></p>
+              </div>
             </div>
 
           </div>

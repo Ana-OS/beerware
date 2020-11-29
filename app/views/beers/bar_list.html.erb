@@ -1,3 +1,5 @@
+<h1>DELETE BAR_LIST</h1> 
+
 <div class="bars-container">
   <div class="container">
     <div class="container-fluid">
@@ -7,14 +9,14 @@
         <div class="card bars">
           <div class="row">
 
-            <div class="col-sm-1" style="width: 10rem;">
+            <div class="col-sm-3 col-5">
               <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
             </div>
 
-            <div class="col bars">
+            <div class="col-sm-9 col-7 pl-0 beers">
               <div class="card-bars-infos">
               <h2 class="card-bars-name"><%=link_to (h truncate(bar.name, :length => 25)), bar_path(bar) %></h2>
-              <p class="card-bars-location"><%=h truncate(bar.location, :length => 30) %></p>
+              <p class="card-bars-location"><%=h truncate(bar.location, :length => 10) %></p>
               <p class="card-bars-description"><%=h truncate(bar.description, :length => 100) %></p>
             </div>
           </div>
