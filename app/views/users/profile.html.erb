@@ -40,15 +40,27 @@
   </div>
   <!-- images of beers to drink- sample from list -->
 
-  <div class="grid">
-    <% @to_drink.each do |beer| %>
-      <div class="item photo">
-        <div class="content">
-            <%= cl_image_tag beer.photo.key %>
+  <!-- images of beers to drink- sample from list -->
+  <div class="beers-to-drink-images">
+      <% if @to_drink.size < 1 %>
+        <p>No drinks on this list- you must be thirsty or drunk!</p>
+        <br>
+        <%= link_to "Check out some beers now!", beers_path %>
+      <% else %>
+      <div class="grid">
+          <% @to_drink.each do |beer| %>
+            <div class="item photo">
+              <div class="content">
+                  <%= cl_image_tag beer.photo.key %>
+              </div>
+            </div>
+          <% end %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+
+ 
 
 </div>
 
