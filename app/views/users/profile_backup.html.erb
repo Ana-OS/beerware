@@ -1,0 +1,102 @@
+<div class="container col-8 mt-5">
+
+  <div class="my-profile">
+    <h1> My Profile </h1>
+  </div>
+
+  <div class="settings-logout">
+    <%= link_to edit_user_registration_path do %>
+      <i class="fas fa-cog"></i>
+    <% end %>
+
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+  </div>
+
+  <div class="user-name-picture">
+    <!-- profile picture -->
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+    <p><%= current_user.first_name.capitalize %> </p>
+    <p><%= current_user.last_name.capitalize %></p>
+  </div>
+
+  <!-- to drink list -->
+  <div class = "to-drink-list">
+    <p> To drink</p>
+    <p><%= @to_drink.size %></p>
+
+  </div>
+
+  <div class = "drank-list">
+    <p> Drank </p>
+    <p><%= @drank.size %></p>
+  </div>
+
+
+
+  <!-- images of beers to drink- sample from list -->
+  <div class="beers-to-drink-images">
+      <% if @to_drink.size < 1 %>
+        <p>No drinks on this list- you must be thirsty or drunk!</p>
+        <br>
+        <%= link_to "Check out some beers now!", beers_path %>
+      <% else %>
+        <% @to_drink.each do |beer| %>
+        <%= cl_image_tag beer.photo.key, height: 200, width: 200, crop: :fit %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+  <div class="user-lists">
+    <!-- to drink list -->
+    <div class = "profile-to-drink-list">
+      <p> To drink</p>
+      <p><%= @to_drink.size %></p>
+    </div>
+
+    <div class = "profile-drank-list">
+      <p> Drank </p>
+      <p><%= @drank.size %></p>
+    </div>
+  </div>
+
+
+  <!-- dog image grid experiment -->
+
+
+<div class="grid">
+  <div class="item photo">
+    <div class="content">
+      <img class="photothumb" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*">
+    </div>
+  </div>
+
+  <div class="item photo">
+    <div class="content">
+      <img class="photothumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTskeYNmVMeGZdNiI6ahm2z647C65saNNF4Fw&usqp=CAU">
+    </div>
+  </div>
+
+  <div class="item photo">
+    <div class="content">
+      <img class="photothumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTskeYNmVMeGZdNiI6ahm2z647C65saNNF4Fw&usqp=CAU">
+    </div>
+  </div>
+  
+  <div class="item photo">
+    <div class="content">
+      <img class="photothumb" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*">
+    </div>
+  </div>
+
+  <div class="item photo">
+    <div class="content">
+      <img class="photothumb" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*">
+    </div>
+  </div>
+</div>
+
+
+
+
