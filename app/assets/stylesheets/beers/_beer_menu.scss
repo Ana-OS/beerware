@@ -48,6 +48,21 @@
   margin-bottom: 0px;
 }
 
+.card-beer-rating {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 7px;
+  margin-left: 80px;
+  color: black !important;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.name-rating {
+  display: flex;
+  align-items: flex-start;
+}
+
 .col.beers {
   padding: 0px 15px 2px 0px;
   margin: 0px 0px 2px 0px;
