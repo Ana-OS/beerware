@@ -160,19 +160,49 @@ mickLager.photo.attach(io: file8, filename: 'filename.png', content_type: 'image
 
 
 BarsBeer.create(beer:oitavaColina, bar: cervejaCanil)
-BarsBeer.create(beer:oitavaColina, bar: musaDaBica)
-BarsBeer.create(beer:meanSardine, bar: musaDaBica)
-BarsBeer.create(beer:meanSardine, bar: outroLado)
 BarsBeer.create(beer:meanSardine, bar: cervejaCanil)
-BarsBeer.create(beer:tresCincoUm, bar: musaDaBica)
-BarsBeer.create(beer:tresCincoUm, bar: fabricaMusa)
-BarsBeer.create(beer:nortada, bar: outroLado)
-BarsBeer.create(beer:nortada, bar: fabricaMusa)
 BarsBeer.create(beer:doisCorvos, bar: cervejaCanil)
 BarsBeer.create(beer:mickLager, bar: cervejaCanil)
 BarsBeer.create(beer:maldita, bar: cervejaCanil)
+
+BarsBeer.create(beer:oitavaColina, bar: musaDaBica)
+BarsBeer.create(beer:meanSardine, bar: musaDaBica)
+BarsBeer.create(beer:tresCincoUm, bar: musaDaBica)
+
+BarsBeer.create(beer:meanSardine, bar: outroLado)
+BarsBeer.create(beer:nortada, bar: outroLado)
 BarsBeer.create(beer:florinda, bar: outroLado)
+
+BarsBeer.create(beer:tresCincoUm, bar: fabricaMusa)
+BarsBeer.create(beer:nortada, bar: fabricaMusa)
 BarsBeer.create(beer:florinda, bar: fabricaMusa)
+
+BarsBeer.create(beer:shamrockQuest, bar: deliriumCafe)
+BarsBeer.create(beer:oitavaColina, bar: deliriumCafe)
+BarsBeer.create(beer:meanSardine, bar: deliriumCafe)
+BarsBeer.create(beer:tresCincoUm, bar: deliriumCafe)
+BarsBeer.create(beer:jackClub, bar: deliriumCafe)
+BarsBeer.create(beer:joeDaSilva, bar: deliriumCafe)
+
+BarsBeer.create(beer:joeDaSilva, bar: beerStation)
+BarsBeer.create(beer:vilaMaria, bar: beerStation)
+BarsBeer.create(beer:joeDaSilva, bar: beerStation)
+BarsBeer.create(beer:simcoeIpa, bar: beerStation)
+BarsBeer.create(beer:cappucinoPorter, bar: beerStation)
+
+BarsBeer.create(beer:cappucinoPorter, bar: cerveteca)
+BarsBeer.create(beer:oitavaColina, bar: cerveteca)
+BarsBeer.create(beer:meanSardine, bar: cerveteca)
+BarsBeer.create(beer:doisCorvos, bar: cerveteca)
+BarsBeer.create(beer:mickLager, bar: cerveteca)
+BarsBeer.create(beer:maldita, bar: cerveteca)
+
+BarsBeer.create(beer:maldita, bar: cerveteca)
+
+
+
+
+
 
 
 
