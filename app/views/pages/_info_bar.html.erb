@@ -1,4 +1,4 @@
-
+<%= link_to bar_path(bar) do %>
 <div class="d-flex">
   <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" alt="" class="popup_img">
   <div class="d-flex flex-column ml-3">
@@ -6,3 +6,4 @@
     <p><%= truncate(bar.description, :length => 100) %></p>
   </div>
 </div>
+<% end %>
