@@ -4,8 +4,6 @@
     <h1> My Profile </h1>
   </div>
 
-
-
   <div class="profile-action-btns">
     <div class="profile-settings">
         <%= link_to edit_user_registration_path do %>
@@ -19,7 +17,11 @@
   
   <!-- profile picture -->
   <div class="profile-user-photo">
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+     <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, height: 400, width: 400, crop: :fit, class: "avatar-large", alt: "avatar-large" %>
+    <% else %>
+     <%= image_tag "https://res.cloudinary.com/di6k1pdz4/image/upload/v1606851697/Beerware/Users/placeholder_gzfccg.png", class: "avatar-large", alt: "avatar-large" %>
+    <% end %>
   </div>
   <div class="profile-user-name">
     <p class="profile-user-first-name"> <%= current_user.first_name.capitalize %> </p>
