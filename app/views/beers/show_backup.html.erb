@@ -1,39 +1,24 @@
-  <!-- Font awesome back button -->
-  <div class="back-button">
-    <%= link_to :back do %>
-      <i class= "fas fa-arrow-circle-left fa-3x"></i>
-    <% end %>
-  </div>
+<div class="row justify-content-center beer-all-content">
 
-  <!-- Beer image -->
+  <div class="col-12 col-lg-6 beer-details">
 
-  <div class="list-unstyled beer-info-top">
-    <%= cl_image_tag @beer.photo.key, height: 400, width: 400, crop: :fit %>
-  </div>
+    <div class="beer-image">
 
-  <div class="container">
-    <div class="container-fluid beer">
-      <div class="beer-name-stars">
-        <h1 class="beer-name"><%= @beer.name %></h1>
-        <p class="beer-stars">stars</p>
-      </div>
-      <div class="category-brewery">
-        <p class="beer-category"><%= @beer.category %></p>
-        <p class="beer-brewery">Musa</p>
-      </div>
-      <p class="beer-description"><%= @beer.description %></p>
     </div>
-  </div>
 
-<div class="beer-infos">
-  <p><%= @beer.alcohol %>%</p>
-  <p><%= @beer.ibu %> IBU</p>
-  <p><%= @beer.avg_rating %></p>
-</div>
+    <div class="list-unstyled beer-info-top">
+      <%= cl_image_tag @beer.photo.key, height: 400, width: 400, crop: :fit %>
+      <div class="d-flex">
+          <h1><li><%= @beer.name %></li></h1>
+        <div class="col 2">
+          <div class="d-flex ml-5 mt-3"><%current_user.reviews.last.rating.times do%> <i class="fas fa-star"></i><% end %></div>
+        </div>
+      </div>
+      <h2><li><%= @beer.category %></li></h2>
+    </div>
 
 
-
-    <ul class = "to-drink-drank-unlist-butons">
+    <ul class = to-drink-drank-unlist-butons">
       <% @to_drink = UsersBeer.find_by(beer: @beer, user: current_user, drank: :false) %>
       <% @drank = UsersBeer.find_by(beer: @beer, user: current_user, drank: :true) %>
       <% if @to_drink %>
@@ -94,7 +79,15 @@
 </div>
 
 
+    <div class="beer-description">
+      <%= @beer.description %>
+    </div>
 
+    <div class="d-flex justify-content-around beer-info">
+      <p><%= @beer.alcohol %>%</p>
+      <p><%= @beer.ibu %></p>
+      <p><%= @beer.avg_rating %></p>
+    </div>
 
     <hr>
 
@@ -114,3 +107,4 @@
 
 
   </div>
+</div>
