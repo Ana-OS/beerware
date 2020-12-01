@@ -18,7 +18,7 @@
     </div>
 
 
-    <ul class = to-drink-drank-unlist-butons">
+    <ul class = "to-drink-drank-unlist-butons">
       <% @to_drink = UsersBeer.find_by(beer: @beer, user: current_user, drank: :false) %>
       <% @drank = UsersBeer.find_by(beer: @beer, user: current_user, drank: :true) %>
       <% if @to_drink %>
@@ -96,6 +96,8 @@
         <ul class="list-group">
           <% @beer.reviews.each do |review| %>
           <li class="list-group-item review-content">
+          <p><%= review.user.first_name %></p>
+
               <% review.rating.to_i.times do %>
                 <i class="fas fa-star"></i>
               <% end %>
