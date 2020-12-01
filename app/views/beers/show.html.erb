@@ -8,12 +8,17 @@
 
     <div class="list-unstyled beer-info-top">
       <%= cl_image_tag @beer.photo.key, height: 400, width: 400, crop: :fit %>
-      <h1><li><%= @beer.name %></li></h1>
+      <div class="d-flex">
+          <h1><li><%= @beer.name %></li></h1>
+        <div class="col 2">
+          <div class="d-flex ml-5 mt-3"><%current_user.reviews.last.rating.times do%> <i class="fas fa-star"></i><% end %></div>
+        </div>
+      </div>
       <h2><li><%= @beer.category %></li></h2>
     </div>
 
 
-    <ul class = to-drink-drank-unlist-butons">
+    <ul class = "to-drink-drank-unlist-butons">
       <% @to_drink = UsersBeer.find_by(beer: @beer, user: current_user, drank: :false) %>
       <% @drank = UsersBeer.find_by(beer: @beer, user: current_user, drank: :true) %>
       <% if @to_drink %>
@@ -45,8 +50,10 @@
         <!-- <h4 class="modal-title">Review</h4> -->
       </div>
       <div class="modal-body">
-        <%= simple_form_for [ @beer, @review ] do |f| %>
-          <div class="rate">
+        <div class="form-group">
+          <%= simple_form_for [ @beer, @review ] do |f| %>
+            <div class="rate-title">Rate it:</div>
+            <div class="rate">
               <input type="radio" id="star5" name="review[rating]" value="5" />
               <label for="star5" title="text">5 stars</label>
               <input type="radio" id="star4" name="review[rating]" value="4" />
@@ -58,9 +65,13 @@
               <input type="radio" id="star1" name="review[rating]" value="1" />
               <label for="star1" title="text">1 star</label>
             </div>
-          <%= f.input :content, label: false, placeholder: 'Describe' %>
-          <%= f.submit "Submit review", class: "btn btn-primary" %>
+        </div>
+        <div class="review-title-container">
+          <label for="review-title">Leave a review:</label>
+            <%= f.input :content, label: false, placeholder: 'Your opinion here' %>
+            <%= f.submit "Submit review", class: "btn btn-primary" %>
         <% end %>
+        </div>
       </div>
     </div>
 
@@ -75,7 +86,7 @@
     <div class="d-flex justify-content-around beer-info">
       <p><%= @beer.alcohol %>%</p>
       <p><%= @beer.ibu %></p>
-      <p><%= @beer.temperature %>Cº</p>
+      <p><%= @beer.avg_rating %></p>
     </div>
 
     <hr>
@@ -85,12 +96,17 @@
         <ul class="list-group">
           <% @beer.reviews.each do |review| %>
           <li class="list-group-item review-content">
-              <%= review.rating %> stars
+          <p><%= review.user.first_name %></p>
+
+              <% review.rating.to_i.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
             <p>Description: <%= review.content %></p>
           </li>
         <% end %>
         </ul>
     </div>
+
 
   </div>
 </div>

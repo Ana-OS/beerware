@@ -2,20 +2,24 @@
   font-size: 20px;
   font-weight: 900;
   font-family: $headers-font;
-  margin-top: 50px;
+  margin-top: 12px;
+  color: $black;
 }
 
 .card.bars {
   overflow: hidden;
   display: flex;
-  align-items: center;
+  // align-items: center;
   border: none;
   // border-bottom: 1px solid $menu-buttons;
+  margin-bottom: 6px;
+  margin-top: 6px;
 }
 
 .card.bars img {
   object-fit: cover;
   height: 130px;
+  border-radius: 10px;
 }
 
 .card-bars-name {
@@ -40,6 +44,7 @@
   font-size: 12px;
   color: $black;
   margin-top: 5px;
+  margin-bottom: 0px;
   font-family: $headers-font;
 }
 

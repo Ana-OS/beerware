@@ -1,23 +1,50 @@
 <div class="bars-container">
+  <div class="container search-header">
+    <!-- font awesome back button -->
+    <!-- add rows and col -->
+    <div class="row">
+      <div class="col col-2">
+        <%= link_to :back do %>
+          <i class= "fas fa-arrow-circle-left fa-2x"></i>
+        <% end %>
+      </div>
+
+    <!-- Search -->
+      <div class="col col-10">
+
+        <%= form_tag search_page_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query], # params[:query]
+            class: "search-bar",
+            placeholder: "Beer name, bar, type of beer..."
+          %>
+        <% end %>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="container-fluid">
     <h2 class="bars-title">Where you can find <%= @beer.name %></h2>
 
       <% @beer_bars.each do |bar| %>
         <div class="card bars">
-          <div class="row">
+          <%= link_to bar_path(bar) do %>
 
-            <div class="col-sm-1" style="width: 10rem;">
-              <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
+            <div class="row">
+              <div class="col-sm-3 col-5">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
+              </div>
+              
+              <div class="col-sm-9 col-7 pl-0 bars">
+                <div class="card-bars-infos">
+                  <h2 class="card-bars-name"><%= h truncate(bar.name, :length => 25) %></h2>
+                  <p class="card-bars-location"><%= h truncate(bar.location, :length => 20) %></p>
+                  <p class="card-bars-description"><%= h truncate(bar.description, :length => 100) %></p>
+                </div>
+              </div>
             </div>
-
-            <div class="col bars">
-              <div class="card-bars-infos">
-              <h2 class="card-bars-name"><%=link_to (h truncate(bar.name, :length => 25)), bar_path(bar) %></h2>
-              <p class="card-bars-location"><%=h truncate(bar.location, :length => 30) %></p>
-              <p class="card-bars-description"><%=h truncate(bar.description, :length => 100) %></p>
-            </div>
-          </div>
+            
+          <% end %>
         </div>
       <% end %>
 

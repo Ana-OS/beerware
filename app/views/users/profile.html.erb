@@ -1,42 +1,46 @@
-<div class="container col-8 mt-5">
+<div class="container">
 
   <div class="my-profile">
     <h1> My Profile </h1>
   </div>
 
-  <div class="settings-logout">
-    <%= link_to edit_user_registration_path do %>
-      <i class="fas fa-cog"></i>
-    <% end %>
-
-    <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+  <div class="profile-action-btns">
+    <div class="profile-settings">
+        <%= link_to edit_user_registration_path do %>
+          <i class="fas fa-cog"></i>
+        <% end %>
+    </div>
+    <div class="profile-logout">
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+    </div>
   </div>
-
-  <div class="user-name-picture">
-    <!-- profile picture -->
-    <% if current_user.photo.attached? %>
+  
+  <!-- profile picture -->
+  <div class="profile-user-photo">
+     <% if current_user.photo.attached? %>
       <%= cl_image_tag current_user.photo.key, height: 400, width: 400, crop: :fit, class: "avatar-large", alt: "avatar-large" %>
     <% else %>
      <%= image_tag "https://res.cloudinary.com/di6k1pdz4/image/upload/v1606851697/Beerware/Users/placeholder_gzfccg.png", class: "avatar-large", alt: "avatar-large" %>
     <% end %>
-
-    <p><%= current_user.first_name.capitalize %> </p>
-    <p><%= current_user.last_name.capitalize %></p>
+  </div>
+  <div class="profile-user-name">
+    <p class="profile-user-first-name"> <%= current_user.first_name.capitalize %> </p>
+    <p class="profile-user-last-name"> <%= current_user.last_name.capitalize %> </p>
   </div>
 
-  <!-- to drink list -->
-  <div class = "to-drink-list">
-    <p> To drink</p>
-    <p><%= @to_drink.size %></p>
+  <!-- To drink and drank buttons -->
+  <div class="user-lists">
+    <div class = "profile-to-drink-list">
+      <p> To drink</p>
+      <p><%= @to_drink.size %></p>
+    </div>
 
+    <div class = "profile-drank-list">
+      <p> Drank </p>
+      <p><%= @drank.size %></p>
+    </div>
   </div>
-
-  <div class = "drank-list">
-    <p> Drank </p>
-    <p><%= @drank.size %></p>
-  </div>
-
-
+  <!-- images of beers to drink- sample from list -->
 
   <!-- images of beers to drink- sample from list -->
   <div class="beers-to-drink-images">
@@ -45,9 +49,20 @@
         <br>
         <%= link_to "Check out some beers now!", beers_path %>
       <% else %>
-        <% @to_drink.each do |beer| %>
-        <%= cl_image_tag beer.photo.key, height: 200, width: 200, crop: :fit %>
+      <div class="grid">
+          <% @to_drink.each do |beer| %>
+            <div class="item photo">
+              <div class="content">
+                  <%= cl_image_tag beer.photo.key %>
+              </div>
+            </div>
+          <% end %>
+        </div>
       <% end %>
-    <% end %>
+    </div>
   </div>
+
+ 
+
 </div>
+

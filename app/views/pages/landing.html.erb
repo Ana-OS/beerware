@@ -1,5 +1,5 @@
 <div class="landing-container">
-  <div class="landing-cog-wheel">
+  <!-- <div class="landing-cog-wheel">
       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="0 0 368 368" width="25px" fill="#999999" style="enable-background:new 0 0 368 368;" xml:space="preserve">
       <g>
@@ -36,7 +36,7 @@
             c-30.88,0-56-25.12-56-56s25.12-56,56-56c30.872,0,56,25.12,56,56S214.872,240,184,240z"/>
         </g>
       </svg>
-    </div>
+    </div> -->
 
 
 
@@ -47,16 +47,18 @@
       <div class="scrollmenu">
         <div class="row landing">
           <% @bars_near.each do |bar| %>
-            <div class="col col-md-2" style="width: 8rem;">
-              <div class="card-landing">
-                <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" />
-                <div class="card-landing-infos">
-                  <h2 class="card-landing-name"><%= bar.name %></h2>
-                  <p class="card-landing-location"><%= bar.location %></p>
+            <div class="col-sm-3 col-5">
+              <%= link_to bar_path(bar) do %>
+                <div class="card-landing">
+                  <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" />
+                  <div class="card-landing-infos">
+                    <h2 class="card-landing-name"><%= h truncate(bar.name, :length => 12) %></h2>
+                    <p class="card-landing-location"><%= bar.location %></p>
+                  </div>
                 </div>
-              </div>
+              <% end %>
             </div>
-          <% end  %>
+          <% end %>
         </div>
       </div>
     </div>

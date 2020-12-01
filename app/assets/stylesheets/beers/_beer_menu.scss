@@ -2,18 +2,24 @@
   font-size: 20px;
   font-weight: 900;
   font-family: $headers-font;
-  margin-top: 50px;
+  margin-top: 12px;
+  color: $black;
 }
 
 .card.beers {
   overflow: hidden;
   display: flex;
+  // align-items: center;
   border: none;
   // border-bottom: 1px solid $menu-buttons;
+  margin-bottom: 6px;
+  margin-top: 6px;
 }
 
 .card.beers img {
   object-fit: cover;
+  height: 128px;
+  border-radius: 10px;
 }
 
 .card-beer-name {
@@ -25,7 +31,7 @@
   font-family: $headers-font;
 }
 
-.card-beer-location {
+.card-beer-category {
   font-size: 16px;
   color: $med-gray;
   font-weight: 300;
@@ -39,6 +45,22 @@
   color: $black;
   margin-top: 5px;
   font-family: $headers-font;
+  margin-bottom: 0px;
+}
+
+.card-beer-rating {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 7px;
+  margin-left: 80px;
+  color: black !important;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.name-rating {
+  display: flex;
+  align-items: flex-start;
 }
 
 .col.beers {

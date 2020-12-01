@@ -1,3 +1,6 @@
+.landing-container {
+  margin-top: 50px;
+}
 .row.landing{
   align-items: stretch;
   display: flex;
@@ -77,4 +80,22 @@
   display: flex;
   justify-content: flex-end;
   margin-right: 13px;
+}
+
+.card-landing-name a {
+  color: $black;
+}
+
+.card-landing-name a:hover {
+  color: $black-hover;
+  text-decoration: none;
+}
+
+.landing-titles p a {
+  color: $med-gray;
+}
+
+.landing-titles p a:hover {
+  color: $border-gray;
+  text-decoration: none;
 }

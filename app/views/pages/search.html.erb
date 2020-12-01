@@ -1,74 +1,177 @@
-<div class="container col-8 mt-5">
+<div class="bars-container">
+
   <!-- <div class = "search-bar-wrapper"> -->
 
-    <div class = "search-bar-wrapper">
-      <!-- font awesome back button -->
-      <div class="back-button">
+  <div class="container search-header">
+    <!-- font awesome back button -->
+    <!-- add rows and col -->
+    <div class="row">
+      <div class="col col-2">
         <%= link_to :back do %>
-          <i class= "fas fa-arrow-circle-left"></i>
+          <i class= "fas fa-arrow-circle-left fa-2x"></i>
         <% end %>
       </div>
-      <!-- Search -->
-      <%= form_tag search_page_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query], # params[:query]
-          class: "search-bar",
-          placeholder: "Find a beer or bar"
-        %>
 
-      <% end %>
+    <!-- Search -->
+      <div class="col col-10">
 
-
-        <%= link_to bars_path do %>
-          <i class="fas fa-ellipsis-v"></i>
+        <%= form_tag search_page_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query], # params[:query]
+            class: "search-bar",
+            placeholder: "Beer name, bar, type of beer..."
+          %>
         <% end %>
+      </div>
     </div>
+  </div>
+
+  <div class="container">
+    <div class="container-fluid">
+      <% if @not_searched %>
+        <div class="search-map">
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 477.874 477.874" width="28px" fill="#D18411" style="enable-background:new 0 0 477.874 477.874;" xml:space="preserve">
+          <g>
+            <g>
+              <path d="M460.812,0c-2.651-0.001-5.266,0.615-7.637,1.8L323.844,66.483L177.6,1.476c-0.239-0.102-0.512-0.12-0.768-0.222
+                c-0.658-0.246-1.331-0.451-2.014-0.614c-0.679-0.183-1.369-0.326-2.065-0.427c-1.386-0.114-2.779-0.114-4.164,0
+                c-0.696,0.101-1.386,0.244-2.065,0.427c-0.683,0.163-1.356,0.368-2.014,0.614c-0.256,0.102-0.529,0.119-0.768,0.222l-153.6,68.267
+                C3.976,72.481,0.003,78.595,0.004,85.341v375.467c0.003,5.774,2.924,11.155,7.765,14.302c4.842,3.152,10.949,3.64,16.23,1.297
+                l146.671-65.195l146.671,65.195c0.256,0.102,0.529,0,0.785,0.154c4.132,1.848,8.875,1.742,12.919-0.29
+                c0.273-0.119,0.58,0,0.853-0.188l136.533-68.267c5.786-2.891,9.441-8.806,9.438-15.275V17.075
+                C477.875,7.649,470.237,0.004,460.812,0z M153.604,381.448L34.137,434.542V96.435L153.604,43.34V381.448z M307.204,434.542
+                l-119.467-53.094V43.34l119.467,53.094V434.542z M443.737,381.994l-102.4,51.2V95.888l102.4-51.2V381.994z"/>
+            </g>
+          </g>
+          </svg>
+
+          <h4 class="no-search-title"> <%= link_to "Or search the map", map_page_path %></h4>
+        </div>
+
+       
+      <% elsif @empty_list%>
+        <br>
+        <h4> No results but you can checkout some of the beers and bars below. </h4>
+
+        <h4> Recommended Beers </h4>
+
+        <% @beers.each do |beer| %>
+          <div class="card beers">
+            <div class="row">
+
+              <div class="col-sm-3 col-5">
+                <img src="https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png" class="img-fluid" />
+              </div>
+
+              <div class="col-sm-9 col-7 pl-0 beers">
+                <div class="card-beer-infos">
+                  <h2 class="card-beer-name"><%=link_to (h truncate(beer.name, :length => 25)), beer_path(beer) %></h2>
+                  <p class="card-beer-category"><%=h truncate(beer.category, :length => 25) %></p>
+                  <p class="card-beer-description"><%=h truncate(beer.description, :length => 90) %></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        <% end %>
+
+        <h4>Recommended Bars</h4>
+
+        <% @bars.each do |bar| %>
+          <div class="card bars">
+            <div class="row">
+
+              <div class="col-sm-3 col-5">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
+              </div>
+              
+              <div class="ol-sm-9 col-7 pl-0 bars">
+                <div class="card-bars-infos">
+                  <h2 class="card-bars-name"><%=link_to (h truncate(bar.name, :length => 25)), bar_path(bar) %></h2>
+                  <p class="card-bars-location"><%=h truncate(bar.location, :length => 30) %></p>
+                  <p class="card-bars-description"><%=h truncate(bar.description, :length => 90) %></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        <% end %>
+
+      <% else %>
+
+        <h2 class="bars-title">Results for beers</h2>
+
+        <% @beers.each do |beer| %>
+          <div class="card beers">
+            <div class="row">
+
+              <div class="col-sm-3 col-5">
+                <img src="https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png" class="img-fluid" />
+              </div>
+
+              <div class="col-sm-9 col-7 pl-0 beers">
+                <div class="card-beer-infos">
+                  <h2 class="card-beer-name"><%=link_to (h truncate(beer.name, :length => 25)), beer_path(beer) %></h2>
+                  <p class="card-beer-category"><%=h truncate(beer.category, :length => 25) %></p>
+                  <p class="card-beer-description"><%=h truncate(beer.description, :length => 90) %></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        <% end %>
 
 
-  <% if @not_searched %>
-    <br>
-    <h4> Search for your favourite beers and bars. </h4>
+        <h2 class="bars-title">Results for bars</h2>
 
+        <% @bars.each do |bar| %>
+          <div class="card bars">
+            <div class="row">
 
-  <% elsif @empty_list%>
-    <br>
-    <h4> No results but you can checkout some of the beers and bars below. </h4>
+              <div class="col-sm-3 col-5">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
+              </div>
+              
+              <div class="ol-sm-9 col-7 pl-0 bars">
+                <div class="card-bars-infos">
+                  <h2 class="card-bars-name"><%=link_to (h truncate(bar.name, :length => 25)), bar_path(bar) %></h2>
+                  <p class="card-bars-location"><%=h truncate(bar.location, :length => 30) %></p>
+                  <p class="card-bars-description"><%=h truncate(bar.description, :length => 90) %></p>
+                </div>
+              </div>
 
-    <br>
-    <h4> Recommended Beers </h4>
-    <ul class="list-unstyled">
-      <% @beers.each do |beer| %>
-      <li class="mt-4">Name: <%= beer.name %></li>
-      <li>Category : <%= beer.category %></li>
+            </div>
+          </div>
+        <% end %>
+
       <% end %>
-    </ul>
-    <br>
-    <h4>Recommended Bars</h4>
-    <ul class="list-unstyled">
-      <% @bars.each do |bar| %>
-      <li class="mt-4">Name: <%= bar.name %></li>
-      <li>Location : <%= bar.location %></li>
-      <% end %>
-    </ul>
-
-  <% else %>
-    <br>
-    <h4 class="mt-5">Results for Beers</h4>
-    <ul class="list-unstyled">
-      <% @beers.each do |beer| %>
-      <li class="mt-4">Name: <%= beer.name %></li>
-      <li>Category : <%= beer.category %></li>
-      <% end  %>
-    </ul>
-    <br>
-
-    <h4>Results for Bars</h4>
-    <ul class="list-unstyled">
-      <% @bars.each do |bar| %>
-      <li class="mt-4">Name: <%= bar.name %></li>
-      <li>Location : <%= bar.location %></li>
-      <% end %>
-    </ul>
-  <% end %>
+    </div>
+  </div>
 </div>
 
+
+
+    <!-- <div class = "search-bar-wrapper">
+    //     <%= link_to bars_path do %>
+    //       <i class="fas fa-ellipsis-v"></i>
+    //     <% end %>
+    // </div>
+
+
+    //         <br>
+    //     <h4> Recommended Beers </h4>
+    //     <ul class="list-unstyled">
+    //       <% @beers.each do |beer| %>
+    //       <li class="mt-4">Name: <%= beer.name %></li>
+    //       <li>Category: <%= beer.category %></li>
+    //       <% end %>
+    //     </ul>
+    //     <br>
+    //     <h4>Recommended Bars</h4>
+    //     <ul class="list-unstyled">
+    //       <% @bars.each do |bar| %>
+    //       <li class="mt-4">Name: <%= bar.name %></li>
+    //       <li>Location: <%= bar.location %></li>
+    //       <% end %>
+    //     </ul>

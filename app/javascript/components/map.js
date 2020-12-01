@@ -29,7 +29,8 @@ const initBarsMap = (mapElement) => {
 
     fitMapToMarkers(map, markers, options);
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-                                      mapboxgl: mapboxgl }));
+                                      mapboxgl: mapboxgl,
+                                      placeholder: 'Search for Location' }));
  }
 
 const initMapbox = () => {
