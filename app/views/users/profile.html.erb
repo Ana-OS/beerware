@@ -14,7 +14,12 @@
 
   <div class="user-name-picture">
     <!-- profile picture -->
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, height: 400, width: 400, crop: :fit, class: "avatar-large", alt: "avatar-large" %>
+    <% else %>
+     <%= image_tag "https://res.cloudinary.com/di6k1pdz4/image/upload/v1606851697/Beerware/Users/placeholder_gzfccg.png", class: "avatar-large", alt: "avatar-large" %>
+    <% end %>
+
     <p><%= current_user.first_name.capitalize %> </p>
     <p><%= current_user.last_name.capitalize %></p>
   </div>
