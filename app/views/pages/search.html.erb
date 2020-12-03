@@ -49,7 +49,7 @@
           <h4 class="no-search-title"> <%= link_to "Or search the map", map_page_path %></h4>
         </div>
 
-       
+
       <% elsif @empty_list%>
         <br>
         <h4> No results but you can checkout some of the beers and bars below. </h4>
@@ -61,14 +61,18 @@
             <div class="row">
 
               <div class="col-sm-3 col-5">
-                <img src="https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png" class="img-fluid" />
+                <%= link_to beer_path(beer) do %>
+                  <img src="https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png" class="img-fluid" />
+                <% end %>
               </div>
 
               <div class="col-sm-9 col-7 pl-0 beers">
-                <div class="card-beer-infos">
-                  <h2 class="card-beer-name"><%=link_to (h truncate(beer.name, :length => 25)), beer_path(beer) %></h2>
-                  <p class="card-beer-category"><%=h truncate(beer.category, :length => 25) %></p>
-                  <p class="card-beer-description"><%=h truncate(beer.description, :length => 90) %></p>
+                <div class="card-beer-infos" >
+                  <%= link_to beer_path(beer) do %>
+                    <h2 class="card-beer-name"><%= h truncate(beer.name, :length => 25) %></h2>
+                    <p class="card-beer-category"><%=h truncate(beer.category, :length => 25) %></p>
+                    <p class="card-beer-description"><%=h truncate(beer.description, :length => 90) %></p>
+                  <% end %>
                 </div>
               </div>
 
@@ -79,21 +83,24 @@
         <h4>Recommended Bars</h4>
 
         <% @bars.each do |bar| %>
-          <div class="card bars">
-            <div class="row">
+          <div class="card bars" >
+            <div class="row" >
 
               <div class="col-sm-3 col-5">
-                <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
-              </div>
-              
-              <div class="ol-sm-9 col-7 pl-0 bars">
-                <div class="card-bars-infos">
-                  <h2 class="card-bars-name"><%=link_to (h truncate(bar.name, :length => 25)), bar_path(bar) %></h2>
-                  <p class="card-bars-location"><%=h truncate(bar.location, :length => 30) %></p>
-                  <p class="card-bars-description"><%=h truncate(bar.description, :length => 90) %></p>
-                </div>
+                <%= link_to bar_path(bar) do %>
+                  <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
+                <% end %>
               </div>
 
+              <div class="ol-sm-9 col-7 pl-0 bars">
+                <div class="card-bars-infos">
+                  <%= link_to bar_path(bar) do %>
+                    <h2 class="card-bars-name"><%=h truncate(bar.name, :length => 25) %></h2>
+                    <p class="card-bars-location"><%=h truncate(bar.location, :length => 30) %></p>
+                    <p class="card-bars-description"><%=h truncate(bar.description, :length => 90) %></p>
+                 <% end %>
+                </div>
+              </div>
             </div>
           </div>
         <% end %>
@@ -103,23 +110,26 @@
         <h2 class="bars-title">Results for beers</h2>
 
         <% @beers.each do |beer| %>
-          <div class="card beers">
-            <div class="row">
+            <div class="card beers">
+              <div class="row">
 
-              <div class="col-sm-3 col-5">
-                <img src="https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png" class="img-fluid" />
-              </div>
+                <div class="col-sm-3 col-5">
+                  <%= link_to beer_path(beer) do %>
+                    <img src="https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png" class="img-fluid" />
+                  <% end %>
+                </div>
 
-              <div class="col-sm-9 col-7 pl-0 beers">
-                <div class="card-beer-infos">
-                  <h2 class="card-beer-name"><%=link_to (h truncate(beer.name, :length => 25)), beer_path(beer) %></h2>
-                  <p class="card-beer-category"><%=h truncate(beer.category, :length => 25) %></p>
-                  <p class="card-beer-description"><%=h truncate(beer.description, :length => 90) %></p>
+                <div class="col-sm-9 col-7 pl-0 beers">
+                  <%= link_to beer_path(beer) do %>
+                    <div class="card-beer-infos">
+                      <h2 class="card-beer-name"><%=h truncate(beer.name, :length => 25)%></h2>
+                      <p class="card-beer-category"><%=h truncate(beer.category, :length => 25) %></p>
+                      <p class="card-beer-description"><%=h truncate(beer.description, :length => 90) %></p>
+                    </div>
+                  <% end %>
                 </div>
               </div>
-
             </div>
-          </div>
         <% end %>
 
 
@@ -130,21 +140,24 @@
             <div class="row">
 
               <div class="col-sm-3 col-5">
-                <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
+                <%= link_to bar_path(bar) do %>
+                  <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
+                <% end %>
               </div>
-              
+
               <div class="ol-sm-9 col-7 pl-0 bars">
-                <div class="card-bars-infos">
-                  <h2 class="card-bars-name"><%=link_to (h truncate(bar.name, :length => 25)), bar_path(bar) %></h2>
-                  <p class="card-bars-location"><%=h truncate(bar.location, :length => 30) %></p>
-                  <p class="card-bars-description"><%=h truncate(bar.description, :length => 90) %></p>
-                </div>
+                <%= link_to bar_path(bar) do %>
+                  <div class="card-bars-infos">
+                    <h2 class="card-bars-name"><%=h truncate(bar.name, :length => 25) %></h2>
+                    <p class="card-bars-location"><%=h truncate(bar.location, :length => 30) %></p>
+                    <p class="card-bars-description"><%=h truncate(bar.description, :length => 90) %></p>
+                  </div>
+                <% end %>
               </div>
 
             </div>
           </div>
         <% end %>
-
       <% end %>
     </div>
   </div>
@@ -152,26 +165,4 @@
 
 
 
-    <!-- <div class = "search-bar-wrapper">
-    //     <%= link_to bars_path do %>
-    //       <i class="fas fa-ellipsis-v"></i>
-    //     <% end %>
-    // </div>
 
-
-    //         <br>
-    //     <h4> Recommended Beers </h4>
-    //     <ul class="list-unstyled">
-    //       <% @beers.each do |beer| %>
-    //       <li class="mt-4">Name: <%= beer.name %></li>
-    //       <li>Category: <%= beer.category %></li>
-    //       <% end %>
-    //     </ul>
-    //     <br>
-    //     <h4>Recommended Bars</h4>
-    //     <ul class="list-unstyled">
-    //       <% @bars.each do |bar| %>
-    //       <li class="mt-4">Name: <%= bar.name %></li>
-    //       <li>Location: <%= bar.location %></li>
-    //       <% end %>
-    //     </ul>

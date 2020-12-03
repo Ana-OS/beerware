@@ -1,47 +1,24 @@
-<!-- Font awesome back button -->
-  <div class="back-button">
-    <%= link_to :back do %>
-      <i class= "fas fa-arrow-circle-left fa-3x"></i>
-    <% end %>
-  </div>
+<div class="row justify-content-center beer-all-content">
 
-  <!-- Beer image -->
+  <div class="col-12 col-lg-6 beer-details">
+
+    <div class="beer-image">
+
+    </div>
 
     <div class="list-unstyled beer-info-top">
-      <% if @beer.photo.attached? %>
-        <% cl_image_tag @beer.photo.key, height: 400, width: 400, crop: :fit %>
-      <% else %>
-        <%= image_tag "https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg", class: "img-fluid" %>
-      <% end %>
+      <%= cl_image_tag @beer.photo.key, height: 400, width: 400, crop: :fit %>
       <div class="d-flex">
           <h1><li><%= @beer.name %></li></h1>
         <div class="col 2">
-
-
-  <div class="container">
-    <div class="container-fluid beer">
-      <div class="beer-name-stars">
-        <h1 class="beer-name"><%= @beer.name %></h1>
-        <p class="beer-stars">stars</p>
+          <div class="d-flex ml-5 mt-3"><%current_user.reviews.last.rating.times do%> <i class="fas fa-star"></i><% end %></div>
+        </div>
       </div>
-      <div class="category-brewery">
-        <p class="beer-category"><%= @beer.category %></p>
-        <p class="beer-brewery">Musa</p>
-
-      </div>
-      <p class="beer-description"><%= @beer.description %></p>
+      <h2><li><%= @beer.category %></li></h2>
     </div>
-  </div>
-
-<div class="beer-infos">
-  <p><%= @beer.alcohol %>%</p>
-  <p><%= @beer.ibu %> IBU</p>
-  <p><%= @beer.avg_rating %></p>
-</div>
 
 
-
-    <ul class = "to-drink-drank-unlist-butons">
+    <ul class = to-drink-drank-unlist-butons">
       <% @to_drink = UsersBeer.find_by(beer: @beer, user: current_user, drank: :false) %>
       <% @drank = UsersBeer.find_by(beer: @beer, user: current_user, drank: :true) %>
       <% if @to_drink %>
@@ -56,7 +33,6 @@
         <li><%= link_to "Add to your To Drink list", to_drink_beer_path, method: :post %></li>
         <li><%= link_to "Add to your Drank list", drank_beer_path, method: :post %></li>
       <% end %>
-
     </ul>
 
     <!-- button to open modal-->
@@ -103,7 +79,15 @@
 </div>
 
 
+    <div class="beer-description">
+      <%= @beer.description %>
+    </div>
 
+    <div class="d-flex justify-content-around beer-info">
+      <p><%= @beer.alcohol %>%</p>
+      <p><%= @beer.ibu %></p>
+      <p><%= @beer.avg_rating %></p>
+    </div>
 
     <hr>
 
@@ -112,8 +96,6 @@
         <ul class="list-group">
           <% @beer.reviews.each do |review| %>
           <li class="list-group-item review-content">
-          <p><%= review.user.first_name %></p>
-
               <% review.rating.to_i.times do %>
                 <i class="fas fa-star"></i>
               <% end %>
@@ -125,3 +107,4 @@
 
 
   </div>
+</div>

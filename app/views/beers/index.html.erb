@@ -29,7 +29,8 @@
 
       <% @beers.each do |beer| %>
         <div class="card beers">
-          <%= link_to beer_path(beer) do %>
+          <%= link_to beer_path(beer), data: { turbolinks: false } do %>
+
 
             <div class="row">
               <div class="col-sm-3 col-5">
