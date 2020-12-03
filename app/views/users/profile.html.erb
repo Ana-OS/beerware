@@ -14,7 +14,7 @@
         <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
     </div>
   </div>
-  
+
   <!-- profile picture -->
   <div class="profile-user-photo">
      <% if current_user.photo.attached? %>
@@ -31,12 +31,21 @@
   <!-- To drink and drank buttons -->
   <div class="user-lists">
     <div class = "profile-to-drink-list">
-      <p> To drink</p>
+      <!-- if clicked will show Beers on To Drink list -->
+      <!-- divs, style to look like buttons, 2 lists (to_d/ drank) seperate ids, once list have a hidden class -->
+      <!-- addEvenetListener to both buttons, to_drink btn- remove hidden of to_drink list and add hidden to the drank list -->
+      <!-- has to do  -->
+      <button id = "show-to-drink-list-btn">
+         To Drink
+      </button>
       <p><%= @to_drink.size %></p>
     </div>
 
     <div class = "profile-drank-list">
-      <p> Drank </p>
+      <!-- if clicked will show Beers on Drank list -->
+      <button id = "show-drank-list-btn">
+         Drank
+      </button>
       <p><%= @drank.size %></p>
     </div>
   </div>
@@ -44,25 +53,51 @@
 
   <!-- images of beers to drink- sample from list -->
   <div class="beers-to-drink-images">
-      <% if @to_drink.size < 1 %>
-        <p>No drinks on this list- you must be thirsty or drunk!</p>
-        <br>
-        <%= link_to "Check out some beers now!", beers_path %>
-      <% else %>
+    <% if @to_drink.size < 1 %>
+      <p>No drinks on this list- you must be thirsty or drunk!</p>
+      <br>
+      <%= link_to "Check out some beers now!", beers_path %>
+    <% else %>
       <div class="grid">
+        <!-- if click on to_drink -->
           <% @to_drink.each do |beer| %>
             <div class="item photo">
               <div class="content">
-                  <%= cl_image_tag beer.photo.key %>
+                <% if beer.photo.attached? %>
+                  <% cl_image_tag beer.photo.key, height: 400, width: 400, crop: :fit %>
+                <% else %>
+                  <%= image_tag "https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg", class: "img-fluid" %>
+                <% end %>
               </div>
             </div>
           <% end %>
-        </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 
- 
-
+  <!-- if click on drank -->
+  <div class="beers-drank-images">
+    <% if @drank.size < 1 %>
+      <p>No drinks on this list.</p>
+      <br>
+      <%= link_to "Check out some beers now!", beers_path %>
+    <% else %>
+      <div class="grid">
+        <!-- if click on to_drink -->
+          <% @drank.each do |beer| %>
+            <div class="item photo">
+              <div class="content">
+                <% if beer.photo.attached? %>
+                  <% cl_image_tag beer.photo.key, height: 400, width: 400, crop: :fit %>
+                <% else %>
+                  <%= image_tag "https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg", class: "img-fluid" %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
+
 

@@ -7,12 +7,15 @@
     </div>
 
     <div class="list-unstyled beer-info-top">
-      <%= cl_image_tag @beer.photo.key, height: 400, width: 400, crop: :fit %>
+      <% if @beer.photo.attached? %>
+        <% cl_image_tag @beer.photo.key, height: 400, width: 400, crop: :fit %>
+      <% else %>
+        <%= image_tag "https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg", class: "img-fluid" %>
+      <% end %>
       <div class="d-flex">
           <h1><li><%= @beer.name %></li></h1>
         <div class="col 2">
-          <div class="d-flex ml-5 mt-3"><%current_user.reviews.last.rating.times do%> <i class="fas fa-star"></i><% end %></div>
-        </div>
+
       </div>
       <h2><li><%= @beer.category %></li></h2>
     </div>
@@ -33,6 +36,7 @@
         <li><%= link_to "Add to your To Drink list", to_drink_beer_path, method: :post %></li>
         <li><%= link_to "Add to your Drank list", drank_beer_path, method: :post %></li>
       <% end %>
+
     </ul>
 
     <!-- button to open modal-->

@@ -23,6 +23,29 @@ const initProfile = () => {
   }
 }
 
+// beer list toggle buttons
+// const drankBeer = document.querySelector('#show-drank-list-btn');
+//   if(drankBeer) {
+//     drankBeer.addEventListener('click', () => {
+//       document.querySelector('#show-drank-list');
+//       var hidden = document.querySelectorAll(".hidden");
+//       hidden.classList.remove("hidden");
+//       document.querySelector('#show-to-drink-list');
+//       hidden.classList.add("hidden");
+//     })
+
+// const toDrinkBeer = document.querySelector('#show-to-drink-list-btn');
+//   if(toDrinkBeer) {
+//     toDrinkBeer.addEventListener('click', () => {
+//       document.querySelector('#show-to-drink-list');
+//       var hidden = document.querySelectorAll(".hidden");
+//       hidden.classList.remove("hidden");
+//       document.querySelector('#show-drank-list');
+//       hidden.classList.add("hidden");
+//     })
+//   }
+
+
 export { initProfile };
 
 // function resizeGridItem(item){
