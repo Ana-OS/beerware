@@ -34,7 +34,11 @@
 
             <div class="row">
               <div class="col-sm-3 col-5">
-                <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
+                <% if beer.photo.attached? %>
+                  <% cl_image_tag beer.photo.key, height: 100, width: 80, crop: :thumbnail, class: "img-fluid" %>
+                <% else %>
+                  <%= image_tag "https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg", class: "img-fluid" %>
+                  <% end %>
               </div>
               <div class="col-sm-9 col-7 pl-0 beers">
                 <div class="card-beer-infos">

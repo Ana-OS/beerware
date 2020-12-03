@@ -19,11 +19,12 @@ class BeersController < ApplicationController
     @user_beer = UsersBeer.find_by(beer: @beer, user: current_user)
     if @user_beer
       @user_beer.update(drank: false)
+      redirect_to beer_path(@beer.id)
     else
       @user_beer = UsersBeer.new(beer: @beer, user: current_user, drank: false)
       @user_beer.save
+      redirect_to beer_path(@beer.id)
     end
-    redirect_to beer_path(@beer.id)
   end
 
   def drank
@@ -33,13 +34,15 @@ class BeersController < ApplicationController
     # if there is, update drank to true
     if @user_beer
       @user_beer.update(drank: true)
+      redirect_to beer_path(@beer.id)
       # else create a new instance of UsersBeer.new(beer: @beer, user: current_user, drank: true)/.save
     else
       @user_beer = UsersBeer.new(beer: @beer, user: current_user, drank: true)
       @user_beer.save
+      redirect_to beer_path(@beer.id)
       # redirect to where user was
     end
-    redirect_to beer_path(@beer.id)
+
   end
 
   def unlist
