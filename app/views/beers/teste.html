@@ -13,7 +13,7 @@
 
   <div class="container">
     <div class="container-fluid beer">
-     <div class="beer-name-stars">
+      <div class="beer-name-stars">
 
         <h1 class="beer-name"><%= @beer.name %></h1>
         <% if current_user.reviews.where(beer_id: @beer) == [] %>
@@ -83,7 +83,7 @@
           <%= simple_form_for [ @beer, @review ] do |f| %>
             <div class="rate-title">Rate it:</div>
             <div class="rate">
-              <input type="radio" id="star5" name="review[rating]" value="5" <%= @review.rating == 5 ? "checked" : "" %> />
+              <input type="radio" id="star5" name="review[rating]" value="5" <%= @review.rating == 5 ? "checked" : "" %>/>
               <label for="star5" title="text">5 stars</label>
               <input type="radio" id="star4" name="review[rating]" value="4" <%= @review.rating == 4 ? "checked" : "" %>/>
               <label for="star4" title="text">4 stars</label>
@@ -91,7 +91,7 @@
               <label for="star3" title="text">3 stars</label>
               <input type="radio" id="star2" name="review[rating]" value="2" <%= @review.rating == 2 ? "checked" : "" %>/>
               <label for="star2" title="text">2 stars</label>
-              <input type="radio" id="star1" name="review[rating]" value="1" <%= @review.rating == 1 ? "checked" : "" %> />
+              <input type="radio" id="star1" name="review[rating]" value="1" <%= @review.rating == 1 ? "checked" : "" %>/>
               <label for="star1" title="text">1 star</label>
             </div>
         </div>
@@ -106,6 +106,8 @@
 
   </div>
 </div>
+
+
 
     <hr>
 
@@ -122,6 +124,10 @@
             <% (5 - review.rating).times do%>
             <i class="far fa-star"></i>
             <% end %>
+
+              <% review.rating.to_i.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
             <p>Description: <%= review.content %></p>
           </li>
         <% end %>
@@ -130,3 +136,9 @@
 
 
   </div>
+
+
+
+
+
+
