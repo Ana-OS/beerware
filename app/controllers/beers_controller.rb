@@ -7,7 +7,7 @@ class BeersController < ApplicationController
 
   def show
     @reviews = @beer.reviews
-    @review = Review.new
+    @review = Review.find_by(beer: @beer, user: current_user) || Review.new
   end
 
   def bar_list

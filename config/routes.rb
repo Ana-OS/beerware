@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       get :bar_list
     end
 
-    resources :reviews, only: [ :new, :create ]
+    resources :reviews, only: [ :new, :create, :edit, :update ]
   end
 
   resources :reviews, only: :destroy

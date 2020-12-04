@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :find_review, only: [:show, :destroy]
+  before_action :find_review, only: [:show, :destroy, :edit, :update]
 
   def index
     @reviews = Review.all
@@ -8,6 +8,17 @@ class ReviewsController < ApplicationController
   def new
     @beer = Beer.find(params[:beer_id])
     @reviews = Review.new
+  end
+
+  def edit
+    @beer = Beer.find(params[:beer_id])
+  end
+
+  def update
+    @beer = Beer.find(params[:beer_id])
+    if @review = Review.update(reviews_params)
+       redirect_to beer_path(@beer)
+    end
   end
 
   def create
