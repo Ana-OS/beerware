@@ -30,12 +30,12 @@
 
   <!-- To drink and drank buttons -->
   <div class="user-lists">
-    <div class = "profile-to-drink-list">
+    <div class="profile-to-drink-list">
       <!-- if clicked will show Beers on To Drink list -->
       <!-- divs, style to look like buttons, 2 lists (to_d/ drank) seperate ids, once list have a hidden class -->
       <!-- addEvenetListener to both buttons, to_drink btn- remove hidden of to_drink list and add hidden to the drank list -->
       <!-- has to do  -->
-      <button id = "show-to-drink-list-btn">
+      <button id="show-to-drink-list-btn" class="active">
          To Drink
       </button>
       <p><%= @to_drink.size %></p>
@@ -52,7 +52,7 @@
   <!-- images of beers to drink- sample from list -->
 
   <!-- images of beers to drink- sample from list -->
-  <div class="beers-to-drink-images">
+  <div id="beers-to-drink-images">
     <% if @to_drink.size < 1 %>
       <p>No drinks on this list- you must be thirsty or drunk!</p>
       <br>
@@ -64,7 +64,7 @@
             <div class="item photo">
               <div class="content">
                 <% if beer.photo.attached? %>
-                  <% cl_image_tag beer.photo.key, height: 400, width: 400, crop: :fit %>
+                  <%= cl_image_tag beer.photo.key, height: 400, width: 400, crop: :fit %>
                 <% else %>
                   <%= image_tag "https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg", class: "img-fluid" %>
                 <% end %>
@@ -76,7 +76,7 @@
   </div>
 
   <!-- if click on drank -->
-  <div class="beers-drank-images">
+  <div id="beers-drank-images" style = "display:none">
     <% if @drank.size < 1 %>
       <p>No drinks on this list.</p>
       <br>
@@ -88,7 +88,7 @@
             <div class="item photo">
               <div class="content">
                 <% if beer.photo.attached? %>
-                  <% cl_image_tag beer.photo.key, height: 400, width: 400, crop: :fit %>
+                  <%= cl_image_tag beer.photo.key, height: 400, width: 400, crop: :fit %>
                 <% else %>
                   <%= image_tag "https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg", class: "img-fluid" %>
                 <% end %>
@@ -96,8 +96,9 @@
             </div>
           <% end %>
       </div>
-    <% end %>
+
   </div>
+   <% end %>
 </div>
 
 
