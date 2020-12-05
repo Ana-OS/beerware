@@ -46,18 +46,27 @@
       <h2 class= "landing-bar-text">Bars closer to you</h2>
       <div class="scrollmenu">
         <div class="row landing">
-          <% @bars_near.each do |bar| %>
-            <div class="col-sm-3 col-5">
-              <%= link_to bar_path(bar) do %>
-                <div class="card-landing">
-                  <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" />
-                  <div class="card-landing-infos">
-                    <h2 class="card-landing-name"><%= h truncate(bar.name, :length => 12) %></h2>
-                    <p class="card-landing-location"><%= bar.location %></p>
-                  </div>
-                </div>
-              <% end %>
+          <% if @bars_near.empty? %>
+              <div class="col-sm-12 col-10">
+              <div class="no-near-bars">
+                <p>There's no bars near you 😕 </p>
+                <p>But you can <%= link_to " search the map", map_page_path %></p>
+              </div>
             </div>
+          <% else %>
+            <% @bars_near.each do |bar| %>
+              <div class="col-sm-3 col-5">
+                <%= link_to bar_path(bar) do %>
+                  <div class="card-landing">
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" />
+                    <div class="card-landing-infos">
+                      <h2 class="card-landing-name"><%= h truncate(bar.name, :length => 12) %></h2>
+                      <p class="card-landing-location"><%= bar.location %></p>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -65,7 +74,7 @@
   </div>
 
 
-  
+
 
 
   <div class="container">
