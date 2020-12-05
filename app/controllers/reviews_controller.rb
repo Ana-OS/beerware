@@ -10,10 +10,6 @@ class ReviewsController < ApplicationController
     @reviews = Review.new
   end
 
-  def edit
-    @beer = Beer.find(params[:beer_id])
-  end
-
   def update
     @beer = Beer.find(params[:beer_id])
     if @review = Review.update(reviews_params)
