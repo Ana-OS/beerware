@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     else
       @ip = Net::HTTP.get(URI.parse('http://checkip.amazonaws.com/')).squish
     end
-    @bars_near = Bar.near(@ip, 1)
+    @bars_near = Bar.near(@ip, 100000)
   end
 
   def search
