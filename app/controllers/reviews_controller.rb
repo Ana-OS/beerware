@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
 
   def update
     @beer = Beer.find(params[:beer_id])
-    if @review = Review.update(reviews_params)
+    if @review.update(reviews_params)
        redirect_to beer_path(@beer)
     end
   end
