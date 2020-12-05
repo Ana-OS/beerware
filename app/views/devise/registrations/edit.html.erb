@@ -1,52 +1,66 @@
-<div class="container col-8 mt-5">
+<div class="container settings">
+  <div class="big-container-settings">
 
-  <h2>Settings</h2>
-
-  <!-- profile picture -->
-  <div class="user-name-picture">
-    <!-- profile picture -->
-    <% if current_user.photo.attached? %>
-      <%= cl_image_tag current_user.photo.key, height: 400, width: 400, crop: :fit, class: "avatar-large", alt: "avatar-large" %>
-    <% else %>
-     <%= image_tag "https://res.cloudinary.com/di6k1pdz4/image/upload/v1606851697/Beerware/Users/placeholder_gzfccg.png", class: "avatar-large", alt: "avatar-large" %>
-    <% end %>
-  </div>
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.error_notification %>
-
-    <div class="form-inputs">
-      <%= f.input :photo, as: :file %>
-      <%= f.input :first_name, required: true, autofocus: true%>
-      <%= f.input :last_name, required: true, autofocus: true%>
-      <%= f.input :email, required: true, autofocus: true %>
-
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <!-- Font awesome back button -->
+    <div class="back-button settings">
+      <%= link_to :back do %>
+        <i class= "fas fa-arrow-circle-left fa-2x"></i>
       <% end %>
-
-      <%= f.input :password,
-                  hint: "leave it blank if you don't want to change it",
-                  required: false,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: false,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :current_password,
-                  hint: "we need your current password to confirm your changes",
-                  required: true,
-                  input_html: { autocomplete: "current-password" } %>
-
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Update", class: "btn btn-ghost" %>
+    <div class="settings-header">
+      <h2 class="settings-text">Settings</h2>
     </div>
-  <% end %>
+    <!-- profile picture -->
+    <div class="user-name-picture">
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, height: 400, width: 400, crop: :fit, class: "avatar-large", alt: "avatar-large" %>
+      <% else %>
+        <%= image_tag "https://res.cloudinary.com/di6k1pdz4/image/upload/v1606851697/Beerware/Users/placeholder_gzfccg.png", class: "avatar-large", alt: "avatar-large" %>
+      <% end %>
+    </div>
 
-  <h3>Cancel my account</h3>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
 
-  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <div class="form-inputs">
+      <p>Upload your profile picture</p>
+        <%= f.input :photo, as: :file, label: false %>
+        <div class="settings-name">
+          <%= f.input :first_name, required: true, autofocus: true, placeholder: "First name", label: false %>
+          <%= f.input :last_name, required: true, autofocus: true, placeholder: "Last name", label: false %>
+        </div>
 
-  <%= link_to "Back", :back %>
+        <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
 
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+        <p>Change password?</p>
+        <%= f.input :current_password,
+                    required: true,
+                    input_html: { autocomplete: "current-password" },
+                    placeholder: "Current password",
+                    label: false %>
+        <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "new-password" },
+                    placeholder: "New password",
+                    label: false %>
+        <%= f.input :password_confirmation,
+                    required: false,
+                    input_html: { autocomplete: "new-password" },
+                    placeholder: "Confirm password",
+                    label: false %>
 
+      </div>
+
+      <div class="form-actions settings">
+        <%= f.button :submit, "Update", class: "btn btn-ghost" %>
+      </div>
+    <% end %>
+    <div class="cancel-action">
+      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    </div>
+  </div>
+</div>
