@@ -25,6 +25,7 @@
 .card-beer-name {
   font-size: 18px;
   font-weight: 700;
+  width: 90px;
   color: $black;
   padding-top: 13px;
   margin-bottom: 2px;
@@ -52,11 +53,12 @@
   display: flex;
   justify-content: flex-end;
   padding-top: 7px;
-  margin-left: 80px;
+  margin-left: 70px;
   color: black !important;
   font-weight: bold;
   font-size: 20px;
 }
+
 
 .name-rating {
   display: flex;
