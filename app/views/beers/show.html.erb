@@ -117,7 +117,7 @@
     <div class="beer-reviews">
       <p>Reviews:</p>
         <ul class="list-group">
-          <% @beer.reviews.each do |review| %>
+          <% @beer.reviews.order('updated_at DESC').each do |review| %>
           <li class="list-group-item review-content">
           <p><%= review.user.first_name %></p>
 
