@@ -1,4 +1,4 @@
-<div class="beers-container">
+<div imass="beers-container">
   <div class="container search-header">
     <!-- font awesome back button -->
     <!-- add rows and col -->
@@ -30,8 +30,6 @@
       <% @beers.each do |beer| %>
         <div class="card beers">
           <%= link_to beer_path(beer), data: { turbolinks: false } do %>
-
-
             <div class="row">
               <div class="col-sm-3 col-5">
                 <% if beer.photo.attached? %>
