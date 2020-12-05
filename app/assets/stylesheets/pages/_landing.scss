@@ -99,3 +99,16 @@
   color: $border-gray;
   text-decoration: none;
 }
+
+.no-near-bars p{
+  font-size: 16px;
+  margin: 0;
+  margin-left: 20px;
+}
+.no-near-bars p a{
+  color: $orange;
+}
+
+.no-near-bars p a:hover {
+  color: $orange-hover;
+}
