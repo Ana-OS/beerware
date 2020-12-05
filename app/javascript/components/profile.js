@@ -21,29 +21,41 @@ const initProfile = () => {
     }, 1000);
     window.addEventListener("resize", resizeAllGridItems);
   }
-}
+
 
 // beer list toggle buttons
-// const drankBeer = document.querySelector('#show-drank-list-btn');
-//   if(drankBeer) {
-//     drankBeer.addEventListener('click', () => {
-//       document.querySelector('#show-drank-list');
-//       var hidden = document.querySelectorAll(".hidden");
-//       hidden.classList.remove("hidden");
-//       document.querySelector('#show-to-drink-list');
-//       hidden.classList.add("hidden");
-//     })
+const drankBeer = document.querySelector('#show-drank-list-btn');
+const toDrinkBeer = document.querySelector('#show-to-drink-list-btn');
+  if(drankBeer) {
+    drankBeer.addEventListener('click', () => {
+      console.log("Drank Beer clicked")
+      document.querySelector('#beers-drank-images').style.display = "block";
+      document.querySelector('#beers-to-drink-images').style.display = "none";
+      drankBeer.classList.add("active");
+      toDrinkBeer.classList.remove("active");
+    })
+  }
 
-// const toDrinkBeer = document.querySelector('#show-to-drink-list-btn');
-//   if(toDrinkBeer) {
-//     toDrinkBeer.addEventListener('click', () => {
-//       document.querySelector('#show-to-drink-list');
-//       var hidden = document.querySelectorAll(".hidden");
-//       hidden.classList.remove("hidden");
-//       document.querySelector('#show-drank-list');
-//       hidden.classList.add("hidden");
-//     })
-//   }
+  if(toDrinkBeer) {
+    toDrinkBeer.addEventListener('click', () => {
+      console.log("To drink Beer clicked")
+      document.querySelector('#beers-drank-images').style.display = "none";
+      document.querySelector('#beers-to-drink-images').style.display = "block";
+      toDrinkBeer.classList.add("active");
+      drankBeer.classList.remove("active");
+    })
+  }
+}
+  // const toDrinkBeer = document.querySelector('#show-to-drink-list-btn');
+  //   if(toDrinkBeer) {
+  //     toDrinkBeer.addEventListener('click', () => {
+  //       document.querySelector('#show-to-drink-list');
+  //       // var hidden = document.querySelectorAll(".hidden");
+  //       hidden.classList.remove("hidden");
+  //       document.querySelector('#show-drank-list');
+  //       hidden.classList.add("hidden");
+  //     })
+  // }
 
 
 export { initProfile };
