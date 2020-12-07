@@ -152,9 +152,38 @@
 //   color: white;
 // }
 
-.review-send-button {
-  background-color: black;
-  color: white;
+.modal-content {
+  margin-top: 45%;
+}
+
+.rate-title {
+  font-family: $body-font;
+  color: $black;
+  font-weight: 500;
+}
+
+.review-title {
+  font-family: $body-font;
+  color: $black;
+  font-weight: 500;
+}
+
+.btn.btn-primary.review {
+  background-color: $black;
+  border-radius: 50px;
+  width: 100%;
+  height: 46px;
+  font-family: $headers-font;
+  border: none;
+}
+
+.btn.btn-primary.review:hover{
+  background-color: $black-hover;
+}
+
+.btn.btn-primary.review a{
+  color: $off-white;
+  text-decoration: none;
 }
 
 .rate {
@@ -200,6 +229,9 @@
 
 .review-title-container {
   clear: both;
+  font-family: $body-font;
+  color: $black;
+  font-weight: 500;
 }
 
 .review-content {
