@@ -3,13 +3,61 @@
   padding: 0px, 15px, 0px, 15px;
 }
 
+// back button
+.back-button {
+  position: relative;
+  left: 30px;
+  top: 10px;
+  width: 50px;
+}
 // image
 
 .list-unstyled.beer-info-top img {
   width: 100%;
   max-height: 440px;
   object-fit: contain;
+  margin-top: -42px;
 }
+
+// plus check button
+
+.check-plus-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.plus-button {
+  padding: 5px;
+  margin-bottom: 2px;
+  background-color: $orange;
+  border-radius: 50px;
+}
+
+.plus-button-gray {
+  padding: 5px;
+  margin-bottom: 2px;
+  background-color: $border-gray;
+  border-radius: 50px;
+}
+
+.check-button {
+  margin-left: auto;
+  padding: 5px;
+  margin-top: 2px;
+  background-color: $orange;
+  border-radius: 50px;
+}
+
+.check-button-gray {
+  margin-left: auto;
+  padding: 5px;
+  margin-top: 2px;
+  background-color: $border-gray;
+  border-radius: 50px;
+}
+
+// beer details
 
 .beer-name-stars {
   display: flex;
@@ -24,9 +72,14 @@
   font-family: $headers-font;
   font-weight: 500;
   margin: 0px;
+  margin-left: -1px;
 }
 
 .beer-stars {
+  margin: 0px;
+}
+
+.beer-name-stars div {
   margin: 0px;
 }
 
@@ -34,6 +87,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: $black;
 }
 
 .beer-category {
@@ -43,12 +97,13 @@
   color: $orange;
 }
 
-.beer-brewery {
-  font-family: $body-font;
-  font-size: 16px;
-  font-weight: 500;
-  color: $med-gray;
-}
+// .beer-brewery {
+//   font-family: $body-font;
+//   font-size: 16px;
+//   font-weight: 500;
+//   color: $med-gray;
+//   color: $black;
+// }
 
 .beer-description {
   font-size: 16px;
@@ -59,7 +114,7 @@
 
 .beer-infos {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   font-size: 24px;
   font-family: $body-font;
@@ -67,43 +122,13 @@
   color: $black;
 }
 
-
-
-.beer-image {
-  border-radius: 1px;
-  text-align: -webkit-center;
+.beer-show-line {
+  border-top: 0.3px solid $border-gray;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-
-
-// .beer-info-top {
-//   margin-left: 10px;
-
-//   h2 {
-//     color: #D18411;
-//     font-size: 16px;
-//   }
-// }
-
-// .beer-info {
-
-//   padding-top: 30px;
-
-//   p {
-//     font-size: 24px;
-//   }
-// }
-
-
-// .beer-all-content {
-//   padding-top: 5px;
-// }
-
-
-// .beer-description {
-//   margin-left: 10px;
-
-// }
+// Reviews
 
 .beer-reviews {
   p {
@@ -113,20 +138,19 @@
   }
 }
 
-.review-button {
-  background-color: black;
-  color: white;
-  padding-top: 5px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-left: 10px;
-}
+// .review-button {
+//   background-color: black;
+//   color: white;
+//   padding-top: 5px;
+//   margin-bottom: 10px;
+//   margin-top: 10px;
+//   margin-left: 10px;
+// }
 
-.review-button:hover {
-  background-color: $black-hover;
-  color: white;
-
-}
+// .review-button:hover {
+//   background-color: $black-hover;
+//   color: white;
+// }
 
 .review-send-button {
   background-color: black;
@@ -182,11 +206,25 @@
   p {
   font-size: 16px;
   font-weight: 100;
-  font-family: Roboto;
+  font-family: $body-font;
   margin-left: 0px !important;
   }
 }
 
 .fa-star {
   color: #FFDE59;
+}
+
+.fas.fa-star.gray {
+  color: $med-gray;
+}
+
+.list-group-item.review-content {
+  border: none;
+}
+
+.review-show-line {
+  border-top: 0.3px solid $border-gray;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
