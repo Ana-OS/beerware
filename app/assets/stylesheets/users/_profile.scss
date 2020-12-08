@@ -124,10 +124,6 @@
 }
 
 
-.hidden{
-  display: none;
-}
-
 // experiment
 .grid {
   display: grid;
@@ -153,7 +149,39 @@
 
 }
 
-#show-to-drink-list-btn.active {
-  background: blue;
-
+#show-to-drink-list-btn{
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: center;
+  width: 100%;
+  border-bottom-left-radius: 45px;
+  border: none;
+  background: none;
+  // box-shadow: 0px 4px 4px 0px #c6c6c62c;
 }
+
+#show-to-drink-list-btn:active{}
+
+
+#show-drank-list-btn{
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: center;
+  width: 100%;
+  border-bottom-right-radius: 45px;
+  border: none;
+  background: none;
+}
+
+#show-drank-list-btn:active{}
+
+
+
