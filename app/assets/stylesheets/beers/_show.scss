@@ -16,6 +16,9 @@
 }
 
 // image
+.list-unstyled.beer-info-top {
+  position: relative;
+}
 
 .list-unstyled.beer-info-top img {
   width: 100%;
@@ -30,36 +33,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  bottom: 0px;
+  right: 30px;
+  cursor: pointer;
 }
 
 .plus-button {
-  background-color: $orange;
+  background-color: #000000cb;
   border-radius: 50px;
-  padding: 5px;
+  padding: 4px 7px 6px 7px;
   margin-bottom: 2px;
 }
 
 .plus-button-gray {
   background-color: $border-gray;
   border-radius: 50px;
-  padding: 5px;
+  padding: 4px 7px 6px 7px;
   margin-bottom: 2px;
 }
 
 .check-button {
-  margin-left: auto;
-  background-color: $orange;
+  background-color: #000000cb;
   border-radius: 50px;
-  padding: 5px;
+  padding: 4px 7px 6px 7px;
   margin-top: 2px;
 }
 
 .check-button-gray {
-  margin-left: auto;
-  padding: 5px;
-  margin-top: 2px;
   background-color: $border-gray;
   border-radius: 50px;
+  padding: 4px 7px 6px 7px;
+  margin-top: 2px;
 }
 
 // beer details
@@ -246,6 +251,10 @@
 
 .fas.fa-star.gray {
   color: $med-gray;
+}
+
+.btn.btn-sm.rev {
+  padding: 0px;
 }
 
 .list-group-item.review-content {
