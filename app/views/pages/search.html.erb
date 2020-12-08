@@ -27,7 +27,7 @@
 
         <%= form_tag search_page_path, method: :get do %>
           <%= text_field_tag :query,
-            params[:query], # params[:query]
+            params[:query],
             class: "search-bar",
             placeholder: "Beer name, bar, type of beer..."
           %>
@@ -118,8 +118,10 @@
       <% else %>
 
         <h2 class="bars-title">Results for beers</h2>
-
-        <% @beers.each do |beer| %>
+        <% if @beers.length < 1  %>
+          <p>Sorry, no beers found 🧐</p>
+        <% else %>
+          <% @beers.each do |beer| %>
             <div class="card beers">
               <div class="row">
 
@@ -143,33 +145,36 @@
                 </div>
               </div>
             </div>
+          <% end %>
         <% end %>
 
-
         <h2 class="bars-title">Results for bars</h2>
+        <% if @bars.length < 1 %>
+          <p>Sorry, no bars found 🧐</p>
+        <% else %>
+          <% @bars.each do |bar| %>
+            <div class="card bars">
+              <div class="row">
 
-        <% @bars.each do |bar| %>
-          <div class="card bars">
-            <div class="row">
+                <div class="col-sm-3 col-5">
+                  <%= link_to bar_path(bar) do %>
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
+                  <% end %>
+                </div>
 
-              <div class="col-sm-3 col-5">
-                <%= link_to bar_path(bar) do %>
-                  <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
-                <% end %>
+                <div class="ol-sm-9 col-7 pl-0 bars">
+                  <%= link_to bar_path(bar) do %>
+                    <div class="card-bars-infos">
+                      <h2 class="card-bars-name"><%=h truncate(bar.name, :length => 25) %></h2>
+                      <p class="card-bars-location"><%=h truncate(bar.location, :length => 25) %></p>
+                      <p class="card-bars-description"><%=h truncate(bar.description, :length => 90) %></p>
+                    </div>
+                  <% end %>
+                </div>
+
               </div>
-
-              <div class="ol-sm-9 col-7 pl-0 bars">
-                <%= link_to bar_path(bar) do %>
-                  <div class="card-bars-infos">
-                    <h2 class="card-bars-name"><%=h truncate(bar.name, :length => 25) %></h2>
-                    <p class="card-bars-location"><%=h truncate(bar.location, :length => 25) %></p>
-                    <p class="card-bars-description"><%=h truncate(bar.description, :length => 90) %></p>
-                  </div>
-                <% end %>
-              </div>
-
             </div>
-          </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
