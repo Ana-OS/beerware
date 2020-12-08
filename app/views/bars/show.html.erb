@@ -1,6 +1,5 @@
 <div class="bar-container">
-
-  <!-- font awesome back button -->
+  <!-- Back button -->
   <div class="back-button">
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       viewBox="0 0 492 492" width="20px" fill="#fcfcfccb" style="enable-background:new 0 0 492 492;" xml:space="preserve">
@@ -14,19 +13,18 @@
       </g>
     </svg>
   </div>
-
+  <!-- Image -->
   <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
-
-
+  <!-- Bar details -->
   <div class="container">
     <div class="container-fluid">
       <h1 class="card-bar-name"><%= @bar.name %></h1>
       <p class="card-bar-location"><%=link_to @bar.location, map_bar_path %></p>
       <p class="card-bar-description"><%= @bar.description %></p>
+      <!-- Beer menu -->
       <div class="beer-menu">
         <button class="button beer-menu"><%= link_to "Beer menu", beer_menu_bar_path(@bar) %></button>
       </div>
-
     </div>
   </div>
 </div>

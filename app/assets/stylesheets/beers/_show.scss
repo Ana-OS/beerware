@@ -11,11 +11,8 @@
   width: 35px;
   height: 35px;
   background-color: #000000cb;
-  padding-left: 5px;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-right: 0px;
   border-radius: 50px;
+  padding: 4px 0px 4px 5px;
 }
 
 // image
@@ -36,25 +33,25 @@
 }
 
 .plus-button {
-  padding: 5px;
-  margin-bottom: 2px;
   background-color: $orange;
   border-radius: 50px;
+  padding: 5px;
+  margin-bottom: 2px;
 }
 
 .plus-button-gray {
-  padding: 5px;
-  margin-bottom: 2px;
   background-color: $border-gray;
   border-radius: 50px;
+  padding: 5px;
+  margin-bottom: 2px;
 }
 
 .check-button {
   margin-left: auto;
-  padding: 5px;
-  margin-top: 2px;
   background-color: $orange;
   border-radius: 50px;
+  padding: 5px;
+  margin-top: 2px;
 }
 
 .check-button-gray {
@@ -75,12 +72,9 @@
 }
 
 .beer-name {
-  font-size: 32px;
   color: $black;
-  font-family: $headers-font;
-  font-weight: 500;
-  margin: 0px;
-  margin-left: -1px;
+  font: 500 32px $body-font;
+  margin: 0px 0px 0px -1px;
 }
 
 .beer-stars {
@@ -99,10 +93,8 @@
 }
 
 .beer-category {
-  font-family: $body-font;
-  font-size: 16px;
-  font-weight: 500;
   color: $orange;
+  font: 500 16px $body-font;
 }
 
 // .beer-brewery {
@@ -114,34 +106,28 @@
 // }
 
 .beer-description {
-  font-size: 16px;
-  font-family: $body-font;
-  font-weight: 400;
   color: $black;
+  font: 400 16px $body-font;
 }
 
 .beer-infos {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: 24px;
-  font-family: $body-font;
-  font-weight: 500;
   color: $black;
+  font: 500 24px $body-font;
 }
 
 .beer-show-line {
   border-top: 0.3px solid $border-gray;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+  margin-top: 20px 0px 20px 0px;
+} 
 
 // Reviews
 
 .beer-reviews {
   p {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 500 18px $body-font;
     margin-left: 10px;
   }
 }
@@ -165,24 +151,23 @@
 }
 
 .rate-title {
-  font-family: $body-font;
   color: $black;
-  font-weight: 500;
+  font: 500 16px $body-font;
 }
 
-.review-title {
-  font-family: $body-font;
-  color: $black;
-  font-weight: 500;
-}
+// .review-title {
+//   font-family: $body-font;
+//   color: $black;
+//   font-weight: 500;
+// }
 
 .btn.btn-primary.review {
-  background-color: $black;
-  border-radius: 50px;
   width: 100%;
   height: 46px;
-  font-family: $headers-font;
+  background-color: $black;
+  font-family: $body-font;
   border: none;
+  border-radius: 50px;
 }
 
 .btn.btn-primary.review:hover{
@@ -199,29 +184,35 @@
     height: 46px;
     padding: 0 10px;
 }
+
 .rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
+    position: absolute;
+    top: -9999px;
 }
+
 .rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ccc;
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
 }
+
 .rate:not(:checked) > label:before {
     content: '★ ';
 }
+
 .rate > input:checked ~ label {
     color: #ffc700;
 }
+
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
     color: #deb217;
 }
+
 .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
 .rate > input:checked ~ label:hover,
@@ -237,16 +228,14 @@
 
 .review-title-container {
   clear: both;
-  font-family: $body-font;
   color: $black;
-  font-weight: 500;
+  font: 500 16px $body-font;
 }
 
 .review-content {
   p {
-  font-size: 16px;
-  font-weight: 100;
-  font-family: $body-font;
+  color: $black;
+  font: 100 16px $body-font;
   margin-left: 0px !important;
   }
 }
@@ -265,6 +254,5 @@
 
 .review-show-line {
   border-top: 0.3px solid $border-gray;
-  margin-top: 1px;
-  margin-bottom: 1px;
+  margin-top: 1px 0px 1px 0px;
 }

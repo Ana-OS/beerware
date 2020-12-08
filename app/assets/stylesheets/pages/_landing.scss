@@ -11,17 +11,26 @@
 }
 
 .landing-bar-text {
-  font-size: 20px;
-  font-weight: 900;
-  font-family: $headers-font;
+  font: 900 20px $body-font;
 }
 
 .card-landing {
   overflow: hidden;
-
   flex-basis: 33.333%;
   flex-grow: 0;
   flex-shrink: 0;
+  h2 {
+    color: $black;
+    font: 500 16px $body-font;
+    margin: 0;
+  }
+  
+  p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+    color: $med-gray;
+  }
 }
 
 .card-landing > img {
@@ -32,21 +41,8 @@
 
 .card-landing-infos {
   height: 40px;
-  font-family: $headers-font;
-}
-
-.card-landing h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
   color: $black;
-}
-
-.card-landing p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-  color: $med-gray;
+  font-family: $headers-font;
 }
 
 .card-landing .card-landing-infos {
@@ -66,14 +62,11 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-}
-
-.landing-titles p {
-  color: $med-gray;
-  font-weight: 400;
-  margin-bottom: 6px;
-  font-size: 16px;
-  font-family: $headers-font;
+  p {
+    color: $med-gray;
+    font-weight: 400 16px $body-font;
+    margin-bottom: 6px;
+  }
 }
 
 .landing-cog-wheel {
@@ -84,26 +77,23 @@
 
 .card-landing-name a {
   color: $black;
-}
-
-.card-landing-name a:hover {
-  color: $black-hover;
-  text-decoration: none;
+  a:hover {
+    color: $black-hover;
+    text-decoration: none;
+  }
 }
 
 .landing-titles p a {
   color: $med-gray;
-}
-
-.landing-titles p a:hover {
-  color: $border-gray;
-  text-decoration: none;
+  a:hover {
+    color: $border-gray;
+    text-decoration: none;
+  }
 }
 
 .no-near-bars p{
   font-size: 16px;
-  margin: 0;
-  margin-left: 20px;
+  margin: 0px 0px 0px 20px;
 }
 .no-near-bars p a{
   color: $orange;
