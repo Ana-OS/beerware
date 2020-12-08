@@ -1,9 +1,7 @@
 <div class="beers-container">
-
   <div class="container search-header">
-    <!-- font awesome back button -->
-    <!-- add rows and col -->
     <div class="row">
+      <!-- Back button -->
       <div class="back-button-index">
         <%= link_to :back do %>
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -17,12 +15,10 @@
             </g>
           </g>
         </svg>
-        <% end %>
+       <% end %>
       </div>
-
-    <!-- Search -->
+      <!-- Search -->
       <div class="col col-10">
-
         <%= form_tag search_page_path, method: :get do %>
           <%= text_field_tag :query,
             params[:query], # params[:query]
@@ -33,19 +29,17 @@
       </div>
     </div>
   </div>
+  <!-- Cards -->
   <div class="container">
     <div class="container-fluid">
       <h2 class="bars-title"> Beer menu for <%= @bar.name %></h2>
-
       <% @bar_beer.each do |beer| %>
         <div class="card beers">
           <%= link_to beer_path(beer) do %>
-
             <div class="row">
               <div class="col-sm-3 col-5">
                 <img src="https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png" class="img-fluid" />
               </div>
-
               <div class="col-sm-9 col-7 pl-0 beers">
                 <div class="card-beer-infos">
                   <div class="name-rating">
@@ -57,11 +51,9 @@
                 </div>
               </div>
             </div>
-
           <% end %>
         </div>
       <% end %>
-
     </div>
   </div>
 </div>

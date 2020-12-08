@@ -1,9 +1,7 @@
 <div class="bars-container">
-
   <div class="container search-header">
-    <!-- font awesome back button -->
-    <!-- add rows and col -->
     <div class="row">
+      <!-- back button -->
       <div class="back-button-index">
         <%= link_to :back do %>
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -19,10 +17,8 @@
         </svg>
         <% end %>
       </div>
-
     <!-- Search -->
       <div class="col col-10">
-
         <%= form_tag search_page_path, method: :get do %>
           <%= text_field_tag :query,
             params[:query], # params[:query]
@@ -33,20 +29,17 @@
       </div>
     </div>
   </div>
-
+  <!-- Cards -->
   <div class="container">
     <div class="container-fluid">
       <h2 class="bars-title">Bars</h2>
-
       <% @bars.each do |bar| %>
         <div class="card bars">
           <%= link_to bar_path(bar) do %>
-
             <div class="row">
               <div class="col-sm-3 col-5">
                 <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
               </div>
-
               <div class="col-sm-9 col-7 pl-0 bars">
                 <div class="card-bars-infos">
                   <h2 class="card-bars-name"><%= h truncate(bar.name, :length => 25) %></h2>
@@ -55,11 +48,9 @@
                 </div>
               </div>
             </div>
-
           <% end %>
         </div>
       <% end %>
-
     </div>
   </div>
 </div>

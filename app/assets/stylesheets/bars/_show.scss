@@ -6,33 +6,27 @@
 }
 
 .card-bar-name {
-  font-size: 32px;
-  margin-top: 19px;
-  margin-bottom: 5px;
   color: $black;
-  font-family: $headers-font;
+  font-size: 500 32px $headers-font;
+  margin: 19px 0px 5px 0px;
 }
 
 .card-bar-location {
-  text-decoration: underline;
-  font-size: 16px;
   color: $black;
-  font-weight: 100;
-  font-family: $headers-font;
+  text-decoration: underline;
+  font: 100 16px $body-font;
 }
 
 .card-bar-location a {
   color: $black;
-}
-
-.card-bar-location a:hover {
-  color: $black-hover;
+  a:hover {
+    color: $black-hover;
+  }
 }
 
 .card-bar-description {
-  font-size: 16px;
+  font: 400 16px $body-font;
   color: $black;
-  font-family: $headers-font;
 }
 
 .beer-menu {
@@ -42,11 +36,11 @@
 }
 
 .button.beer-menu{
+  font-family: $body-font;
   background-color: $black;
   border-radius: 50px;
   width: 100%;
   height: 46px;
-  font-family: $headers-font;
 }
 
 .button.beer-menu:hover{
