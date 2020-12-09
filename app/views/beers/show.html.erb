@@ -11,8 +11,8 @@
   </div>
   <!-- Beer image -->
   <div class="list-unstyled beer-info-top">
-    <% if @beer.photo.attached? %>
-      <%= cl_image_tag @beer.photo.key, height: 400, width: 400, crop: :fit %>
+    <% if @beer.photo_url %>
+      <%= image_tag @beer.photo_url %>
     <% else %>
       <%= image_tag "https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg", class: "img-fluid" %>
     <% end %>
@@ -68,14 +68,17 @@
             <% end %>
           </button>
         <% else %>
+         <button type="button" class="btn btn-sm rev" data-toggle="modal" data-target="#modal">
           <p class="beer-stars">
             <% current_user.reviews.where(beer_id: @beer).last.rating.times do %>
               <i class="fas fa-star"></i>
             <% end %>
             <% (5 - current_user.reviews.where(beer_id: @beer).last.rating).times do %>
               <i class="far fa-star"></i>
-            <% end %> 
+            <% end %>
           </p>
+          </button>
+
         <% end %>
       </div>
       <div class="category-brewery">
