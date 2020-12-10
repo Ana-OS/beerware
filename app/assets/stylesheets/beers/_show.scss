@@ -6,6 +6,7 @@
 // back button
 .back-button {
   position: relative;
+  z-index: 1;
   left: 25px;
   top: 39px;
   width: 35px;
@@ -102,14 +103,6 @@
   font: 500 16px $body-font;
 }
 
-// .beer-brewery {
-//   font-family: $body-font;
-//   font-size: 16px;
-//   font-weight: 500;
-//   color: $med-gray;
-//   color: $black;
-// }
-
 .beer-description {
   color: $black;
   font: 400 16px $body-font;
@@ -125,31 +118,49 @@
 
 .beer-show-line {
   border-top: 0.3px solid $border-gray;
-  margin-top: 20px 0px 20px 0px;
+  margin: 20px 0px 20px 0px;
 } 
 
 // Reviews
 
 .beer-reviews {
-  p {
-    font-size: 500 18px $body-font;
-    margin-left: 10px;
+  p:nth-child(1) {
+    color: $black;
+    font: 500 18px $body-font;
   }
 }
 
-// .review-button {
-//   background-color: black;
-//   color: white;
-//   padding-top: 5px;
-//   margin-bottom: 10px;
-//   margin-top: 10px;
-//   margin-left: 10px;
-// }
+.list-group-item-review-content {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 10px 0px 10px 0px;
+}
 
-// .review-button:hover {
-//   background-color: $black-hover;
-//   color: white;
-// }
+.list-group-item-review-content p:nth-child(1) {
+  color: $black;
+  font: 500 16px $body-font;
+  margin-bottom: 0px;
+  padding-right: 10px;
+}
+
+.list-group-item-review-content .fas.fa-star {
+  font-size: 14px;
+  padding-bottom: 2px;
+}
+
+.list-group-item-review p:nth-child(2) {
+  color: $black;
+  font: 200 16px $body-font;
+  margin-bottom: 0px;
+}
+
+.review-show-line {
+  border-top: 0.3px solid $border-gray;
+  margin-top: 1px 0px 1px 0px;
+}
+
+// Review Modal
 
 .modal-content {
   margin-top: 45%;
@@ -159,12 +170,6 @@
   color: $black;
   font: 500 16px $body-font;
 }
-
-// .review-title {
-//   font-family: $body-font;
-//   color: $black;
-//   font-weight: 500;
-// }
 
 .btn.btn-primary.review {
   width: 100%;
@@ -257,11 +262,31 @@
   padding: 0px;
 }
 
-.list-group-item.review-content {
-  border: none;
-}
 
-.review-show-line {
-  border-top: 0.3px solid $border-gray;
-  margin-top: 1px 0px 1px 0px;
-}
+// .review-button {
+//   background-color: black;
+//   color: white;
+//   padding-top: 5px;
+//   margin-bottom: 10px;
+//   margin-top: 10px;
+//   margin-left: 10px;
+// }
+
+// .review-button:hover {
+//   background-color: $black-hover;
+//   color: white;
+// }
+
+// .review-title {
+//   font-family: $body-font;
+//   color: $black;
+//   font-weight: 500;
+// }
+
+// .beer-brewery {
+//   font-family: $body-font;
+//   font-size: 16px;
+//   font-weight: 500;
+//   color: $med-gray;
+//   color: $black;
+// }
