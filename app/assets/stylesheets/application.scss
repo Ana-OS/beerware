@@ -30,12 +30,10 @@
 @import "registrations/_login";
 @import "registrations/_settings";
 
-// Map
-@import "popup";
-
 // Pages
 @import "pages/_map";
 @import "pages/_search";
+@import "pages/popup";
 
 // Pages
 @import "users/_profile";

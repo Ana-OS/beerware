@@ -6,9 +6,8 @@
 }
 
 .my-profile h1 {
-  font-size: 24px;
   color: $menu-buttons;
-  font-family: $headers-font;
+  font: 500 24px $headers-font;
 }
 
 .profile-action-btns {
@@ -19,9 +18,7 @@
 
 .profile-action-btns a {
   color: $med-gray;
-  font-family: $body-font;
-  font-size: 16px;
-  font-weight: 200;
+  font: 200 16px $body-font;
 }
 
 .profile-action-btns a:nth-child(1) {
@@ -41,18 +38,15 @@
 .profile-user-photo .avatar-large {
   width: 100px;
   height: auto;
-  border: solid;
-  border-color: $border-gray;
-  border-width: 0.5px;
+  border: solid 0.5px $border-gray;
   box-shadow: 0px 0px 4px rgba(191, 191, 191, 0.25);
 }
 
 .profile-user-name {
   color: $black;
-  font-size: 16px;
-  font-weight: 700;
+  font: 700 16px $body-font;
   margin-top: 14px;
-  font-family: $body-font;
+  padding-bottom: 10px;
 }
 
 .profile-user-first-name {
@@ -70,10 +64,10 @@
 }
 
 .user-lists {
-  height: 82px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 82px;
   margin-bottom: 15px;
 }
 
@@ -95,27 +89,37 @@
   box-shadow: 0px 4px 4px 0px #c6c6c62c;
 }
 
-.user-lists p:nth-child(1) {
+#show-drank-list-btn {
   color: $med-gray;
+  font: 400 16px $body-font;
   margin: 0px;
-  font-family: $body-font;
-  padding-top: 20px;
 }
 
-.user-lists p:nth-child(2) {
+#show-to-drink-list-btn {
+  color: $med-gray;
+  font: 400 16px $body-font;
+  margin: 0px;
+}
+
+.profile-to-drink-list p {
   color: $black;
-  font-weight: bold;
+  font: 700 16px $body-font;
+  padding: 10px 0px 10px 0px;
   margin: 0px;
-  font-family: $body-font;
-  padding-bottom: 20px;
 }
 
+.profile-drank-list p {
+  color: $black;
+  font: 700 16px $body-font;
+  padding: 10px 0px 10px 0px;
+  margin: 0px;
+}
 
 .beers-to-drink-images {
-  margin: 10px, 4px, 0px, 4px;
   display: grid;
   justify-content: center;
   align-items: center;
+  margin: 10px, 4px, 0px, 4px;
 }
 
 .row.image-grid img {
@@ -141,16 +145,14 @@
 
 .content img {
   width: 100%;
-  border: solid;
-  border-width: 0.5px;
-  border-color: $light-gray;
+  border: solid 0.5px $light-gray;
   border-radius: 5px;
   box-shadow: 0px 0px 4px 0px #e5e5e55e;
 
 }
 
 #show-to-drink-list-btn{
-  font-family: Roboto;
+  font-family: $body-font;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
