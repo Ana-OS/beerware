@@ -24,7 +24,6 @@
 
     <!-- Search -->
       <div class="col col-10">
-
         <%= form_tag search_page_path, method: :get do %>
           <%= text_field_tag :query,
             params[:query],
@@ -64,49 +63,55 @@
         <h4 class="bars-title"> Recommended Beers </h4>
 
         <% @beers.each do |beer| %>
-            <div class="card beers">
-              <%= link_to beer_path(beer), data: { turbolinks: false } do %>
-                <div class="row">
-                  <div class="col-sm-3 col-5">
+          <div class="card beers">
+            <%= link_to beer_path(beer), data: { turbolinks: false } do %>
+              <div class="row">
+                <div class="col-sm-3 col-5">
+                  <%= link_to beer_path(beer) do %>
                     <% if beer.photo.attached? %>
                       <%= cl_image_tag beer.photo.key, height: 100, width: 80, crop: :fit, class: "img-fluid" %>
                     <% else %>
-                      <%= image_tag "https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg", class: "img-fluid" %>
-                      <% end %>
-                  </div>
-                  <div class="col-sm-9 col-7 pl-0 beers">
-                    <div class="card-beer-infos">
-                      <div class="name-rating">
-                        <h2 class="card-beer-name"><%= h truncate(beer.name, :length => 15) %></h2>
-                        <div class="card-beer-rating"><%= beer.avg_rating %></div>
-                      </div>
-                      <p class="card-beer-category"><%= h truncate(beer.category, :length => 25) %></p>
-                      <p class="card-beer-description"><%= h truncate(beer.description, :length => 90) %></p>
-                    </div>
-                  </div>
+                      <%= image_tag "https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png", class: "img-fluid" %>
+                    <% end %>
+                  <% end %>
                 </div>
-              <% end %>
-            </div>
-          <% end %>
-
-        <h4 class="bars-title">Recommended Bars</h4>
-
-        <% @bars.each do |bar| %>
-          <div class="card bars">
-            <%= link_to bar_path(bar) do %>
-              <div class="row">
-                <div class="col-sm-3 col-5">
-                  <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
-                </div>
-                <div class="col-sm-9 col-7 pl-0 bars">
-                  <div class="card-bars-infos">
-                    <h2 class="card-bars-name"><%= h truncate(bar.name, :length => 15) %></h2>
-                    <p class="card-bars-location"><%= h truncate(bar.location, :length => 25) %></p>
-                    <p class="card-bars-description"><%= h truncate(bar.description, :length => 90) %></p>
+                <div class="col-sm-9 col-7 pl-0 beers">
+                  <div class="card-beer-infos" >
+                    <%= link_to beer_path(beer) do %>
+                      <h2 class="card-beer-name"><%= h truncate(beer.name, :length => 25) %></h2>
+                      <p class="card-beer-category"><%=h truncate(beer.category, :length => 25) %></p>
+                      <p class="card-beer-description"><%=h truncate(beer.description, :length => 90) %></p>
+                    <% end %>
                   </div>
                 </div>
               </div>
             <% end %>
+          </div>
+        <% end %>
+
+        <h4 class="bars-title">Recommended Bars</h4>
+
+        <% @bars.each do |bar| %>
+          <div class="card bars" >
+            <div class="row" >
+
+              <div class="col-sm-3 col-5">
+                <%= link_to bar_path(bar) do %>
+                  <%= image_tag "https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg", class: "img-fluid" %>
+                <% end %>
+              </div>
+
+              <div class="ol-sm-9 col-7 pl-0 bars">
+                <div class="card-bars-infos">
+                  <%= link_to bar_path(bar) do %>
+                    <h2 class="card-bars-name"><%=h truncate(bar.name, :length => 25) %></h2>
+                    <p class="card-bars-location"><%=h truncate(bar.location, :length => 25) %></p>
+                    <p class="card-bars-description"><%=h truncate(bar.description, :length => 90) %></p>
+                 <% end %>
+                </div>
+              </div>
+
+            </div>
           </div>
         <% end %>
 
@@ -122,7 +127,11 @@
 
                 <div class="col-sm-3 col-5">
                   <%= link_to beer_path(beer) do %>
-                    <img src="https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png" class="img-fluid" />
+                    <% if beer.photo.attached? %>
+                      <%= cl_image_tag beer.photo.key, height: 100, width: 80, crop: :fit, class: "img-fluid" %>
+                    <% else %>
+                      <%= image_tag "https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png", class: "img-fluid" %>
+                    <% end %>
                   <% end %>
                 </div>
 
@@ -153,7 +162,11 @@
 
                 <div class="col-sm-3 col-5">
                   <%= link_to bar_path(bar) do %>
-                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
+                    <% if beer.photo.attached? %>
+                      <%= cl_image_tag beer.photo.key, height: 100, width: 80, crop: :fit, class: "img-fluid" %>
+                    <% else %>
+                      <%= image_tag "https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png", class: "img-fluid" %>
+                    <% end %>
                   <% end %>
                 </div>
 
@@ -169,13 +182,13 @@
 
               </div>
             </div>
+
           <% end %>
         <% end %>
       <% end %>
+
     </div>
   </div>
 </div>
-
-
 
 

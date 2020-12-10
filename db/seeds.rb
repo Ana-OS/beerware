@@ -139,24 +139,45 @@ puts "beers created"
 
 puts "adding photos"
 
-file = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249754/Beerware/Beers/dois_yy0rws.webp')
-doisCorvos.photo.attach(io: file, filename: 'filename.png', content_type: 'image/png')
-file1 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249850/Beerware/Beers/8a_dpwkqp.jpg')
-oitavaColina.photo.attach(io: file1, filename: 'filename.png', content_type: 'image/png')
-file2 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249851/Beerware/Beers/351_v59f4u.jpg')
-tresCincoUm.photo.attach(io: file2, filename: 'filename.png', content_type: 'image/png')
-file3 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250220/Beerware/Beers/florinda_ndykgp.webp')
-florinda.photo.attach(io: file3, filename: 'filename.png', content_type: 'image/png')
-file4 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/nortada_aqjotn.jpg')
-nortada.photo.attach(io: file4, filename: 'filename.png', content_type: 'image/png')
-file5 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/mean_s_o96ql7.jpg')
-meanSardine.photo.attach(io: file5, filename: 'filename.png', content_type: 'image/png')
-file6 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/bilitre_uybubq.jpg')
-biltre.photo.attach(io: file6, filename: 'filename.png', content_type: 'image/png')
-file7 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250124/Beerware/Beers/matilda_wxpr4g.jpg')
-maldita.photo.attach(io: file7, filename: 'filename.png', content_type: 'image/png')
-file8 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606247256/Beerware/Beers/mick_copo_blsgxn.png')
-mickLager.photo.attach(io: file8, filename: 'filename.png', content_type: 'image/png')
+
+doisCorvos = Beer.find_by(name:'Dois Corvos')
+doisCorvos.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249754/Beerware/Beers/dois_yy0rws.webp'
+doisCorvos.save
+
+
+oitavaColina = Beer.find_by(name:'8ª Colina')
+oitavaColina.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249850/Beerware/Beers/8a_dpwkqp.jpg')
+oitavaColina.save
+
+tresCincoUm = Beer.find_by(name:'+351')
+tresCincoUm.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249851/Beerware/Beers/351_v59f4u.jpg')
+tresCincoUm.save
+
+florinda = Beer.find_by(name:'Florinda')
+florinda.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250220/Beerware/Beers/florinda_ndykgp.webp'
+florinda.save
+
+nortada = Beer.find_by(name:'Nortada')
+nortada.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/nortada_aqjotn.jpg'
+nortada.save
+
+
+meanSardine = Beer.find_by(name:'Mean Sardine')
+meanSardine.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/mean_s_o96ql7.jpg'
+meanSardine.save
+
+
+biltre = Beer.find_by(name:'Biltre')
+biltre.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/bilitre_uybubq.jpg'
+biltre.save
+
+maldita = Beer.find_by(name:'Maldita')
+maldita.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250124/Beerware/Beers/matilda_wxpr4g.jpg'
+maldita.save
+
+mickLager = Beer.find_by(name:'Mick Lager')
+mickLager.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606247256/Beerware/Beers/mick_copo_blsgxn.png'
+mickLager.save
 
 
 BarsBeer.create(beer:oitavaColina, bar: cervejaCanil)
