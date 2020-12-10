@@ -94,8 +94,8 @@
           <% @to_drink.each do |beer| %>
             <div class="item photo">
               <div class="content">
-                <% if beer.photo.attached? %>
-                  <%= cl_image_tag beer.photo.key, height: 400, width: 400, crop: :fit %>
+                <% if beer.photo_url %>
+                  <%= image_tag beer.photo_url, height: 400, width: 400, crop: :fit %>
                 <% else %>
                   <%= image_tag "https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg", class: "img-fluid" %>
                 <% end %>
@@ -118,8 +118,8 @@
           <% @drank.each do |beer| %>
             <div class="item photo">
               <div class="content">
-                <% if beer.photo.attached? %>
-                  <%= cl_image_tag beer.photo.key, height: 400, width: 400, crop: :fit %>
+                <% if beer.photo_url %>
+                  <%= image_tag beer.photo_url, height: 400, width: 400, crop: :fit %>
                 <% else %>
                   <%= image_tag "https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg", class: "img-fluid" %>
                 <% end %>
@@ -127,9 +127,8 @@
             </div>
           <% end %>
       </div>
-
   </div>
-   <% end %>
+  <% end %>
 </div>
 
 
