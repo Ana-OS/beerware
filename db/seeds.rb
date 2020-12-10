@@ -146,11 +146,11 @@ doisCorvos.save
 
 
 oitavaColina = Beer.find_by(name:'8ª Colina')
-oitavaColina.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249850/Beerware/Beers/8a_dpwkqp.jpg')
+oitavaColina.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249850/Beerware/Beers/8a_dpwkqp.jpg'
 oitavaColina.save
 
 tresCincoUm = Beer.find_by(name:'+351')
-tresCincoUm.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249851/Beerware/Beers/351_v59f4u.jpg')
+tresCincoUm.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249851/Beerware/Beers/351_v59f4u.jpg'
 tresCincoUm.save
 
 florinda = Beer.find_by(name:'Florinda')
