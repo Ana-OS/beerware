@@ -60,8 +60,8 @@
             <div class="row">
               <div class="col-sm-3 col-5">
                 <%= link_to beer_path(beer), data: { turbolinks: false } do %>
-                  <% if @beer.photo_url? %>
-                    <%= image_tag @beer.photo_url, class: "img-fluid" %>
+                  <% if beer.photo_url? %>
+                    <%= image_tag beer.photo_url, class: "img-fluid" %>
                   <% else %>
                     <%= image_tag "https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png", class: "img-fluid" %>
                   <% end %>
