@@ -27,6 +27,7 @@
     background-color: white;
     padding: 7px 12% 0;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+    padding-bottom: 50px;
   }
 
   .rails-default-error-page h1 {
@@ -38,7 +39,7 @@
   }
 
   .dialog p {
-    padding-bottom: 10px;
+    padding-bottom: 20px;
   }
 
   .button-dark {
@@ -48,10 +49,12 @@
     padding-right: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
+    padding-top: 15px;
     border-radius: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     font-family: Roboto;
     font-size: 15px;
+    outline: none !important;
   }
 
   </style>
@@ -63,7 +66,7 @@
     <div>
       <h1>Uh oh! You're lost &#129300; </h1>
       <p>The page you are looking for does not exist. How you got here is a mystery.</p>
-      <button type="button" class="button-dark">Take me to the home</button>
+      <a href="/landing" type="button" class="button-dark">Take me to the home</a>
     </div>
   </div>
 </body>
