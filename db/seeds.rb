@@ -118,10 +118,10 @@ aWalkInMadeira = Beer.create( name: 'A Walk In Madeira', category: 'IPA - Americ
 portucale = Beer.create( name: 'Portucale', category: 'Stout - Imperial / Double', alcohol: '11', ibu: '', brewery: 'Mean Sardine', description: 'Com Figo e Vinho do Porto.' )
 blommerMadeira = Beer.create( name: 'Blommer I Madeira', category: 'Stout - Imperial / Double', alcohol: '12', ibu: 80, brewery: 'Mean Sardine', description: 'Collaboration with To Øl. Imperial stout aged in Madeira barrels with plums.' )
 
-trezentosIpa = Beer.create( name: '+351 IPA', category: 'IPA - International', alcohol: '6.5', ibu: 55, brewery: 'Cervejeira +351', description: 'No description yet' )
-trezentosCervejaPaleAle = Beer.create( name: '+351 Cerveja Pale Ale', category: 'Pale Ale - International', alcohol: '5', ibu: 25, brewery: 'Cervejeira +351', description: 'No description yet' )
-trezentosWeiss = Beer.create( name: '+351 Weiss', category: 'Hefeweizen', alcohol: '4.5', ibu: 13, brewery: 'Cervejeira +351', description: 'No description yet' )
-trezentosBlackIpa = Beer.create( name: '+351 Black IPA', category: 'IPA - Black / Cascadian Dark Ale', alcohol: '5', ibu: 25, brewery: 'Cervejeira +351', description: 'No description yet' )
+trezentosIpa = Beer.create( name: '+351 IPA', category: 'IPA - International', alcohol: '6.5', ibu: 55, brewery: 'Cervejeira +351', description: 'This specimen has a subtle aroma with notes of citrus. Good translucency with white foam and amber body.' )
+trezentosCervejaPaleAle = Beer.create( name: '+351 Cerveja Pale Ale', category: 'Pale Ale - International', alcohol: '5', ibu: 25, brewery: 'Cervejeira +351', description: 'A gateway to the world of craft beer. Golden, clear foam, medium carbonation, very fresh.' )
+trezentosWeiss = Beer.create( name: '+351 Weiss', category: 'Hefeweizen', alcohol: '4.5', ibu: 13, brewery: 'Cervejeira +351', description: 'Aroma of wheat and fruity banana. Straw yellow color. Smooth malt flavor and well balanced with citric acid. Light body.' )
+trezentosBlackIpa = Beer.create( name: '+351 Black IPA', category: 'IPA - Black / Cascadian Dark Ale', alcohol: '5', ibu: 25, brewery: 'Cervejeira +351', description: 'It has a fruity aroma and toasted grains. It has a black and cloudy color, medium intensity body but very soft. Leaves a slight bitterness on the palate. Rich in flavor!' )
 
 
 
