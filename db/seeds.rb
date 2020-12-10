@@ -30,7 +30,7 @@ hoppyHouseBrewing = Bar.create( name: 'Hoppy House Brewing', description: 'Como 
 trevo = Bar.create( name: 'Trevo', description: 'A Trevo foi criada em 2016 por dois irlandeses e um português. Tiveram a ideia de fazer esta marca depois da vitória de Portugal no Campeonato da Europa de futebol em França nesse ano. Apresentaram algumas receitas no Concurso Nacional de Cerveja Artesanal e conquistaram o segundo lugar na categoria de Double IPA.', street_address: 'R. Rodrigues de Faria 103, 1300-501, Lisbon', location: 'Alcântara', city: 'Lisbon', country: 'Portugal' )
 craftyCorner = Bar.create( name: 'Crafty Corner', description: 'Located in a converted warehouse in downtown Lisbon, Crafty Corner’s banquet benches and large elegant shop windows make it the perfect place to breathe in the local scenery, socialise with fellow enthusiasts, and taste Portugal\'s exquisite craft beers.', street_address: 'Travessa Corpo Santo 15, 1200-131, Lisbon', location: 'Cais do Sodré', city: 'Lisbon', country: 'Portugal' )
 oitavaColinaTaproom = Bar.create( name: 'Oitava Colina - Taproom', description: 'Mais do que um pub. O nosso primeiro taproom é um destino e uma bandeira do bairro da Graça. No 8A da Rua Damasceno Monteiro ficam as 10 torneiras com uma vista única sobre Lisboa e um ambiente que nos faz sentir em casa. Beer, foods & friends! É o que mais gostamos.', street_address: 'Rua Damasceno Monteiro, nº 8A, Lisbon', location: 'Lisbon', city: 'Lisbon', country: 'Portugal' )
-oitvaMarques = Bar.create( name: 'Oitva Marquês', description: 'No 85 da Duque de Loulé vive-se numa paixão frenética entre pizza e cerveja. O Chef Thomas Mancini tira do forno deliciosas pizzas de inspiração napolitana, enquanto que das 14 torneiras de cerveja jorram as mais frescas maravilhas da Oitava Colina.', street_address: 'Av. Duque de Loulé, nº 85, Lisbon', location: 'Marquês de Pombal', city: 'Lisbon', country: 'Portugal' )
+oitavaMarques = Bar.create( name: 'Oitva Marquês', description: 'No 85 da Duque de Loulé vive-se numa paixão frenética entre pizza e cerveja. O Chef Thomas Mancini tira do forno deliciosas pizzas de inspiração napolitana, enquanto que das 14 torneiras de cerveja jorram as mais frescas maravilhas da Oitava Colina.', street_address: 'Av. Duque de Loulé, nº 85, Lisbon', location: 'Marquês de Pombal', city: 'Lisbon', country: 'Portugal' )
 
 
 
@@ -203,7 +203,7 @@ BarsBeer.create(beer:avenida, bar: outroLado)
 BarsBeer.create(beer:tresCincoUm, bar: outroLado)
 
 BarsBeer.create(beer:tresCincoUm, bar: fabricaMusa)
-BarsBeer.create(beer:bornInTheIpa, bar: mfabricaMusa)
+BarsBeer.create(beer:bornInTheIpa, bar: fabricaMusa)
 BarsBeer.create(beer:frankApa, bar: fabricaMusa)
 BarsBeer.create(beer:blondie, bar: fabricaMusa)
 BarsBeer.create(beer:iggyBop, bar: fabricaMusa)
@@ -435,16 +435,16 @@ BarsBeer.create(beer:doisCorvos, bar: oitavaColinaTaproom)
 BarsBeer.create(beer:mickLager, bar: oitavaColinaTaproom)
 BarsBeer.create(beer:maldita, bar: oitavaColinaTaproom)
 
-BarsBeer.create(beer:oitavaColina, bar: oitvaMarques)
-BarsBeer.create(beer:meanSardine, bar: oitvaMarques)
-BarsBeer.create(beer:doisCorvos, bar: oitvaMarques)
-BarsBeer.create(beer:mickLager, bar: oitvaMarques)
-BarsBeer.create(beer:maldita, bar: oitvaMarques)
-BarsBeer.create(beer:bornInTheIpa, bar: oitvaMarques)
-BarsBeer.create(beer:frankApa, bar: oitvaMarques)
-BarsBeer.create(beer:blondie, bar: oitvaMarques)
-BarsBeer.create(beer:iggyBop, bar: oitvaMarques)
-BarsBeer.create(beer:romaria, bar: oitvaMarques)
+BarsBeer.create(beer:oitavaColina, bar: oitavaMarques)
+BarsBeer.create(beer:meanSardine, bar: oitavaMarques)
+BarsBeer.create(beer:doisCorvos, bar: oitavaMarques)
+BarsBeer.create(beer:mickLager, bar: oitavaMarques)
+BarsBeer.create(beer:maldita, bar: oitavaMarques)
+BarsBeer.create(beer:bornInTheIpa, bar: oitavaMarques)
+BarsBeer.create(beer:frankApa, bar: oitavaMarques)
+BarsBeer.create(beer:blondie, bar: oitavaMarques)
+BarsBeer.create(beer:iggyBop, bar: oitavaMarques)
+BarsBeer.create(beer:romaria, bar: oitavaMarques)
 
 
 
