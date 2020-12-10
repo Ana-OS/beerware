@@ -11,10 +11,11 @@
   </div>
   <!-- Beer image -->
   <div class="list-unstyled beer-info-top">
-    <% if @beer.photo.attached? %>
-      <%= cl_image_tag @beer.photo.key, height: 400, width: 400, crop: :fit %>
+    <% if @beer.photo_url? %>
+      <%= image_tag @beer.photo_url, class: "img-fluid" %>
+      <!-- cl_image_tag @beer.photo.key, height: 400, width: 400, crop: :fit %> -->
     <% else %>
-      <%= image_tag "https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg", class: "img-fluid" %>
+      <%= image_tag "https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png", class: "img-fluid" %>
     <% end %>
   <!-- Add and check icons -->
     <div class = "check-plus-buttons">
@@ -74,7 +75,7 @@
             <% end %>
             <% (5 - current_user.reviews.where(beer_id: @beer).last.rating).times do %>
               <i class="far fa-star"></i>
-            <% end %> 
+            <% end %>
           </p>
         <% end %>
       </div>

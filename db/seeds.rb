@@ -13,11 +13,11 @@ BarsBeer.destroy_all
 Beer.destroy_all
 Bar.destroy_all
 
+puts 'adding bars'
 cervejaCanil = Bar.create(name: 'Cerveja Canil', description: 'The Cerveja Canil is the greatest reference in craft beer in Portugal. With 32 taps (the biggest in the country) and over a hundred bottled labels, we are always looking for what is new and best in Portuguese crafbeer.', street_address: 'Rua dos Douradores 133, Lisbon', location: 'Baixa', city: 'Lisbon', country: 'Portugal')
 musaDaBica = Bar.create(name: 'Musa da Bica - Craft Beer Bar', description: 'Musa da Bica is Cerveja Musa\'s new taproom in one of Lisbon\'s most historic neighborhoods; Bica. We have 15 open taps and a food menu that complements them perfectly. Come check it out!', street_address: 'Calcada Salvador Correia de Sa 2, Lisbon', location: 'Bica', city: 'Lisbon', country: 'Portugal')
 fabricaMusa = Bar.create(name: 'Fábrica Musa', description: 'Musa da Bica is Cerveja Musa\'s new taproom in one of Lisbon\'s most historic neighborhoods; Bica. We have 15 open taps and a food menu that complements them perfectly. Come check it out!', street_address: '83 Rua do Açúcar, Lisbon', location: 'Marvila', city: 'Lisbon', country: 'Portugal')
 outroLado = Bar.create(name: 'Outro Lado', description: 'Musa da Bica is Cerveja Musa\'s new taproom in one of Lisbon\'s most historic neighborhoods; Bica. We have 15 open taps and a food menu that complements them perfectly. Come check it out!', street_address: '1 Beco do Arco Escuro, Lisbon', location: 'Alfama', city: 'Lisbon', country: 'Portugal')
-
 deliriumCafe = Bar.create(name: 'Delirium Cafe', description: 'A Baixa de Lisboa foi invadida por elefantes cor de rosa e não tem nada a ver com alguma substância ilícita que possa ter tomado. A culpa é do novo bar de cervejas na cidade onde o paquiderme em tons rosa vive um pouco por todo o lado: nas paredes, nos copos, nas bases, nas torneiras, nas mesas e até garrafas. Chama-se Delirium Café.', street_address:'Calçada Nova de São Francisco, 2 A, Lisbon', location: 'Chiado', city: 'Lisbon', country: 'Portugal')
 beerStation= Bar.create(name: 'Beer station', description: 'Junto à estação do Rossio e mais virada para os turistas que por ali passam, a Beer Station é um pequeno bar de cervejas artesanais dos mesmos donos do Wine & Pisco, ali mesmo ao lado. Começou por misturar cerveja artesanal lisboeta e internacional, mas mais recentemente afastou-se do estrangeiro. Neste momento, só vale cerveja portuguesa, espalhada por 12 torneiras e mais de 50 referências em garrafa.', street_address: 'Largo Duque de Cadaval 17, Quiosque D, 1200-160, Lisbon', location: 'Rossio', city: 'Lisbon', country: 'Portugal')
 cerveteca = Bar.create(name: 'Cerveteca', description: 'As cervejas artesanais são feitas de valores, de ideias, de conceitos. Têm um nome e um rosto associados. São feitas por pessoas reais, que amam as suas cervejas e que nelas imprimem o cunho do seu país, da sua cidade, do seu bairro, da sua casa, da sua vida. Pessoas que são felizes quando partilham - literalmente - a paixão que os move, todos os dias. Foi com base neste conceito que nasceu a Cerveteca Lisboa. Um lugar para partilhar e apreciar muito mais do que cabe numa simples garrafa de cerveja.', street_address: 'Praça das Flores 63, 1200-192, Lisbon', location: 'Príncipe Real', city: 'Lisbon', country: 'Portugal')
@@ -39,12 +39,95 @@ trevo = Bar.create( name: 'Trevo', description: 'A Trevo foi criada em 2016 por 
 craftyCorner = Bar.create( name: 'Crafty Corner', description: 'Located in a converted warehouse in downtown Lisbon, Crafty Corner’s banquet benches and large elegant shop windows make it the perfect place to breathe in the local scenery, socialise with fellow enthusiasts, and taste Portugal\'s exquisite craft beers.', street_address: 'Travessa Corpo Santo 15, 1200-131, Lisbon', location: 'Cais do Sodré', city: 'Lisbon', country: 'Portugal' )
 oitavaColinaTaproom = Bar.create( name: 'Oitava Colina - Taproom', description: 'Mais do que um pub. O nosso primeiro taproom é um destino e uma bandeira do bairro da Graça. No 8A da Rua Damasceno Monteiro ficam as 10 torneiras com uma vista única sobre Lisboa e um ambiente que nos faz sentir em casa. Beer, foods & friends! É o que mais gostamos.', street_address: 'Rua Damasceno Monteiro, nº 8A, Lisbon', location: 'Lisbon', city: 'Lisbon', country: 'Portugal' )
 oitvaMarques = Bar.create( name: 'Oitva Marquês', description: 'No 85 da Duque de Loulé vive-se numa paixão frenética entre pizza e cerveja. O Chef Thomas Mancini tira do forno deliciosas pizzas de inspiração napolitana, enquanto que das 14 torneiras de cerveja jorram as mais frescas maravilhas da Oitava Colina.', street_address: 'Av. Duque de Loulé, nº 85, Lisbon', location: 'Marquês de Pombal', city: 'Lisbon', country: 'Portugal' )
-
-
-
 puts 'bars created'
 
+puts 'adding bar photos'
+cervejaCanil = Bar.find_by(name: 'Cerveja Canil')
+cervejaCanil.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462253/Beerware/Bars/Cerveja_canil_cg3hcp.jpg'
+cervejaCanil.save
+musaDaBica = Bar.find_by(name: 'Musa da Bica - Craft Beer Bar')
+musaDaBica.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462246/Beerware/Bars/musa_da_bica_g9h5nk.jpg'
+musaDaBica.save
+fabricaMusa = Bar.find_by(name: 'Fábrica Musa')
+fabricaMusa.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462253/Beerware/Bars/fabrica_da_musa_qsqycl.jpg'
+fabricaMusa.save
+outroLado = Bar.find_by(name: 'Outro Lado')
+outroLado.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607616541/Beerware/Bars/outro_lado_yhtchw.jpg'
+outroLado.save
+deliriumCafe = Bar.find_by(name: 'Delirium Cafe')
+deliriumCafe.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462251/Beerware/Bars/Delirium_cafe_ae3vzw.jpg'
+deliriumCafe.save
+beerStation= Bar.find_by(name: 'Beer station')
+beerStation.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462254/Beerware/Bars/Beer_station_dyfmah.jpg'
+beerStation.save
+cerveteca = Bar.find_by(name: 'Cerveteca')
+cerveteca.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462253/Beerware/Bars/Cerveteca__ldqv5e.jpg'
+cerveteca.save
+sputnik = Bar.find_by(name: 'Sputnik')
+sputnik.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462252/Beerware/Bars/sputnik_avrkrr.jpg'
+sputnik.save
+cervejaLince = Bar.find_by(name: 'Cerveja Lince')
+cervejaLince.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462254/Beerware/Bars/Cerveja_lince_hxuudu.jpg'
+cervejaLince.save
+duqueBrewpub = Bar.find_by(name: 'Duque Brewpub')
+duqueBrewpub.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462253/Beerware/Bars/Duque_brewpub_u1hhb4.jpg'
+duqueBrewpub.save
+quimera = Bar.find_by(name: 'Quimera Brewpub')
+quimera.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462251/Beerware/Bars/Quimera_Brewpub_jcvp8n.jpg'
+quimera.save
+piratasCervejeiros = Bar.find_by( name: 'Piratas Cervejeiros')
+piratasCervejeiros.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607606205/Beerware/Bars/83901_Piratas_jbjwvx.jpg'
+piratasCervejeiros.save
+amoBrewery = Bar.find_by( name: 'A.M.O. Brewery')
+amoBrewery.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462254/Beerware/Bars/AMO_brewery_eogyzn.png'
+amoBrewery.save
+beerCascais = Bar.find_by( name: 'Beer Cascais')
+beerCascais.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462253/Beerware/Bars/beer_cascais_nqjxyk.jpg'
+beerCascais.save
+patoBrewering = Bar.find_by( name: 'Pato Brewering - Tap Room')
+patoBrewering.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462251/Beerware/Bars/Pata_brewery_ewxhwb.jpg'
+patoBrewering.save
+deBru = Bar.find_by( name: 'DeBru')
+deBru.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462254/Beerware/Bars/Debru_ph4yss.jpg'
+deBru.save
+cervejariaArtesanalAdamastor = Bar.find_by( name: 'Cervejaria Artesanal Adamastor')
+cervejariaArtesanalAdamastor.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462260/Beerware/Bars/ArtesanaLis_Bottle_Shop_mbrtew.jpg'
+cervejariaArtesanalAdamastor.save
+florLupulo = Bar.find_by( name: 'Flor de Lúpulo')
+florLupulo.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462252/Beerware/Bars/Flor_de_Lu%CC%81pulo_ay3fk0.webp'
+florLupulo.save
+naMedida = Bar.find_by( name: 'Na Medida')
+naMedida.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462251/Beerware/Bars/Na_Medida_euydx1.jpg'
+naMedida.save
+brewpubGallas = Bar.find_by( name: '21 Brewpub Gallas')
+brewpubGallas.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462250/Beerware/Bars/21_Gallas_bak3rd.jpg'
+brewpubGallas.save
+hoppyHouseBrewing = Bar.find_by( name: 'Hoppy House Brewing')
+hoppyHouseBrewing.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462252/Beerware/Bars/Hoppy_House_Brewing_nalaka.jpg'
+hoppyHouseBrewing.save
+trevo = Bar.find_by( name: 'Trevo')
+trevo.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607606299/Beerware/Bars/trevo_tsz1wn.webp'
+trevo.save
+craftyCorner = Bar.find_by( name: 'Crafty Corner')
+craftyCorner.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462248/Beerware/Bars/Crafty_corner_ullvd3.png'
+craftyCorner.save
+oitavaColinaTaproom = Bar.find_by( name: 'Oitava Colina - Taproom')
+oitavaColinaTaproom.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462267/Beerware/Bars/8_colina_Grac%CC%A7a_akat6k.jpg'
+oitavaColinaTaproom.save
+oitvaMarques = Bar.find_by( name: 'Oitva Marquês')
+oitvaMarques.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462254/Beerware/Bars/8_colina_Marques_pceqnl.jpg'
+oitvaMarques.save
+# https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462267/Beerware/Bars/8_colina_Grac%CC%A7a_akat6k.jpg
+# https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462260/Beerware/Bars/ArtesanaLis_Bottle_Shop_mbrtew.jpg
+# https://res.cloudinary.com/di6k1pdz4/image/upload/v1607462254/Beerware/Bars/8_colina_Marques_pceqnl.jpg
+#
+#
+#
+puts 'bars photos attached'
+
+puts 'creting beers'
 doisCorvos = Beer.create(name:'Dois Corvos', category: 'Blonde Ale', alcohol:'4', ibu: 3, brewery: 'Dois Corvos', description: 'So good')
+
 oitavaColina = Beer.create(name:'8ª Colina', category: 'IPA', alcohol:'5.1', ibu: 4, brewery: 'Oitava Colina', description: 'So awesome')
 mickLager = Beer.create(name:'Mick Lager', category: 'Vienna Lager', alcohol:'4.5', ibu: 20, brewery: 'Cerveja Musa', description: 'Amber colour. Toasted malt notes complemented by an assertive bouquet of german hops. Delicate and smooth. One problem though: an irresistible urge to keep drinking.')
 tresCincoUm = Beer.create(name:'+351', category: 'Weiss', alcohol:'3.3', ibu: 2, brewery: 'Cervejaria +351', description: 'Refreshing and light')
@@ -130,35 +213,33 @@ trezentosIpa = Beer.create( name: '+351 IPA', category: 'IPA - International', a
 trezentosCervejaPaleAle = Beer.create( name: '+351 Cerveja Pale Ale', category: 'Pale Ale - International', alcohol: '5', ibu: 25, brewery: 'Cervejeira +351', description: 'No description yet' )
 trezentosWeiss = Beer.create( name: '+351 Weiss', category: 'Hefeweizen', alcohol: '4.5', ibu: 13, brewery: 'Cervejeira +351', description: 'No description yet' )
 trezentosBlackIpa = Beer.create( name: '+351 Black IPA', category: 'IPA - Black / Cascadian Dark Ale', alcohol: '5', ibu: 25, brewery: 'Cervejeira +351', description: 'No description yet' )
-
-
-
-
 puts "beers created"
 
 
 puts "adding photos"
+# file = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249754/Beerware/Beers/dois_yy0rws.webp')
+# doisCorvos.photo.attach(io: file, filename: 'filename.png', content_type: 'image/png')
+# file1 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249850/Beerware/Beers/8a_dpwkqp.jpg')
+# oitavaColina.photo.attach(io: file1, filename: 'filename.png', content_type: 'image/png')
+# file2 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249851/Beerware/Beers/351_v59f4u.jpg')
+# tresCincoUm.photo.attach(io: file2, filename: 'filename.png', content_type: 'image/png')
+# file3 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250220/Beerware/Beers/florinda_ndykgp.webp')
+# florinda.photo.attach(io: file3, filename: 'filename.png', content_type: 'image/png')
+# file4 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/nortada_aqjotn.jpg')
+# nortada.photo.attach(io: file4, filename: 'filename.png', content_type: 'image/png')
+# file5 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/mean_s_o96ql7.jpg')
+# meanSardine.photo.attach(io: file5, filename: 'filename.png', content_type: 'image/png')
+# file6 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/bilitre_uybubq.jpg')
+# biltre.photo.attach(io: file6, filename: 'filename.png', content_type: 'image/png')
+# file7 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250124/Beerware/Beers/matilda_wxpr4g.jpg')
+# maldita.photo.attach(io: file7, filename: 'filename.png', content_type: 'image/png')
+# file8 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606247256/Beerware/Beers/mick_copo_blsgxn.png')
+# mickLager.photo.attach(io: file8, filename: 'filename.png', content_type: 'image/png')
 
-file = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249754/Beerware/Beers/dois_yy0rws.webp')
-doisCorvos.photo.attach(io: file, filename: 'filename.png', content_type: 'image/png')
-file1 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249850/Beerware/Beers/8a_dpwkqp.jpg')
-oitavaColina.photo.attach(io: file1, filename: 'filename.png', content_type: 'image/png')
-file2 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249851/Beerware/Beers/351_v59f4u.jpg')
-tresCincoUm.photo.attach(io: file2, filename: 'filename.png', content_type: 'image/png')
-file3 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250220/Beerware/Beers/florinda_ndykgp.webp')
-florinda.photo.attach(io: file3, filename: 'filename.png', content_type: 'image/png')
-file4 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/nortada_aqjotn.jpg')
-nortada.photo.attach(io: file4, filename: 'filename.png', content_type: 'image/png')
-file5 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/mean_s_o96ql7.jpg')
-meanSardine.photo.attach(io: file5, filename: 'filename.png', content_type: 'image/png')
-file6 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/bilitre_uybubq.jpg')
-biltre.photo.attach(io: file6, filename: 'filename.png', content_type: 'image/png')
-file7 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250124/Beerware/Beers/matilda_wxpr4g.jpg')
-maldita.photo.attach(io: file7, filename: 'filename.png', content_type: 'image/png')
-file8 = URI.open('https://res.cloudinary.com/di6k1pdz4/image/upload/v1606247256/Beerware/Beers/mick_copo_blsgxn.png')
-mickLager.photo.attach(io: file8, filename: 'filename.png', content_type: 'image/png')
 
 
+
+puts "creating beers for bars"
 BarsBeer.create(beer:oitavaColina, bar: cervejaCanil)
 BarsBeer.create(beer:meanSardine, bar: cervejaCanil)
 BarsBeer.create(beer:doisCorvos, bar: cervejaCanil)

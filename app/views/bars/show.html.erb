@@ -14,7 +14,11 @@
     </svg>
   </div>
   <!-- Image -->
-  <img src="https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg" class="img-fluid" />
+  <% if @bar.photo_url? %>
+    <%= image_tag @bar.photo_url, class: "img-fluid" %>
+  <% else %>
+    <%= image_tag "https://res.cloudinary.com/di6k1pdz4/image/upload/v1607614839/Beerware/Bars/generic_bar_kiyhwh.jpg", class: "img-fluid" %>
+  <% end %>
   <!-- Bar details -->
   <div class="container">
     <div class="container-fluid">

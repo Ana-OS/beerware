@@ -6,23 +6,24 @@
 
   <div class="profile-action-btns">
     <div class="profile-settings">
-        <%= link_to edit_user_registration_path do %>
-          <i class="fas fa-cog"></i>
-        <% end %>
+      <%= link_to edit_user_registration_path do %>
+        <i class="fas fa-cog"></i>
+      <% end %>
     </div>
     <div class="profile-logout">
-        <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+      <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
     </div>
   </div>
 
   <!-- profile picture -->
   <div class="profile-user-photo">
-     <% if current_user.photo.attached? %>
-      <%= cl_image_tag current_user.photo.key, height: 400, width: 400, crop: :fit, class: "avatar-large", alt: "avatar-large" %>
+    <% if current_user.photo.attached? %>
+      <%=cl_image_tag current_user.photo.key, height: 400, width: 400, crop: :fit, class: "avatar-large", alt: "avatar-large" %>
     <% else %>
-     <%= image_tag "https://res.cloudinary.com/di6k1pdz4/image/upload/v1606851697/Beerware/Users/placeholder_gzfccg.png", class: "avatar-large", alt: "avatar-large" %>
+      <%= image_tag "https://res.cloudinary.com/di6k1pdz4/image/upload/v1606851697/Beerware/Users/placeholder_gzfccg.png", class: "avatar-large", alt: "avatar-large" %>
     <% end %>
   </div>
+
   <div class="profile-user-name">
     <p class="profile-user-first-name"> <%= current_user.first_name.capitalize %> </p>
     <p class="profile-user-last-name"> <%= current_user.last_name.capitalize %> </p>
@@ -37,8 +38,7 @@
       <!-- has to do  -->
       <button id="show-to-drink-list-btn" class="active">
          To Drink
-
-      <p><%= @to_drink.size %></p>
+        <p><%= @to_drink.size %></p>
 
       </button>
     </div>
@@ -66,10 +66,10 @@
           <% @to_drink.each do |beer| %>
             <div class="item photo">
               <div class="content">
-                <% if beer.photo.attached? %>
-                  <%= cl_image_tag beer.photo.key, height: 400, width: 400, crop: :fit %>
+                <% if beer.photo_url? %>
+                   <%= image_tag beer.photo_url, class: "img-fluid" %>
                 <% else %>
-                  <%= image_tag "https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg", class: "img-fluid" %>
+                  <%= image_tag "https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png", class: "img-fluid" %>
                 <% end %>
               </div>
             </div>
@@ -90,10 +90,10 @@
           <% @drank.each do |beer| %>
             <div class="item photo">
               <div class="content">
-                <% if beer.photo.attached? %>
-                  <%= cl_image_tag beer.photo.key, height: 400, width: 400, crop: :fit %>
+                <% if beer.photo_url? %>
+                   <%= image_tag beer.photo_url, class: "img-fluid" %>
                 <% else %>
-                  <%= image_tag "https://media-cdn.tripadvisor.com/media/photo-s/16/25/81/c2/our-new-logo.jpg", class: "img-fluid" %>
+                  <%= image_tag "https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png", class: "img-fluid" %>
                 <% end %>
               </div>
             </div>
