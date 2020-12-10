@@ -173,3 +173,6 @@
   </div>
 </div>
 <!-- End of Review Modal -->
+<% content_for :meta_title, "#{@beer.name }" %>
+<% content_for :meta_description, "Check this beer" %>
+<% content_for :meta_image, @beer.photo_url %>
