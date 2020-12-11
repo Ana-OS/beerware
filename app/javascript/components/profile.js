@@ -29,7 +29,7 @@ const toDrinkBeer = document.querySelector('#show-to-drink-list-btn');
   if(drankBeer) {
     drankBeer.addEventListener('click', () => {
       console.log("Drank Beer clicked")
-      document.querySelector('#beers-drank-images').style.display = "block";
+      document.querySelector('#beers-drank-images').style.display = "flex";
       document.querySelector('#beers-to-drink-images').style.display = "none";
       drankBeer.classList.add("active");
       toDrinkBeer.classList.remove("active");
@@ -40,7 +40,7 @@ const toDrinkBeer = document.querySelector('#show-to-drink-list-btn');
     toDrinkBeer.addEventListener('click', () => {
       console.log("To drink Beer clicked")
       document.querySelector('#beers-drank-images').style.display = "none";
-      document.querySelector('#beers-to-drink-images').style.display = "block";
+      document.querySelector('#beers-to-drink-images').style.display = "flex";
       toDrinkBeer.classList.add("active");
       drankBeer.classList.remove("active");
     })
