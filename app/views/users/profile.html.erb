@@ -71,6 +71,7 @@
       <!-- addEvenetListener to both buttons, to_drink btn- remove hidden of to_drink list and add hidden to the drank list -->
       <!-- has to do  -->
       <button id="show-to-drink-list-btn" class="active">
+         <br>
          To Drink
         <p><%= @to_drink.size %></p>
 
@@ -80,9 +81,9 @@
     <div class = "profile-drank-list">
       <!-- if clicked will show Beers on Drank list -->
       <button id = "show-drank-list-btn">
-         Drank
-
-      <p><%= @drank.size %></p>
+        <br>
+        Drank
+        <p><%= @drank.size %></p>
       </button>
     </div>
   </div>
@@ -104,8 +105,8 @@
                 <% if beer.photo_url? %>
                    <%= image_tag beer.photo_url, class: "img-fluid" %>
                 <% else %>
-                  <%= image_tag "https://w7.pngwing.com/pngs/266/759/png-transparent-gray-can-illustration-beer-aluminum-can-beer-packaging-design-glass-beer-bottle-preview.png", class: "img-fluid" %>
-                <% end %>
+                  <%= image_tag 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607702982/Beerware/Beers/beer_blank1_z4ntoh.jpg', class: "img-fluid" %>
+                 <% end %>
               </div>
             </div>
           <% end %>
