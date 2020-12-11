@@ -50,7 +50,7 @@
               <div class="col-sm-9 col-7 pl-0 beers">
                 <div class="card-beer-infos">
                   <div class="name-rating">
-                    <h2 class="card-beer-name"><%= h truncate(beer.name, :length => 25) %></h2>
+                    <div class="card-beer-name"><%= h truncate(beer.name, :length => 18) %></div>
                     <div class="card-beer-rating"><%= beer.avg_rating %></div>
                   </div>
                   <p class="card-beer-category"><%= h truncate(beer.category, :length => 25) %></p>
