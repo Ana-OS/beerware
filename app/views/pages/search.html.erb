@@ -52,9 +52,9 @@
           <h4 class="no-search-title"> <%= link_to "Or search the map", map_page_path %></h4>
         </div>
       <% elsif @empty_list%>
-        <h4> No results but you can checkout some of the beers and bars below. </h4>
+        <h4 class="no-results-text"> No results but you can checkout some of the beers and bars below. </h4>
 
-        <h4 class="bars-title"> Recommended Beers </h4>
+        <h4 class="title-search"> Recommended Beers </h4>
         <% @beers.each do |beer| %>
           <div class="card beers">
             <div class="row">
@@ -70,7 +70,10 @@
               <div class="col-sm-9 col-7 pl-0 beers">
                 <div class="card-beer-infos" >
                   <%= link_to beer_path(beer) do %>
-                    <h2 class="card-beer-name"><%= h truncate(beer.name, :length => 25) %></h2>
+                    <div class="name-rating">
+                      <div class="card-beer-name"><%= h truncate(beer.name, :length => 18) %></div>
+                      <div class="card-beer-rating"><%= beer.avg_rating %></div>
+                    </div>
                     <p class="card-beer-category"><%=h truncate(beer.category, :length => 25) %></p>
                     <p class="card-beer-description"><%=h truncate(beer.description, :length => 90) %></p>
                   <% end %>
@@ -79,7 +82,7 @@
             </div>
           </div>
         <% end %>
-        <h4>Recommended Bars</h4>
+        <h4 class="title-search">Recommended Bars</h4>
         <% @bars.each do |bar| %>
           <div class="card bars" >
             <div class="row" >
@@ -95,7 +98,7 @@
               <div class="ol-sm-9 col-7 pl-0 bars">
                 <div class="card-bars-infos">
                   <%= link_to bar_path(bar) do %>
-                    <h2 class="card-bars-name"><%=h truncate(bar.name, :length => 25) %></h2>
+                    <h2 class="card-bars-name"><%=h truncate(bar.name, :length => 18) %></h2>
                     <p class="card-bars-location"><%=h truncate(bar.location, :length => 25) %></p>
                     <p class="card-bars-description"><%=h truncate(bar.description, :length => 90) %></p>
                  <% end %>
@@ -105,9 +108,9 @@
           </div>
         <% end %>
       <% else %>
-        <h2 class="bars-title">Results for beers</h2>
+        <h2 class="title-search">Results for beers</h2>
         <% if @beers.length < 1  %>
-          <p>Sorry, no beers found 🧐</p>
+          <p class="no-results-text">Sorry, no beers found 🧐</p>
         <% else %>
           <% @beers.each do |beer| %>
             <div class="card beers">
@@ -125,7 +128,7 @@
                   <%= link_to beer_path(beer) do %>
                     <div class="card-beer-infos">
                       <div class="name-rating">
-                        <h2 class="card-beer-name"><%= h truncate(beer.name, :length => 25) %></h2>
+                        <div class="card-beer-name"><%= h truncate(beer.name, :length => 18) %></div>
                         <div class="card-beer-rating"><%= beer.avg_rating %></div>
                       </div>
                       <p class="card-beer-category"><%=h truncate(beer.category, :length => 25) %></p>
@@ -137,9 +140,9 @@
             </div>
           <% end %>
         <% end %>
-        <h2 class="bars-title">Results for bars</h2>
+        <h2 class="title-search">Results for bars</h2>
         <% if @bars.length < 1 %>
-          <p>Sorry, no bars found 🧐</p>
+          <p class="no-results-text">Sorry, no bars found 🧐</p>
         <% else %>
           <% @bars.each do |bar| %>
             <div class="card bars">
@@ -156,7 +159,7 @@
                 <div class="ol-sm-9 col-7 pl-0 bars">
                   <%= link_to bar_path(bar) do %>
                     <div class="card-bars-infos">
-                      <h2 class="card-bars-name"><%=h truncate(bar.name, :length => 25) %></h2>
+                      <h2 class="card-bars-name"><%=h truncate(bar.name, :length => 18) %></h2>
                       <p class="card-bars-location"><%=h truncate(bar.location, :length => 25) %></p>
                       <p class="card-bars-description"><%=h truncate(bar.description, :length => 90) %></p>
                     </div>
