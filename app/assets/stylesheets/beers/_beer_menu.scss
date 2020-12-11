@@ -11,7 +11,8 @@
   margin: 6px 0px 6px 0px;
   img {
     object-fit: cover;
-    height: 128px;
+    height: 130px;
+    width: 130px;
     border-radius: 10px;
   }
 }
@@ -19,7 +20,7 @@
 .card-beer-name {
   color: $black;
   font: 700 18px $body-font;
-  width: 90px;
+  width: 90%;
   padding-top: 13px;
   margin-bottom: 2px;
 }
@@ -39,15 +40,13 @@
 .card-beer-rating {
   color: $black;
   font: 500 20px $body-font;
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 7px;
-  margin-left: 70px;
+  padding-top: 13px;
 }
 
 .name-rating {
   display: flex;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .col.beers {

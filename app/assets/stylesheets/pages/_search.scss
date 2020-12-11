@@ -17,6 +17,13 @@
   padding-left: 21px;
 }
 
+.title-search{
+  color: $black;
+  font: 900 16px $body-font;
+  padding: 10px 0px 10px 0px;
+  margin-top: 12px;
+}
+
 .search-map {
   display: flex;
   justify-content: center;
@@ -25,7 +32,7 @@
 }
 
 .search-map h4 {
-  font-size: 16px;
+  font-size: 500 16px $body-font;
   margin: 0px 0px 0px 10px;
 }
 
@@ -39,16 +46,6 @@
 
 #Capa_1 {
   padding-left: 2px;
-}
-
-.card-beer-rating {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 7px;
-  margin-left: 70px;
-  color: $black !important;
-  font-weight: bold;
-  font-size: 20px;
 }
 
 .no-results-text {
