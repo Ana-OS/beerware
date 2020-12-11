@@ -245,7 +245,7 @@ blackLucy.save
 politeSociety = Beer.find_by(name:'Polite Society')
 politeSociety.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686140/Beerware/Beers/Dois_Corvos_Polite_Society_enhdge.jpg'
 politeSociety.save
-vossaNova = Beer.find_by(name:'Vossa Nova')
+# vossaNova = Beer.find_by(name:'Vossa Nova')
 # vossaNova.photo_url = ''
 # vossaNova.save
 # miasma = Beer.find_by(name:'Miasma')
