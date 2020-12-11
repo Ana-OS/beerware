@@ -119,7 +119,7 @@ puts 'bars photos attached'
 puts 'creating beers'
 mickLager = Beer.create(name:'Mick Lager', category: 'Vienna Lager', alcohol:'4.5', ibu: 20, brewery: 'Cerveja Musa', description: 'Amber colour. Toasted malt notes complemented by an assertive bouquet of german hops. Delicate and smooth. One problem though: an irresistible urge to keep drinking.')
 tresCincoUm = Beer.create(name:'+351', category: 'Weiss', alcohol:'3.3', ibu: 2, brewery: 'Cervejaria +351', description: 'Tasting Notes: Medium bitterness with a very soft finish. Aroma of Secondary malt. Pale golden, deep amber color. Irreverent! Happy wedding with: sushi “all you can eat”, seafood, freshly caught fish and cozy soups.')
-florinda = Beer.create(name:'Florinda', category: 'Lager', alcohol:'3.1', ibu: 2, brewery: 'Oitava Colina', description: 'Sweet and elegant, Florinda is light on the hill. The lightness of a lager, with heavy doses of german Hallertau Mittlefruh.')
+# florinda = Beer.create(name:'Florinda', category: 'Lager', alcohol:'3.1', ibu: 2, brewery: 'Oitava Colina', description: 'Sweet and elegant, Florinda is light on the hill. The lightness of a lager, with heavy doses of german Hallertau Mittlefruh.')
 nortada = Beer.create(name:'Nortada', category: 'Brown Porter', alcohol:'2.6', ibu: 4, brewery: 'Nortada', description: 'Born in Bavaria, a style whose production was disputed by the German nobles. Made with wheat malt, it is a refreshing breath with subtle notes of banana. The last time King Kong was seen, he had a box like this under his arm.')
 meanSardine = Beer.create(name:'Mean Sardine', category: 'Brown Porter', alcohol:'2.6', ibu: 4, brewery: 'Mean Sardine', description: 'Dark beer with a great punch of piney hops in the nose, a well-inserted bitterness, and a light chocolate finish.')
 biltre = Beer.create(name:'Biltre', category: 'American Pale Ale', alcohol:'2.6', ibu: 4, brewery: 'Cerveja Biltre', description: 'A light and very refreshing Pilsner. Clove and banana aromas. Cloudy yellow-straw appearence as a good weiss should look like.')
@@ -134,7 +134,7 @@ politeSociety = Beer.create( name: 'Polite Society', category: 'Farmhouse Ale - 
 vossaNova = Beer.create( name: 'Vossa Nova', category: 'IPA - International', alcohol: '5.7', ibu: '', brewery: 'Dois Corvos', description: 'Tradition means innovation. Thats how we define Vossa Nova - a Dry-hopped Kveik with Citra and Sorachi Ace hops and 5.7% ABV. It was brewed with our friends from Paname Brewing Company and is a lovely match for the warmth of these days.' )
 miasma = Beer.create( name: 'Miasma', category: 'Red Ale - American Amber / Red', alcohol: '5.8', ibu: 20, brewery: 'Dois Corvos', description: 'Máscaras em forma de bico eram usadas no século XVII para prevenir doenças que se pensavam ser transmitidas por um tipo de ar nocivo - conhecido como Miasma. Neste Halloween, podes tu próprio provar "Miasma" - uma Amber Ale de 5.8 com adição de canela, gengibre, cravinho e noz moscada. Tudo num equilibro entre o doce e o amargo que foi pensado para te aquecer o corpo e a alma. "Miasma" é uma edição limitada disponível exclusivamente à pressão no Tap Room.' )
 vaiNu = Beer.create( name: 'Vai Nú', category: 'Stout - Imperial / Double', alcohol: '9', ibu: 43, brewery: 'Dois Corvos', description: '“O Rei vai nú”, é uma conhecida expressão que arrasa gloriosamente a mentira exaltando a obviedade. É também o nome desta colaboração a três, entre Vilhoa, Dois Corvos e O Reizinho. Vestimos uma gulosa Imperial Stout com Rum madeirense e o seu impacto é apenas visível para aqueles com coragem de a beber. As duas versões, vestida e despida, podem e devem ser degustadas lado a lado em jeito de rebeldia contra o incontestável.' )
-avenida = Beer.create( name: 'Avenida ', category: 'Blonde Ale', alcohol: '5', ibu: 16, brewery: 'Dois Corvos', description: 'Avenida is a light, easy-drinking beer with an interplay between biscuity malt and a fruitiness developed from the German yeast. It pours a white head with some natural haze. As tardes de Lisboa merecem uma cerveja assim, fácil de beber mas complexa. Um jogo entre malte e levedura alemã, que se traduz num final suave, com um aroma frutado e notas de especiarias.' )
+avenida = Beer.create( name: 'Avenida', category: 'Blonde Ale', alcohol: '5', ibu: 16, brewery: 'Dois Corvos', description: 'Avenida is a light, easy-drinking beer with an interplay between biscuity malt and a fruitiness developed from the German yeast. It pours a white head with some natural haze. As tardes de Lisboa merecem uma cerveja assim, fácil de beber mas complexa. Um jogo entre malte e levedura alemã, que se traduz num final suave, com um aroma frutado e notas de especiarias.' )
 
 bornInTheIpa = Beer.create( name: 'Born in the IPA', category: 'IPA - American', alcohol: '6.5', ibu: 70, brewery: 'Cerveja Musa', description: 'Cor laranja, ligeiramente turva. Sabor amargo mas equilibrado com notas complexas de citrinos (toranja), manga e melão. Lúpulos: citra, mosaic e columbus. Bold & Loud like the ‘mericans who invented the style. Citrus, pine and tropical fruits. Notes from generous amounts of american hops. Like a cool rockin’ daddy.' )
 frankApa= Beer.create( name: 'Frank APA', category: 'Pale Ale - American', alcohol: '5', ibu: 35, brewery: 'Cerveja Musa', description: 'Corpo suave, aroma a citrinos e frutos tropicais. Aroma a lúpulos americanos o que lhe dá um certo final amargo, porém, feliz. Soft body with notes of citrus and tropical fruits. Generous amounts of aromatic American hops with a mildly bitter aftertaste.' )
@@ -207,49 +207,233 @@ puts "beers created"
 
 
 puts "adding photos"
-
-
-
-# doisCorvos = Beer.find_by(name:'Dois Corvos')
-# doisCorvos.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249754/Beerware/Beers/dois_yy0rws.webp'
-# doisCorvos.save
-
-
-# oitavaColina = Beer.find_by(name:'8ª Colina')
-# oitavaColina.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249850/Beerware/Beers/8a_dpwkqp.jpg'
-# oitavaColina.save
-
+mickLager = Beer.find_by(name:'Mick Lager')
+mickLager.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606247256/Beerware/Beers/mick_copo_blsgxn.png'
+mickLager.save
 tresCincoUm = Beer.find_by(name:'+351')
 tresCincoUm.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249851/Beerware/Beers/351_v59f4u.jpg'
 tresCincoUm.save
-
 florinda = Beer.find_by(name:'Florinda')
-florinda.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250220/Beerware/Beers/florinda_ndykgp.webp'
+florinda.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686144/Beerware/Beers/8_colina_Florinda_rukt2o.jpg'
 florinda.save
-
 nortada = Beer.find_by(name:'Nortada')
 nortada.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/nortada_aqjotn.jpg'
 nortada.save
-
-
 meanSardine = Beer.find_by(name:'Mean Sardine')
 meanSardine.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/mean_s_o96ql7.jpg'
 meanSardine.save
-
-
 biltre = Beer.find_by(name:'Biltre')
 biltre.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250123/Beerware/Beers/bilitre_uybubq.jpg'
 biltre.save
-
 maldita = Beer.find_by(name:'Maldita')
 maldita.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606250124/Beerware/Beers/matilda_wxpr4g.jpg'
 maldita.save
 
-mickLager = Beer.find_by(name:'Mick Lager')
-mickLager.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606247256/Beerware/Beers/mick_copo_blsgxn.png'
-mickLager.save
+blackLucy = Beer.find_by( name: 'Black Lucy')
+blackLucy.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686143/Beerware/Beers/Against_the_Tide_Black_Lucy_cyhqbd.jpg'
+blackLucy.save
+# russianMafia = Beer.find_by(name:'Russian Mafia')
+# russianMafia.photo_url = ''
+# russianMafia.save
+# pinkerSaison = Beer.find_by(name:'Pinker Saison')
+# pinkerSaison.photo_url = ''
+# pinkerSaison.save
+# brownSuga = Beer.find_by(name:'Brown Suga')
+# brownSuga.photo_url = ''
+# brownSuga.save
+
+politeSociety = Beer.find_by(name:'Polite Society')
+politeSociety.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686140/Beerware/Beers/Dois_Corvos_Polite_Society_enhdge.jpg'
+politeSociety.save
+vossaNova = Beer.find_by(name:'Vossa Nova')
+# vossaNova.photo_url = ''
+# vossaNova.save
+# miasma = Beer.find_by(name:'Miasma')
+# miasma.photo_url = ''
+# miasma.save
+vaiNu = Beer.find_by(name:'Vai Nú')
+vaiNu.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686148/Beerware/Beers/Dois_Corvos_Vai_Nu_n8vmpj.png'
+vaiNu.save
+avenida = Beer.find_by(name:'Avenida')
+avenida.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607685688/Beerware/Beers/piratas_cervejeiros_avenida_tropical_ep43ov.jpg'
+avenida.save
+
+bornInTheIpa = Beer.find_by(name:'Born in the IPA')
+bornInTheIpa.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606247255/Beerware/Beers/5c917247d679f_cqbfl5.png'
+bornInTheIpa.save
+frankApa = Beer.find_by(name:'Frank APA')
+frankApa.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607685691/Beerware/Beers/musa_frank_apa_2_njmx4h.png'
+frankApa.save
+blondie = Beer.find_by(name:'Blondie')
+blondie.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607685690/Beerware/Beers/musa_blondie_st2x9c.jpg'
+blondie.save
+iggyBop = Beer.find_by(name:'Iggy Bop')
+iggyBop.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607685686/Beerware/Beers/musa_iggy_bop_ngtdbl.png'
+iggyBop.save
+psychoPilsner = Beer.find_by(name:'Psycho Pilsner')
+psychoPilsner.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607685688/Beerware/Beers/musa_psycho_pilsner_cvqcyx.jpg'
+psychoPilsner.save
+romaria = Beer.find_by(name:'Romāria')
+romaria.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607687525/Beerware/Beers/musa_romaria_izyfdm.jpg'
+romaria.save
+
+witCinco = Beer.find_by(name:'Wit Cinco de Abril')
+witCinco.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686138/Beerware/Beers/Gallas_wit_cinco_de_abril_m1noca.jpg'
+witCinco.save
+donaFilipa = Beer.find_by(name:'Dona Filipa')
+donaFilipa.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686139/Beerware/Beers/Gallas_Dona_Filipa_vttui8.jpg'
+donaFilipa.save
+simcoeIpa = Beer.find_by(name:'Simcoe IPA')
+simcoeIpa.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686141/Beerware/Beers/Gallas_Simcoe_IPA_b3sgmh.png'
+simcoeIpa.save
+caparIpa = Beer.find_by(name:'CaparIPA')
+caparIpa.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686140/Beerware/Beers/Gallas_Caparipa_y6srsm.jpg'
+caparIpa.save
+mangoMilkshake = Beer.find_by(name:'Mango Milkshake Double Juicy NEIPA DDH Citra+Ekuanot')
+mangoMilkshake.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686141/Beerware/Beers/Gallas_Mango_Milkshake_ntw7ag.png'
+mangoMilkshake.save
+tangerIpa = Beer.find_by(name:'TangerIPA')
+tangerIpa.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686140/Beerware/Beers/Gallas_tangeripa_x0krzc.png'
+tangerIpa.save
+
+shamrockQuest = Beer.find_by(name:'Shamrock\'s Quest')
+shamrockQuest.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607685683/Beerware/Beers/Trevo_Shamrocks_quest_tbaa5i.png'
+shamrockQuest.save
+jackClub = Beer.find_by(name:'Jack of Club')
+jackClub.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607687945/Beerware/Beers/Trevo_Jack_of_clubs_tj8rmb.jpg'
+jackClub.save
+rabbitsFoot = Beer.find_by(name:'Rabbit\'s Foot')
+rabbitsFoot.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607685684/Beerware/Beers/Trevo_rabbits_foot_xjtpvg.png'
+rabbitsFoot.save
+# cappucinoPorter = Beer.find_by(name:'Cappucino Porter')
+# cappucinoPorter.photo_url = ''
+# cappucinoPorter.save
+epicWipeout = Beer.find_by(name:'Epic Wipeout')
+epicWipeout.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607685684/Beerware/Beers/Trevo_Epic_Wipeout_nyfp4o.jpg'
+epicWipeout.save
 
 
+singleHopCascadeAle = Beer.find_by(name:'Single Hop Cascade Ale')
+singleHopCascadeAle.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607687525/Beerware/Beers/Quimera_single_hop_ale_ncz1do.jpg'
+singleHopCascadeAle.save
+nafipa = Beer.find_by(name:'NAFIPA')
+nafipa.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607687524/Beerware/Beers/Quimera_NAFIPA_wyengg.png'
+nafipa.save
+# chocolatePorter = Beer.find_by(name:'Chocolate Porter')
+# chocolatePorter.photo_url = ''
+# chocolatePorter.save
+# barrelAgedRaspberry = Beer.find_by(name:'Barrel Aged Raspberry Sour Raw Ale')
+# barrelAgedRaspberry.photo_url = ''
+# barrelAgedRaspberry.save
+
+urracaVendaval = Beer.find_by(name:'Urraca Vendaval')
+urracaVendaval.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686147/Beerware/Beers/8_Colina_Urraca_Vendaval_xafjnl.png'
+urracaVendaval.save
+joeDaSilva = Beer.find_by(name:'Joe Da Silva')
+joeDaSilva.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686144/Beerware/Beers/8_colina_Joe_da_Silva_r9mhfp.jpg'
+joeDaSilva.save
+florinda = Beer.find_by(name:'Florinda')
+# florinda.photo_url = ''
+# florinda.save
+vilaMaria = Beer.find_by(name:'Vila Maria')
+vilaMaria.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686144/Beerware/Beers/8_Colina_Vila_Maria_micxkg.png'
+vilaMaria.save
+
+trindadeProfana = Beer.find_by(name:'Trindade - Profana')
+trindadeProfana.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607685685/Beerware/Beers/Trindade_Profana_r8rrt7.jpg'
+trindadeProfana.save
+trindadeAurea = Beer.find_by(name:'Trindade - Áurea')
+trindadeAurea.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607685687/Beerware/Beers/Trindade_Aurea_axii12.jpg'
+trindadeAurea.save
+trindadeFenix = Beer.find_by(name:'Trindade - Fénix')
+trindadeFenix.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607685685/Beerware/Beers/Trindade_Fenix_kwsezi.jpg'
+trindadeFenix.save
+trindadeZenite = Beer.find_by(name:'Trindade - Zénite')
+trindadeZenite.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607685687/Beerware/Beers/Trindade_Zenite_e1ckfl.jpg'
+trindadeZenite.save
+# smashMyBeer = Beer.find_by(name:'Smash My Beer')
+# smashMyBeer.photo_url = ''
+# smashMyBeer.save
+
+sharkBaitGinger = Beer.find_by(name:'Shark Bait Ginger Lime Cucumber')
+sharkBaitGinger.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607687525/Beerware/Beers/piratas_cervejeiros_Shark_Bait_Ginger_Lime_Cucumber_hyge9o.jpg'
+sharkBaitGinger.save
+avenidaTropical = Beer.find_by(name:'Avenida Tropical')
+avenidaTropical.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607685688/Beerware/Beers/piratas_cervejeiros_avenida_tropical_ep43ov.jpg'
+avenidaTropical.save
+hoistColours = Beer.find_by(name:'Hoist the Colours : Mango Basilic')
+hoistColours.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607687524/Beerware/Beers/Piratas_cervejeiros_-_Hoist_the_Colours_Mango_Basilic_tjidoq.jpg'
+hoistColours.save
+vamoFlorianopolis = Beer.find_by(name:'Vamo A Florianópolis')
+vamoFlorianopolis.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607687525/Beerware/Beers/Piratas_cervejeiros_vamos_a_florianopolis_dl7dla.jpg'
+vamoFlorianopolis.save
+
+desconfinada = Beer.find_by(name:'Desconfinada')
+desconfinada.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686137/Beerware/Beers/LBD_-_Desconfinada_irzpfs.png'
+desconfinada.save
+# linceNutBrownAle = Beer.find_by(name:'Lince Nut Brown Ale')
+# linceNutBrownAle.photo_url = ''
+# linceNutBrownAle.save
+linceBelgianPaleAle = Beer.find_by(name:'Lince Belgian Pale Ale')
+linceBelgianPaleAle.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686136/Beerware/Beers/Lince_Belgian_Pale_Ale_cyi26r.jpg'
+linceBelgianPaleAle.save
+linceBlonde = Beer.find_by(name:'Lince Blonde')
+linceBlonde.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686136/Beerware/Beers/Lince_Blonde_zfc2d8.jpg'
+linceBlonde.save
+linceAmericanIpa = Beer.find_by(name:'Lince American IPA')
+linceAmericanIpa.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686139/Beerware/Beers/Lince_American_IPA_o8gnkx.jpg'
+linceAmericanIpa.save
+
+juniperSmokin = Beer.find_by(name:'Juniper Smokin\'')
+juniperSmokin.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686134/Beerware/Beers/Mean_Sardine_Amnesia_Brewery_Juniper_Smokin_2_bqntes.jpg'
+juniperSmokin.save
+rageIpa = Beer.find_by(name:'Rage IPA')
+rageIpa.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686142/Beerware/Beers/Amnesia_Brewery_Rage_IPA_yqv1q6.jpg'
+rageIpa.save
+amnesiaWeiss = Beer.find_by(name:'Weiss')
+amnesiaWeiss.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686142/Beerware/Beers/Amnesia_Brewery_Weiss_ijssrc.jpg'
+amnesiaWeiss.save
+# youTalkinToMe = Beer.find_by(name:'You Talkin\' To Me?')
+# youTalkinToMe.photo_url = ''
+# youTalkinToMe.save
+hotCherry = Beer.find_by(name:'Hot Cherry')
+hotCherry.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686145/Beerware/Beers/Amnesia_Brewery_Hot_Cherry_xtsksp.jpg'
+hotCherry.save
+darkVader = Beer.find_by(name:'Dark Vader')
+darkVader.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686142/Beerware/Beers/amnesia_against_the_tide_dark_vader_ggedpi.jpg'
+darkVader.save
+
+ginjaNinja = Beer.find_by(name:'Ginja Ninja')
+ginjaNinja.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686133/Beerware/Beers/Mean_sardine_ginja_nija_k7af0x.jpg'
+ginjaNinja.save
+tordesilhasPortugueseEmpireStout = Beer.find_by(name:'Tordesilhas Portuguese Empire Stout')
+tordesilhasPortugueseEmpireStout.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686133/Beerware/Beers/Mean_Sardine_Tordesilhas_wxfxnt.png'
+tordesilhasPortugueseEmpireStout.save
+zagaia = Beer.find_by(name:'Zagaia')
+zagaia.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607685688/Beerware/Beers/Mean_sardine_zagaia_mpycki.png'
+zagaia.save
+aWalkInMadeira = Beer.find_by(name:'A Walk In Madeira')
+aWalkInMadeira.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607687525/Beerware/Beers/Mean_sardine_a_walk_in_madeira_xdy4ee.jpg'
+aWalkInMadeira.save
+portucale = Beer.find_by(name:'Portucale')
+portucale.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686133/Beerware/Beers/mean_sardine_portucale_pnyu15.jpg'
+portucale.save
+blommerMadeira = Beer.find_by(name:'Blommer I Madeira')
+blommerMadeira.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686133/Beerware/Beers/mean_sardine_blommer_madeira_orhvab.jpg'
+blommerMadeira.save
+
+trezentosIpa = Beer.find_by(name:'+351 IPA')
+trezentosIpa.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686143/Beerware/Beers/351_IPA_tz1oyu.jpg'
+trezentosIpa.save
+trezentosCervejaPaleAle = Beer.find_by(name: '+351 Cerveja Pale Ale')
+trezentosCervejaPaleAle.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1606249851/Beerware/Beers/351_v59f4u.jpg'
+trezentosCervejaPaleAle.save
+trezentosWeiss = Beer.find_by(name:'+351 Weiss')
+trezentosWeiss.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686142/Beerware/Beers/351_weiss_eqi2sd.jpg'
+trezentosWeiss.save
+trezentosBlackIpa = Beer.find_by(name:'+351 Black IPA')
+trezentosBlackIpa.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686143/Beerware/Beers/351_black_ipa_v9ul4h.jpg'
+trezentosBlackIpa.save
 
 # BarsBeer.create(beer:oitavaColina, bar: cervejaCanil)
 BarsBeer.create(beer:meanSardine, bar: cervejaCanil)
@@ -290,7 +474,6 @@ BarsBeer.create(beer:romaria, bar: fabricaMusa)
 BarsBeer.create(beer:psychoPilsner, bar: fabricaMusa)
 
 BarsBeer.create(beer:shamrockQuest, bar: deliriumCafe)
-# BarsBeer.create(beer:oitavaColina, bar: deliriumCafe)
 BarsBeer.create(beer:meanSardine, bar: deliriumCafe)
 BarsBeer.create(beer:tresCincoUm, bar: deliriumCafe)
 BarsBeer.create(beer:jackClub, bar: deliriumCafe)
@@ -303,19 +486,17 @@ BarsBeer.create(beer:simcoeIpa, bar: deliriumCafe)
 
 BarsBeer.create(beer:joeDaSilva, bar: beerStation)
 BarsBeer.create(beer:vilaMaria, bar: beerStation)
-BarsBeer.create(beer:joeDaSilva, bar: beerStation)
+# BarsBeer.create(beer:joeDaSilva, bar: beerStation)
 BarsBeer.create(beer:simcoeIpa, bar: beerStation)
 BarsBeer.create(beer:cappucinoPorter, bar: beerStation)
 BarsBeer.create(beer:maldita, bar: beerStation)
 BarsBeer.create(beer:frankApa, bar: beerStation)
 BarsBeer.create(beer:iggyBop, bar: beerStation)
 BarsBeer.create(beer:urracaVendaval, bar: beerStation)
-BarsBeer.create(beer:vilaMaria, bar: beerStation)
+# BarsBeer.create(beer:vilaMaria, bar: beerStation)
 
 BarsBeer.create(beer:cappucinoPorter, bar: cerveteca)
-# BarsBeer.create(beer:oitavaColina, bar: cerveteca)
 BarsBeer.create(beer:meanSardine, bar: cerveteca)
-# BarsBeer.create(beer:doisCorvos, bar: cerveteca)
 BarsBeer.create(beer:mickLager, bar: cerveteca)
 BarsBeer.create(beer:maldita, bar: cerveteca)
 BarsBeer.create(beer:frankApa, bar: cerveteca)
@@ -324,31 +505,25 @@ BarsBeer.create(beer:urracaVendaval, bar: cerveteca)
 BarsBeer.create(beer:vilaMaria, bar: cerveteca)
 
 BarsBeer.create(beer:maldita, bar: sputnik)
-# BarsBeer.create(beer:oitavaColina, bar: sputnik)
 BarsBeer.create(beer:meanSardine, bar: sputnik)
-# BarsBeer.create(beer:doisCorvos, bar: sputnik)
 BarsBeer.create(beer:mickLager, bar: sputnik)
-BarsBeer.create(beer:maldita, bar: sputnik)
+# BarsBeer.create(beer:maldita, bar: sputnik)
 BarsBeer.create(beer:joeDaSilva, bar: sputnik)
 BarsBeer.create(beer:vilaMaria, bar: sputnik)
 BarsBeer.create(beer:portucale, bar: sputnik)
 BarsBeer.create(beer:simcoeIpa, bar: sputnik)
 
 BarsBeer.create(beer:maldita, bar: cervejaLince)
-# BarsBeer.create(beer:oitavaColina, bar: cervejaLince)
 BarsBeer.create(beer:meanSardine, bar: cervejaLince)
-# BarsBeer.create(beer:doisCorvos, bar: cervejaLince)
 BarsBeer.create(beer:mickLager, bar: cervejaLince)
-BarsBeer.create(beer:maldita, bar: cervejaLince)
+# BarsBeer.create(beer:maldita, bar: cervejaLince)
 BarsBeer.create(beer:joeDaSilva, bar: cervejaLince)
 BarsBeer.create(beer:vilaMaria, bar: cervejaLince)
 BarsBeer.create(beer:frankApa, bar: cervejaLince)
 BarsBeer.create(beer:bornInTheIpa, bar: cervejaLince)
 
 BarsBeer.create(beer:maldita, bar: duqueBrewpub)
-# BarsBeer.create(beer:oitavaColina, bar: duqueBrewpub)
 BarsBeer.create(beer:meanSardine, bar: duqueBrewpub)
-# BarsBeer.create(beer:doisCorvos, bar: duqueBrewpub)
 BarsBeer.create(beer:mickLager, bar: duqueBrewpub)
 BarsBeer.create(beer:politeSociety, bar: duqueBrewpub)
 BarsBeer.create(beer:vossaNova, bar: duqueBrewpub)
@@ -358,9 +533,7 @@ BarsBeer.create(beer:frankApa, bar: duqueBrewpub)
 BarsBeer.create(beer:bornInTheIpa, bar: duqueBrewpub)
 
 BarsBeer.create(beer:vilaMaria, bar: quimera)
-# BarsBeer.create(beer:oitavaColina, bar: quimera)
 BarsBeer.create(beer:meanSardine, bar: quimera)
-# BarsBeer.create(beer:doisCorvos, bar: quimera)
 BarsBeer.create(beer:mickLager, bar: quimera)
 BarsBeer.create(beer:maldita, bar: quimera)
 BarsBeer.create(beer:ginjaNinja, bar: quimera)
@@ -370,20 +543,16 @@ BarsBeer.create(beer:avenida, bar: quimera)
 BarsBeer.create(beer:vaiNu, bar: quimera)
 
 BarsBeer.create(beer:maldita, bar: piratasCervejeiros)
-# BarsBeer.create(beer:oitavaColina, bar: piratasCervejeiros)
 BarsBeer.create(beer:meanSardine, bar: piratasCervejeiros)
-# BarsBeer.create(beer:doisCorvos, bar: piratasCervejeiros)
 BarsBeer.create(beer:mickLager, bar: piratasCervejeiros)
-BarsBeer.create(beer:maldita, bar: piratasCervejeiros)
+# BarsBeer.create(beer:maldita, bar: piratasCervejeiros)
 BarsBeer.create(beer:joeDaSilva, bar: piratasCervejeiros)
 BarsBeer.create(beer:vilaMaria, bar: piratasCervejeiros)
 BarsBeer.create(beer:trezentosWeiss, bar: piratasCervejeiros)
 BarsBeer.create(beer:trezentosBlackIpa , bar: piratasCervejeiros)
 
 BarsBeer.create(beer:cappucinoPorter, bar: amoBrewery)
-# BarsBeer.create(beer:oitavaColina, bar: amoBrewery)
 BarsBeer.create(beer:meanSardine, bar: amoBrewery)
-# BarsBeer.create(beer:doisCorvos, bar: amoBrewery)
 BarsBeer.create(beer:mickLager, bar: amoBrewery)
 BarsBeer.create(beer:maldita, bar: amoBrewery)
 BarsBeer.create(beer:trezentosIpa, bar: amoBrewery)
@@ -393,28 +562,23 @@ BarsBeer.create(beer:trezentosBlackIpa , bar: amoBrewery)
 
 BarsBeer.create(beer:joeDaSilva, bar: beerCascais)
 BarsBeer.create(beer:vilaMaria, bar: beerCascais)
-BarsBeer.create(beer:joeDaSilva, bar: beerCascais)
+# BarsBeer.create(beer:joeDaSilva, bar: beerCascais)
 BarsBeer.create(beer:simcoeIpa, bar: beerCascais)
 BarsBeer.create(beer:cappucinoPorter, bar: beerCascais)
 BarsBeer.create(beer:maldita, bar: beerCascais)
-# BarsBeer.create(beer:oitavaColina, bar: beerCascais)
 BarsBeer.create(beer:meanSardine, bar: beerCascais)
-# BarsBeer.create(beer:doisCorvos, bar: beerCascais)
 BarsBeer.create(beer:mickLager, bar: beerCascais)
 
 BarsBeer.create(beer:maldita, bar: patoBrewering)
-# BarsBeer.create(beer:oitavaColina, bar: patoBrewering)
 BarsBeer.create(beer:meanSardine, bar: patoBrewering)
-# BarsBeer.create(beer:doisCorvos, bar: patoBrewering)
 BarsBeer.create(beer:mickLager, bar: patoBrewering)
-BarsBeer.create(beer:maldita, bar: patoBrewering)
+# BarsBeer.create(beer:maldita, bar: patoBrewering)
 BarsBeer.create(beer:joeDaSilva, bar: patoBrewering)
 BarsBeer.create(beer:vilaMaria, bar: patoBrewering)
 BarsBeer.create(beer:trezentosWeiss, bar: patoBrewering)
 BarsBeer.create(beer:trezentosBlackIpa , bar: patoBrewering)
 
 BarsBeer.create(beer:shamrockQuest, bar: deBru)
-# BarsBeer.create(beer:oitavaColina, bar: deBru)
 BarsBeer.create(beer:meanSardine, bar: deBru)
 BarsBeer.create(beer:tresCincoUm, bar: deBru)
 BarsBeer.create(beer:jackClub, bar: deBru)
@@ -425,9 +589,7 @@ BarsBeer.create(beer:trezentosWeiss, bar: deBru)
 BarsBeer.create(beer:trezentosBlackIpa , bar: deBru)
 
 BarsBeer.create(beer:cappucinoPorter, bar: cervejariaArtesanalAdamastor)
-# BarsBeer.create(beer:oitavaColina, bar: cervejariaArtesanalAdamastor)
 BarsBeer.create(beer:meanSardine, bar: cervejariaArtesanalAdamastor)
-# BarsBeer.create(beer:doisCorvos, bar: cervejariaArtesanalAdamastor)
 BarsBeer.create(beer:mickLager, bar: cervejariaArtesanalAdamastor)
 BarsBeer.create(beer:maldita, bar: cervejariaArtesanalAdamastor)
 BarsBeer.create(beer:trezentosBlackIpa, bar: cervejariaArtesanalAdamastor)
@@ -437,9 +599,7 @@ BarsBeer.create(beer:trezentosIpa, bar: cervejariaArtesanalAdamastor)
 BarsBeer.create(beer:trezentosWeiss, bar: cervejariaArtesanalAdamastor)
 
 BarsBeer.create(beer:cappucinoPorter, bar: florLupulo)
-# BarsBeer.create(beer:oitavaColina, bar: florLupulo)
 BarsBeer.create(beer:meanSardine, bar: florLupulo)
-# BarsBeer.create(beer:doisCorvos, bar: florLupulo)
 BarsBeer.create(beer:mickLager, bar: florLupulo)
 BarsBeer.create(beer:maldita, bar: florLupulo)
 BarsBeer.create(beer:trindadeProfana, bar: florLupulo)
@@ -449,9 +609,7 @@ BarsBeer.create(beer:trindadeZenite, bar: florLupulo)
 BarsBeer.create(beer:trezentosCervejaPaleAle, bar: florLupulo)
 
 BarsBeer.create(beer:vilaMaria, bar: naMedida)
-# BarsBeer.create(beer:oitavaColina, bar: naMedida)
 BarsBeer.create(beer:meanSardine, bar: naMedida)
-# BarsBeer.create(beer:doisCorvos, bar: naMedida)
 BarsBeer.create(beer:mickLager, bar: naMedida)
 BarsBeer.create(beer:maldita, bar: naMedida)
 BarsBeer.create(beer:trindadeAurea, bar: naMedida)
@@ -460,31 +618,25 @@ BarsBeer.create(beer:trindadeZenite, bar: naMedida)
 BarsBeer.create(beer:trezentosCervejaPaleAle, bar: naMedida)
 
 BarsBeer.create(beer:maldita, bar: brewpubGallas)
-# BarsBeer.create(beer:oitavaColina, bar: brewpubGallas)
 BarsBeer.create(beer:meanSardine, bar: brewpubGallas)
-# BarsBeer.create(beer:doisCorvos, bar: brewpubGallas)
 BarsBeer.create(beer:mickLager, bar: brewpubGallas)
-BarsBeer.create(beer:maldita, bar: brewpubGallas)
+# BarsBeer.create(beer:maldita, bar: brewpubGallas)
 BarsBeer.create(beer:joeDaSilva, bar: brewpubGallas)
 BarsBeer.create(beer:vilaMaria, bar: brewpubGallas)
 BarsBeer.create(beer:trindadeZenite, bar: brewpubGallas)
 BarsBeer.create(beer:trezentosCervejaPaleAle, bar: brewpubGallas)
 
 BarsBeer.create(beer:maldita, bar: hoppyHouseBrewing)
-# BarsBeer.create(beer:oitavaColina, bar: hoppyHouseBrewing)
 BarsBeer.create(beer:meanSardine, bar: hoppyHouseBrewing)
-# BarsBeer.create(beer:doisCorvos, bar: hoppyHouseBrewing)
 BarsBeer.create(beer:mickLager, bar: hoppyHouseBrewing)
-BarsBeer.create(beer:maldita, bar: hoppyHouseBrewing)
+# BarsBeer.create(beer:maldita, bar: hoppyHouseBrewing)
 BarsBeer.create(beer:joeDaSilva, bar: hoppyHouseBrewing)
 BarsBeer.create(beer:vilaMaria, bar: hoppyHouseBrewing)
 BarsBeer.create(beer:trindadeZenite, bar: hoppyHouseBrewing)
 BarsBeer.create(beer:trezentosCervejaPaleAle, bar: hoppyHouseBrewing)
 
 BarsBeer.create(beer:cappucinoPorter, bar: trevo)
-# BarsBeer.create(beer:oitavaColina, bar: trevo)
 BarsBeer.create(beer:meanSardine, bar: trevo)
-# BarsBeer.create(beer:doisCorvos, bar: trevo)
 BarsBeer.create(beer:mickLager, bar: trevo)
 BarsBeer.create(beer:maldita, bar: trevo)
 BarsBeer.create(beer:politeSociety, bar: trevo)
@@ -493,7 +645,6 @@ BarsBeer.create(beer:vilaMaria, bar: trevo)
 BarsBeer.create(beer:vaiNu, bar: trevo)
 
 BarsBeer.create(beer:shamrockQuest, bar: craftyCorner)
-# BarsBeer.create(beer:oitavaColina, bar: craftyCorner)
 BarsBeer.create(beer:meanSardine, bar: craftyCorner)
 BarsBeer.create(beer:tresCincoUm, bar: craftyCorner)
 BarsBeer.create(beer:jackClub, bar: craftyCorner)
@@ -508,15 +659,11 @@ BarsBeer.create(beer:joeDaSilva, bar: oitavaColinaTaproom)
 BarsBeer.create(beer:florinda, bar: oitavaColinaTaproom)
 BarsBeer.create(beer:vilaMaria, bar: oitavaColinaTaproom)
 BarsBeer.create(beer:maldita, bar: oitavaColinaTaproom)
-# BarsBeer.create(beer:oitavaColina, bar: oitavaColinaTaproom)
 BarsBeer.create(beer:meanSardine, bar: oitavaColinaTaproom)
-# BarsBeer.create(beer:doisCorvos, bar: oitavaColinaTaproom)
 BarsBeer.create(beer:mickLager, bar: oitavaColinaTaproom)
-BarsBeer.create(beer:maldita, bar: oitavaColinaTaproom)
+# BarsBeer.create(beer:maldita, bar: oitavaColinaTaproom)
 
-# BarsBeer.create(beer:oitavaColina, bar: oitvaMarques)
 BarsBeer.create(beer:meanSardine, bar: oitvaMarques)
-# BarsBeer.create(beer:doisCorvos, bar: oitvaMarques)
 BarsBeer.create(beer:mickLager, bar: oitvaMarques)
 BarsBeer.create(beer:maldita, bar: oitvaMarques)
 BarsBeer.create(beer:bornInTheIpa, bar: oitvaMarques)
