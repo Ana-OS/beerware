@@ -255,7 +255,7 @@ vaiNu = Beer.find_by(name:'Vai Nú')
 vaiNu.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686148/Beerware/Beers/Dois_Corvos_Vai_Nu_n8vmpj.png'
 vaiNu.save
 avenida = Beer.find_by(name:'Avenida')
-avenida.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607685688/Beerware/Beers/piratas_cervejeiros_avenida_tropical_ep43ov.jpg'
+avenida.photo_url = 'https://res.cloudinary.com/di6k1pdz4/image/upload/v1607686144/Beerware/Beers/Dois_Corvos_Avenida_ujbqml.png'
 avenida.save
 
 bornInTheIpa = Beer.find_by(name:'Born in the IPA')
